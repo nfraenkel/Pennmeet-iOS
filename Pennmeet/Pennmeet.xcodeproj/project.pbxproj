@@ -7,105 +7,140 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C6148BA16758DF4001E4F7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6148B916758DF4001E4F7D /* UIKit.framework */; };
-		4C6148BC16758DF4001E4F7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6148BB16758DF4001E4F7D /* Foundation.framework */; };
-		4C6148BE16758DF4001E4F7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6148BD16758DF4001E4F7D /* CoreGraphics.framework */; };
-		4C6148C416758DF4001E4F7D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C6148C216758DF4001E4F7D /* InfoPlist.strings */; };
-		4C6148C616758DF4001E4F7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6148C516758DF4001E4F7D /* main.m */; };
-		4C6148CA16758DF4001E4F7D /* PennMeetAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6148C916758DF4001E4F7D /* PennMeetAppDelegate.m */; };
-		4C6148D016758DF4001E4F7D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6148CF16758DF4001E4F7D /* Default-568h@2x.png */; };
-		4C6148D316758DF4001E4F7D /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C6148D116758DF4001E4F7D /* MainStoryboard.storyboard */; };
-		4C6148D616758DF4001E4F7D /* PennMeetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6148D516758DF4001E4F7D /* PennMeetViewController.m */; };
-		4C6148DD16758E1F001E4F7D /* pennmeet-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6148DC16758E1F001E4F7D /* pennmeet-icon.png */; };
-		4C6148E016758F11001E4F7D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6148DE16758F11001E4F7D /* Default.png */; };
-		4C6148E116758F11001E4F7D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C6148DF16758F11001E4F7D /* Default@2x.png */; };
+		4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7164167A45E0007C1B87 /* UIKit.framework */; };
+		4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7166167A45E0007C1B87 /* Foundation.framework */; };
+		4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7168167A45E0007C1B87 /* CoreGraphics.framework */; };
+		4C7E716F167A45E0007C1B87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E716D167A45E0007C1B87 /* InfoPlist.strings */; };
+		4C7E7171167A45E0007C1B87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E7170167A45E0007C1B87 /* main.m */; };
+		4C7E7175167A45E0007C1B87 /* PennMeetAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E7174167A45E0007C1B87 /* PennMeetAppDelegate.m */; };
+		4C7E7177167A45E0007C1B87 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7176167A45E0007C1B87 /* Default.png */; };
+		4C7E7179167A45E0007C1B87 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7178167A45E0007C1B87 /* Default@2x.png */; };
+		4C7E717B167A45E0007C1B87 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E717A167A45E0007C1B87 /* Default-568h@2x.png */; };
+		4C7E717E167A45E0007C1B87 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E717C167A45E0007C1B87 /* MainStoryboard.storyboard */; };
+		4C7E7181167A45E0007C1B87 /* PennMeetFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E7180167A45E0007C1B87 /* PennMeetFirstViewController.m */; };
+		4C7E7183167A45E0007C1B87 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7182167A45E0007C1B87 /* first.png */; };
+		4C7E7185167A45E0007C1B87 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7184167A45E0007C1B87 /* first@2x.png */; };
+		4C7E7188167A45E0007C1B87 /* PennMeetSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E7187167A45E0007C1B87 /* PennMeetSecondViewController.m */; };
+		4C7E718A167A45E0007C1B87 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7189167A45E0007C1B87 /* second.png */; };
+		4C7E718C167A45E0007C1B87 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E718B167A45E0007C1B87 /* second@2x.png */; };
+		4C7E7199167A45FC007C1B87 /* fb_circ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7192167A45FC007C1B87 /* fb_circ.png */; };
+		4C7E719A167A45FC007C1B87 /* foggy_birds_@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7193167A45FC007C1B87 /* foggy_birds_@2X.png */; };
+		4C7E719B167A45FC007C1B87 /* foggy_birds.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7194167A45FC007C1B87 /* foggy_birds.png */; };
+		4C7E719C167A45FC007C1B87 /* groups1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7195167A45FC007C1B87 /* groups1.png */; };
+		4C7E719D167A45FC007C1B87 /* pennmeet-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7196167A45FC007C1B87 /* pennmeet-icon.png */; };
+		4C7E719E167A45FC007C1B87 /* qrcodeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7197167A45FC007C1B87 /* qrcodeicon.png */; };
+		4C7E719F167A45FC007C1B87 /* twitter_circ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7198167A45FC007C1B87 /* twitter_circ.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C6148B516758DF4001E4F7D /* PennMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C6148B916758DF4001E4F7D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		4C6148BB16758DF4001E4F7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		4C6148BD16758DF4001E4F7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		4C6148C116758DF4001E4F7D /* PennMeet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PennMeet-Info.plist"; sourceTree = "<group>"; };
-		4C6148C316758DF4001E4F7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4C6148C516758DF4001E4F7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4C6148C716758DF4001E4F7D /* PennMeet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PennMeet-Prefix.pch"; sourceTree = "<group>"; };
-		4C6148C816758DF4001E4F7D /* PennMeetAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PennMeetAppDelegate.h; sourceTree = "<group>"; };
-		4C6148C916758DF4001E4F7D /* PennMeetAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennMeetAppDelegate.m; sourceTree = "<group>"; };
-		4C6148CF16758DF4001E4F7D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		4C6148D216758DF4001E4F7D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		4C6148D416758DF4001E4F7D /* PennMeetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PennMeetViewController.h; sourceTree = "<group>"; };
-		4C6148D516758DF4001E4F7D /* PennMeetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennMeetViewController.m; sourceTree = "<group>"; };
-		4C6148DC16758E1F001E4F7D /* pennmeet-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pennmeet-icon.png"; sourceTree = "<group>"; };
-		4C6148DE16758F11001E4F7D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		4C6148DF16758F11001E4F7D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4C7E7160167A45E0007C1B87 /* PennMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C7E7164167A45E0007C1B87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C7E7166167A45E0007C1B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C7E7168167A45E0007C1B87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C7E716C167A45E0007C1B87 /* PennMeet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PennMeet-Info.plist"; sourceTree = "<group>"; };
+		4C7E716E167A45E0007C1B87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C7E7170167A45E0007C1B87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C7E7172167A45E0007C1B87 /* PennMeet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PennMeet-Prefix.pch"; sourceTree = "<group>"; };
+		4C7E7173167A45E0007C1B87 /* PennMeetAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PennMeetAppDelegate.h; sourceTree = "<group>"; };
+		4C7E7174167A45E0007C1B87 /* PennMeetAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennMeetAppDelegate.m; sourceTree = "<group>"; };
+		4C7E7176167A45E0007C1B87 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		4C7E7178167A45E0007C1B87 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		4C7E717A167A45E0007C1B87 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4C7E717D167A45E0007C1B87 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4C7E717F167A45E0007C1B87 /* PennMeetFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PennMeetFirstViewController.h; sourceTree = "<group>"; };
+		4C7E7180167A45E0007C1B87 /* PennMeetFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennMeetFirstViewController.m; sourceTree = "<group>"; };
+		4C7E7182167A45E0007C1B87 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		4C7E7184167A45E0007C1B87 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		4C7E7186167A45E0007C1B87 /* PennMeetSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PennMeetSecondViewController.h; sourceTree = "<group>"; };
+		4C7E7187167A45E0007C1B87 /* PennMeetSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PennMeetSecondViewController.m; sourceTree = "<group>"; };
+		4C7E7189167A45E0007C1B87 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		4C7E718B167A45E0007C1B87 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		4C7E7192167A45FC007C1B87 /* fb_circ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fb_circ.png; sourceTree = "<group>"; };
+		4C7E7193167A45FC007C1B87 /* foggy_birds_@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foggy_birds_@2X.png"; sourceTree = "<group>"; };
+		4C7E7194167A45FC007C1B87 /* foggy_birds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foggy_birds.png; sourceTree = "<group>"; };
+		4C7E7195167A45FC007C1B87 /* groups1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groups1.png; sourceTree = "<group>"; };
+		4C7E7196167A45FC007C1B87 /* pennmeet-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pennmeet-icon.png"; sourceTree = "<group>"; };
+		4C7E7197167A45FC007C1B87 /* qrcodeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrcodeicon.png; sourceTree = "<group>"; };
+		4C7E7198167A45FC007C1B87 /* twitter_circ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_circ.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4C6148B216758DF4001E4F7D /* Frameworks */ = {
+		4C7E715D167A45E0007C1B87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C6148BA16758DF4001E4F7D /* UIKit.framework in Frameworks */,
-				4C6148BC16758DF4001E4F7D /* Foundation.framework in Frameworks */,
-				4C6148BE16758DF4001E4F7D /* CoreGraphics.framework in Frameworks */,
+				4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */,
+				4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */,
+				4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C6148AA16758DF4001E4F7D = {
+		4C7E7155167A45E0007C1B87 = {
 			isa = PBXGroup;
 			children = (
-				4C6148BF16758DF4001E4F7D /* PennMeet */,
-				4C6148B816758DF4001E4F7D /* Frameworks */,
-				4C6148B616758DF4001E4F7D /* Products */,
+				4C7E716A167A45E0007C1B87 /* PennMeet */,
+				4C7E7163167A45E0007C1B87 /* Frameworks */,
+				4C7E7161167A45E0007C1B87 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		4C6148B616758DF4001E4F7D /* Products */ = {
+		4C7E7161167A45E0007C1B87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4C6148B516758DF4001E4F7D /* PennMeet.app */,
+				4C7E7160167A45E0007C1B87 /* PennMeet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4C6148B816758DF4001E4F7D /* Frameworks */ = {
+		4C7E7163167A45E0007C1B87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C6148B916758DF4001E4F7D /* UIKit.framework */,
-				4C6148BB16758DF4001E4F7D /* Foundation.framework */,
-				4C6148BD16758DF4001E4F7D /* CoreGraphics.framework */,
+				4C7E7164167A45E0007C1B87 /* UIKit.framework */,
+				4C7E7166167A45E0007C1B87 /* Foundation.framework */,
+				4C7E7168167A45E0007C1B87 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4C6148BF16758DF4001E4F7D /* PennMeet */ = {
+		4C7E716A167A45E0007C1B87 /* PennMeet */ = {
 			isa = PBXGroup;
 			children = (
-				4C6148C816758DF4001E4F7D /* PennMeetAppDelegate.h */,
-				4C6148C916758DF4001E4F7D /* PennMeetAppDelegate.m */,
-				4C6148D116758DF4001E4F7D /* MainStoryboard.storyboard */,
-				4C6148D416758DF4001E4F7D /* PennMeetViewController.h */,
-				4C6148D516758DF4001E4F7D /* PennMeetViewController.m */,
-				4C6148C016758DF4001E4F7D /* Supporting Files */,
+				4C7E7173167A45E0007C1B87 /* PennMeetAppDelegate.h */,
+				4C7E7174167A45E0007C1B87 /* PennMeetAppDelegate.m */,
+				4C7E717C167A45E0007C1B87 /* MainStoryboard.storyboard */,
+				4C7E717F167A45E0007C1B87 /* PennMeetFirstViewController.h */,
+				4C7E7180167A45E0007C1B87 /* PennMeetFirstViewController.m */,
+				4C7E7182167A45E0007C1B87 /* first.png */,
+				4C7E7184167A45E0007C1B87 /* first@2x.png */,
+				4C7E7186167A45E0007C1B87 /* PennMeetSecondViewController.h */,
+				4C7E7187167A45E0007C1B87 /* PennMeetSecondViewController.m */,
+				4C7E7189167A45E0007C1B87 /* second.png */,
+				4C7E718B167A45E0007C1B87 /* second@2x.png */,
+				4C7E716B167A45E0007C1B87 /* Supporting Files */,
 			);
 			path = PennMeet;
 			sourceTree = "<group>";
 		};
-		4C6148C016758DF4001E4F7D /* Supporting Files */ = {
+		4C7E716B167A45E0007C1B87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4C6148DE16758F11001E4F7D /* Default.png */,
-				4C6148DF16758F11001E4F7D /* Default@2x.png */,
-				4C6148DC16758E1F001E4F7D /* pennmeet-icon.png */,
-				4C6148C116758DF4001E4F7D /* PennMeet-Info.plist */,
-				4C6148C216758DF4001E4F7D /* InfoPlist.strings */,
-				4C6148C516758DF4001E4F7D /* main.m */,
-				4C6148C716758DF4001E4F7D /* PennMeet-Prefix.pch */,
-				4C6148CF16758DF4001E4F7D /* Default-568h@2x.png */,
+				4C7E7192167A45FC007C1B87 /* fb_circ.png */,
+				4C7E7193167A45FC007C1B87 /* foggy_birds_@2X.png */,
+				4C7E7194167A45FC007C1B87 /* foggy_birds.png */,
+				4C7E7195167A45FC007C1B87 /* groups1.png */,
+				4C7E7196167A45FC007C1B87 /* pennmeet-icon.png */,
+				4C7E7197167A45FC007C1B87 /* qrcodeicon.png */,
+				4C7E7198167A45FC007C1B87 /* twitter_circ.png */,
+				4C7E716C167A45E0007C1B87 /* PennMeet-Info.plist */,
+				4C7E716D167A45E0007C1B87 /* InfoPlist.strings */,
+				4C7E7170167A45E0007C1B87 /* main.m */,
+				4C7E7172167A45E0007C1B87 /* PennMeet-Prefix.pch */,
+				4C7E7176167A45E0007C1B87 /* Default.png */,
+				4C7E7178167A45E0007C1B87 /* Default@2x.png */,
+				4C7E717A167A45E0007C1B87 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -113,13 +148,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C6148B416758DF4001E4F7D /* PennMeet */ = {
+		4C7E715F167A45E0007C1B87 /* PennMeet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C6148D916758DF4001E4F7D /* Build configuration list for PBXNativeTarget "PennMeet" */;
+			buildConfigurationList = 4C7E718F167A45E0007C1B87 /* Build configuration list for PBXNativeTarget "PennMeet" */;
 			buildPhases = (
-				4C6148B116758DF4001E4F7D /* Sources */,
-				4C6148B216758DF4001E4F7D /* Frameworks */,
-				4C6148B316758DF4001E4F7D /* Resources */,
+				4C7E715C167A45E0007C1B87 /* Sources */,
+				4C7E715D167A45E0007C1B87 /* Frameworks */,
+				4C7E715E167A45E0007C1B87 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -127,78 +162,89 @@
 			);
 			name = PennMeet;
 			productName = PennMeet;
-			productReference = 4C6148B516758DF4001E4F7D /* PennMeet.app */;
+			productReference = 4C7E7160167A45E0007C1B87 /* PennMeet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		4C6148AC16758DF4001E4F7D /* Project object */ = {
+		4C7E7157167A45E0007C1B87 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PennMeet;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Nathan Fraenkel";
 			};
-			buildConfigurationList = 4C6148AF16758DF4001E4F7D /* Build configuration list for PBXProject "PennMeet" */;
+			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 4C6148AA16758DF4001E4F7D;
-			productRefGroup = 4C6148B616758DF4001E4F7D /* Products */;
+			mainGroup = 4C7E7155167A45E0007C1B87;
+			productRefGroup = 4C7E7161167A45E0007C1B87 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4C6148B416758DF4001E4F7D /* PennMeet */,
+				4C7E715F167A45E0007C1B87 /* PennMeet */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4C6148B316758DF4001E4F7D /* Resources */ = {
+		4C7E715E167A45E0007C1B87 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C6148C416758DF4001E4F7D /* InfoPlist.strings in Resources */,
-				4C6148D016758DF4001E4F7D /* Default-568h@2x.png in Resources */,
-				4C6148D316758DF4001E4F7D /* MainStoryboard.storyboard in Resources */,
-				4C6148DD16758E1F001E4F7D /* pennmeet-icon.png in Resources */,
-				4C6148E016758F11001E4F7D /* Default.png in Resources */,
-				4C6148E116758F11001E4F7D /* Default@2x.png in Resources */,
+				4C7E716F167A45E0007C1B87 /* InfoPlist.strings in Resources */,
+				4C7E7177167A45E0007C1B87 /* Default.png in Resources */,
+				4C7E7179167A45E0007C1B87 /* Default@2x.png in Resources */,
+				4C7E717B167A45E0007C1B87 /* Default-568h@2x.png in Resources */,
+				4C7E717E167A45E0007C1B87 /* MainStoryboard.storyboard in Resources */,
+				4C7E7183167A45E0007C1B87 /* first.png in Resources */,
+				4C7E7185167A45E0007C1B87 /* first@2x.png in Resources */,
+				4C7E718A167A45E0007C1B87 /* second.png in Resources */,
+				4C7E718C167A45E0007C1B87 /* second@2x.png in Resources */,
+				4C7E7199167A45FC007C1B87 /* fb_circ.png in Resources */,
+				4C7E719A167A45FC007C1B87 /* foggy_birds_@2X.png in Resources */,
+				4C7E719B167A45FC007C1B87 /* foggy_birds.png in Resources */,
+				4C7E719C167A45FC007C1B87 /* groups1.png in Resources */,
+				4C7E719D167A45FC007C1B87 /* pennmeet-icon.png in Resources */,
+				4C7E719E167A45FC007C1B87 /* qrcodeicon.png in Resources */,
+				4C7E719F167A45FC007C1B87 /* twitter_circ.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4C6148B116758DF4001E4F7D /* Sources */ = {
+		4C7E715C167A45E0007C1B87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C6148C616758DF4001E4F7D /* main.m in Sources */,
-				4C6148CA16758DF4001E4F7D /* PennMeetAppDelegate.m in Sources */,
-				4C6148D616758DF4001E4F7D /* PennMeetViewController.m in Sources */,
+				4C7E7171167A45E0007C1B87 /* main.m in Sources */,
+				4C7E7175167A45E0007C1B87 /* PennMeetAppDelegate.m in Sources */,
+				4C7E7181167A45E0007C1B87 /* PennMeetFirstViewController.m in Sources */,
+				4C7E7188167A45E0007C1B87 /* PennMeetSecondViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4C6148C216758DF4001E4F7D /* InfoPlist.strings */ = {
+		4C7E716D167A45E0007C1B87 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4C6148C316758DF4001E4F7D /* en */,
+				4C7E716E167A45E0007C1B87 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		4C6148D116758DF4001E4F7D /* MainStoryboard.storyboard */ = {
+		4C7E717C167A45E0007C1B87 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4C6148D216758DF4001E4F7D /* en */,
+				4C7E717D167A45E0007C1B87 /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -206,7 +252,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		4C6148D716758DF4001E4F7D /* Debug */ = {
+		4C7E718D167A45E0007C1B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +280,7 @@
 			};
 			name = Debug;
 		};
-		4C6148D816758DF4001E4F7D /* Release */ = {
+		4C7E718E167A45E0007C1B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -256,7 +302,7 @@
 			};
 			name = Release;
 		};
-		4C6148DA16758DF4001E4F7D /* Debug */ = {
+		4C7E7190167A45E0007C1B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -267,7 +313,7 @@
 			};
 			name = Debug;
 		};
-		4C6148DB16758DF4001E4F7D /* Release */ = {
+		4C7E7191167A45E0007C1B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -281,24 +327,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C6148AF16758DF4001E4F7D /* Build configuration list for PBXProject "PennMeet" */ = {
+		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4C6148D716758DF4001E4F7D /* Debug */,
-				4C6148D816758DF4001E4F7D /* Release */,
+				4C7E718D167A45E0007C1B87 /* Debug */,
+				4C7E718E167A45E0007C1B87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C6148D916758DF4001E4F7D /* Build configuration list for PBXNativeTarget "PennMeet" */ = {
+		4C7E718F167A45E0007C1B87 /* Build configuration list for PBXNativeTarget "PennMeet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4C6148DA16758DF4001E4F7D /* Debug */,
-				4C6148DB16758DF4001E4F7D /* Release */,
+				4C7E7190167A45E0007C1B87 /* Debug */,
+				4C7E7191167A45E0007C1B87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 4C6148AC16758DF4001E4F7D /* Project object */;
+	rootObject = 4C7E7157167A45E0007C1B87 /* Project object */;
 }

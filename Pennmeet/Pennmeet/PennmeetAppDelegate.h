@@ -2,7 +2,7 @@
 //  PennMeetAppDelegate.h
 //  PennMeet
 //
-//  Created by Nathan Fraenkel on 12/9/12.
+//  Created by Nathan Fraenkel on 12/13/12.
 //  Copyright (c) 2012 Nathan Fraenkel. All rights reserved.
 //
 

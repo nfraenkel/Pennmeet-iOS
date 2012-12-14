@@ -12,20 +12,47 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="PROFILE" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="20">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="foggy_birds_@2X.png" translatesAutoresizingMaskIntoConstraints="NO" id="NPq-57-NCB"/>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yrr-cg-9gm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="PEc-l6-Bwl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-KB-96w">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="GMc-FZ-Pbt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bwZ-Vh-5c7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="NEo-Rj-0D1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="-" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="20">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="6Bg-3O-OR8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the first view controller — an instance of PennMeetFirstViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="Ikv-jk-tyi"/>
+                                    <constraint firstAttribute="height" constant="33" id="VqO-cM-gF2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
+                                <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="aez-tJ-h1Z">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="aSt-KP-MKQ"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="My Profile" id="fyV-ym-hEL">
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="08g-Kw-YKp">
@@ -39,21 +66,39 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yrr-cg-9gm" firstAttribute="top" secondItem="16" secondAttribute="top" constant="184" id="731-0C-Urd"/>
+                            <constraint firstAttribute="bottom" secondItem="bwZ-Vh-5c7" secondAttribute="bottom" constant="97" id="7gD-8I-ZCD"/>
+                            <constraint firstItem="NPq-57-NCB" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="9nw-aH-CiW"/>
+                            <constraint firstAttribute="bottom" secondItem="ahR-KB-96w" secondAttribute="bottom" constant="144" id="AqD-LB-pMS"/>
+                            <constraint firstItem="NPq-57-NCB" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="GRY-aj-y1O"/>
+                            <constraint firstItem="NPq-57-NCB" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="HCY-kA-1zB"/>
+                            <constraint firstAttribute="trailing" secondItem="bwZ-Vh-5c7" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IgR-PH-cs0"/>
+                            <constraint firstItem="bwZ-Vh-5c7" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PaI-xf-kIX"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="Pct-eg-Nbt"/>
                             <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QBg-X6-fBV"/>
-                            <constraint firstAttribute="trailing" secondItem="20" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Qxj-1L-2Yh"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="RhY-xS-D16"/>
-                            <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ty9-wx-CyI"/>
+                            <constraint firstItem="yrr-cg-9gm" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="RqF-lq-lML"/>
                             <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Zmm-k2-2L7"/>
-                            <constraint firstItem="21" firstAttribute="top" secondItem="20" secondAttribute="bottom" constant="40" type="user" id="jX0-Wi-kmb"/>
+                            <constraint firstAttribute="trailing" secondItem="ahR-KB-96w" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ala-e5-v1j"/>
+                            <constraint firstItem="NPq-57-NCB" firstAttribute="top" secondItem="aez-tJ-h1Z" secondAttribute="bottom" type="default" id="bxg-VW-GI1"/>
+                            <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="80" id="e0Y-U6-Seu"/>
+                            <constraint firstItem="21" firstAttribute="top" secondItem="16" secondAttribute="top" constant="138" id="ftW-8v-MuW"/>
+                            <constraint firstItem="ahR-KB-96w" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gsl-oC-2OQ"/>
+                            <constraint firstAttribute="trailing" secondItem="yrr-cg-9gm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rfq-fU-C4B"/>
+                            <constraint firstItem="20" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="sl1-bY-CXI"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="x3M-WZ-FlZ"/>
-                            <constraint firstAttribute="centerY" secondItem="21" secondAttribute="centerY" type="user" id="yWk-L2-m9F"/>
+                            <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="xCT-3s-kXT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" image="first" id="7"/>
                     <connections>
+                        <outlet property="birthdayLabel" destination="bwZ-Vh-5c7" id="6q9-op-yWu"/>
                         <outlet property="editButton" destination="08g-Kw-YKp" id="DQ7-BT-geH"/>
+                        <outlet property="emailLabel" destination="21" id="lsp-dU-4Fc"/>
+                        <outlet property="majorLabel" destination="ahR-KB-96w" id="vMW-dP-xZH"/>
+                        <outlet property="nameLabel" destination="20" id="buw-Dx-Dky"/>
                         <outlet property="navBar" destination="aez-tJ-h1Z" id="2Xk-ng-vqW"/>
+                        <outlet property="schoolLabel" destination="yrr-cg-9gm" id="r98-Rc-Dpv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -69,28 +114,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupCell" textLabel="dTN-UT-OF8" detailTextLabel="83U-qv-Td5" style="IBUITableViewCellStyleValue2" id="tub-tW-0qT">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupCell" textLabel="dTN-UT-OF8" style="IBUITableViewCellStyleDefault" id="tub-tW-0qT">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTN-UT-OF8">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                            <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83U-qv-Td5">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTN-UT-OF8">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="vr2-np-ynB" kind="push" identifier="showGroup" id="g0K-7F-SlA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WbC-v2-vYF" id="zYd-dS-D6K"/>
+                            <outlet property="delegate" destination="WbC-v2-vYF" id="oi5-M9-AGU"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Groups" id="7ya-ZE-AtO">
                         <barButtonItem key="rightBarButtonItem" title="New Group" id="PPe-WK-mLr">
@@ -109,7 +156,10 @@
         <scene sceneID="zh6-12-G2s">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Vov-k6-l1E" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2sx-VN-QLD">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="2sx-VN-QLD">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -119,6 +169,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xc-l7-quQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-101" y="443"/>
+        </scene>
+        <!--Penn Meet Group View Controller - Group-->
+        <scene sceneID="8T0-Hu-2Ud">
+            <objects>
+                <viewController id="vr2-np-ynB" customClass="PennMeetGroupViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yme-bJ-LPb">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="foggy_birds_@2X.png" translatesAutoresizingMaskIntoConstraints="NO" id="Is0-tV-ky7"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPW-Jh-3NK">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="jfP-9q-SHy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="26"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hzr-jm-HrF">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="238" id="9Qd-Fp-uau"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memberCell" textLabel="gdi-6G-NFU" detailTextLabel="aBb-LJ-fHl" style="IBUITableViewCellStyleValue2" id="sQn-cq-Ouc">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdi-6G-NFU">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                    <color key="textColor" red="0.32156862745098042" green="0.40000000000000002" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-LJ-fHl">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vr2-np-ynB" id="S2z-UM-Nr4"/>
+                                    <outlet property="delegate" destination="vr2-np-ynB" id="lRz-Pk-gF1"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Group Info would go here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTY-XV-wFm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="rkW-Tu-YhM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hzr-jm-HrF" firstAttribute="bottom" secondItem="Yme-bJ-LPb" secondAttribute="bottom" type="default" id="5AP-x8-5ZF"/>
+                            <constraint firstItem="Is0-tV-ky7" firstAttribute="bottom" secondItem="Yme-bJ-LPb" secondAttribute="bottom" type="default" id="DYx-IF-Gb8"/>
+                            <constraint firstItem="Hzr-jm-HrF" firstAttribute="leading" secondItem="Yme-bJ-LPb" secondAttribute="leading" type="default" id="LCT-GF-IxR"/>
+                            <constraint firstItem="Hzr-jm-HrF" firstAttribute="trailing" secondItem="Yme-bJ-LPb" secondAttribute="trailing" type="default" id="O1D-kW-Ybf"/>
+                            <constraint firstItem="Is0-tV-ky7" firstAttribute="top" secondItem="Yme-bJ-LPb" secondAttribute="top" type="default" id="aeT-AE-WtV"/>
+                            <constraint firstItem="BTY-XV-wFm" firstAttribute="leading" secondItem="Yme-bJ-LPb" secondAttribute="leading" type="default" id="ayA-gl-ftC"/>
+                            <constraint firstItem="SPW-Jh-3NK" firstAttribute="leading" secondItem="Yme-bJ-LPb" secondAttribute="leading" type="default" id="bLC-Qs-M2e"/>
+                            <constraint firstItem="BTY-XV-wFm" firstAttribute="trailing" secondItem="Yme-bJ-LPb" secondAttribute="trailing" type="default" id="d68-E0-2ha"/>
+                            <constraint firstItem="Is0-tV-ky7" firstAttribute="leading" secondItem="Yme-bJ-LPb" secondAttribute="leading" type="default" id="fKH-Ze-G0J"/>
+                            <constraint firstItem="SPW-Jh-3NK" firstAttribute="top" secondItem="Yme-bJ-LPb" secondAttribute="top" constant="41" id="jnD-yV-s1R"/>
+                            <constraint firstItem="SPW-Jh-3NK" firstAttribute="trailing" secondItem="Yme-bJ-LPb" secondAttribute="trailing" type="default" id="rLh-Da-n9A"/>
+                            <constraint firstItem="Is0-tV-ky7" firstAttribute="trailing" secondItem="Yme-bJ-LPb" secondAttribute="trailing" type="default" id="sjP-s7-HBr"/>
+                            <constraint firstItem="BTY-XV-wFm" firstAttribute="top" secondItem="SPW-Jh-3NK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="yIz-of-Rqj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Group" id="t9M-ta-eeX"/>
+                    <connections>
+                        <outlet property="groupName" destination="SPW-Jh-3NK" id="ocV-qc-3ee"/>
+                        <outlet property="navItem" destination="t9M-ta-eeX" id="bhC-Sb-JvN"/>
+                        <outlet property="tableForGroupMembers" destination="Hzr-jm-HrF" id="iFu-Hl-LvC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7oc-uY-WYS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="82" y="1084"/>
         </scene>
         <!--Penn Meet Create Group View Controller - Create Group-->
         <scene sceneID="xlf-xB-8La">
@@ -151,7 +288,9 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="R6e-Um-l6x" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Groups" id="2oK-oz-3I6"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tup-OF-H62">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="Tup-OF-H62">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -252,6 +391,7 @@
     </scenes>
     <resources>
         <image name="first" width="16" height="16"/>
+        <image name="foggy_birds_@2X.png" width="412" height="412"/>
         <image name="plus_black.png" width="512" height="512"/>
     </resources>
     <classes>
@@ -269,8 +409,21 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetFirstViewController.h"/>
             <relationships>
                 <relationship kind="action" name="editButtonPressed:"/>
+                <relationship kind="outlet" name="birthdayLabel" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="majorLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="schoolLabel" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetGroupViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetGroupViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="groupName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="tableForGroupMembers" candidateClass="UITableView"/>
             </relationships>
         </class>
         <class className="PennMeetSecondViewController" superclassName="UITableViewController">

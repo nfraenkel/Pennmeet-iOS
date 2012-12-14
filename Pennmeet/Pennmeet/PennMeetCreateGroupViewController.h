@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PennMeetCurrentLoggedInUser.h"
 
 @interface PennMeetCreateGroupViewController : UIViewController
+
+
 - (IBAction)cancelButtonTouched:(id)sender;
 - (IBAction)doneButtonTouched:(id)sender;
+
+
+@property (retain) PennMeetCurrentLoggedInUser *currentUser;
 
 @end

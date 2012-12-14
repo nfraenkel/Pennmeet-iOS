@@ -10,6 +10,7 @@
 #import "PennMeetAppDelegate.h"
 #import "PennMeetUser.h"
 #import "PennMeetGroup.h"
+#import "PennMeetCurrentLoggedInUser.h"
 
 @interface PennMeetFirstViewController : UIViewController <NSURLConnectionDataDelegate> {
     NSMutableData *_data;
@@ -18,6 +19,13 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
+@property (retain) PennMeetCurrentLoggedInUser *currentUser;
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UITextView *emailLabel;
+@property (weak, nonatomic) IBOutlet UITextView *schoolLabel;
+@property (weak, nonatomic) IBOutlet UITextView *majorLabel;
+@property (weak, nonatomic) IBOutlet UITextView *birthdayLabel;
 
 - (IBAction)editButtonPressed:(id)sender;
 

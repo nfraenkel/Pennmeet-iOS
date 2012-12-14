@@ -14,10 +14,14 @@
 
 @implementation PennMeetFirstViewController
 
+@synthesize currentUser, nameLabel, emailLabel, schoolLabel, majorLabel, birthdayLabel;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
     
     // TODO: make this get the user who just logged in
     [self retrieveUser:@"fraenkel@seas.upenn.edu"];
@@ -35,8 +39,13 @@
 }
 
 -(void)populateProfile:(PennMeetUser *)user {
-    NSLog(@"WOULD POPULATE PROFILE AT THIS TIME");
-    //TODO
+    NSLog(@"POPULATE PROFILE AT THIS TIME");
+    
+    nameLabel.text = [NSString stringWithFormat:@"%@ %@", user.first, user.last];
+    emailLabel.text = [NSString stringWithFormat:@"%@", user.uniqueID];
+    schoolLabel.text = [NSString stringWithFormat:@"%@", user.school];
+    majorLabel.text = [NSString stringWithFormat:@"%@", user.major];
+    birthdayLabel.text = [NSString stringWithFormat:@"%@", user.birthday];
     
 }
 
@@ -45,18 +54,6 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    
-    [request setHTTPMethod:@"GET"];
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [connection start];
-}
-
--(void)retrieveGroup:(NSString *)identifier{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/groups/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     
     [request setHTTPMethod:@"GET"];
@@ -106,10 +103,16 @@
         NSDictionary *groupsDict = [dictResponse objectForKey:@"groups"];
         for (int i = 1; i <= groupsDict.count; i++){
             NSString* groupID = [groupsDict objectForKey:[NSString stringWithFormat:@"group%d", i]];
+            NSLog(@"groupID for group%d: %@", i, groupID);
             [groups addObject:groupID];
         }
+        NSLog(@"user has %d groups", groups.count);
         PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups];
+    
+        // UPDATE OUR SINGLETON
+        currentUser.currentUser = user;
         
+        // populate user profile page/ labels with singleton info
         [self populateProfile:user];
         
         

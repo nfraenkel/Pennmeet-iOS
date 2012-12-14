@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PennMeetCurrentLoggedInUser.h"
+
 
 @interface PennMeetThirdViewController : UIViewController <UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView *plusButton;
+
+@property (retain) PennMeetCurrentLoggedInUser *currentUser;
+
+
 
 @end

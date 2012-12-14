@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PennMeetSecondViewController : UIViewController
+@interface PennMeetSecondViewController : UITableViewController
+
+- (IBAction)newGroupTouched:(id)sender;
+
 
 @end

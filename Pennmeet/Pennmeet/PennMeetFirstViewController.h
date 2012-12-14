@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface PennMeetFirstViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+- (IBAction)editButtonPressed:(id)sender;
 
 @end

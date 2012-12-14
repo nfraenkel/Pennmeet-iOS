@@ -26,4 +26,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)newGroupTouched:(id)sender {
+    
+    NSLog(@"NEW GROUP TOUCHED THO");
+//    [self performSegueWithIdentifier:@"createNewGroup" sender:self];
+}
 @end

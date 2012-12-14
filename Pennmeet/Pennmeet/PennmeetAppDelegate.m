@@ -12,6 +12,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.apiToken = @"5vj8a8fxoktufbjegfv0";
+    self.accountToken = @"849315";
+    
     // Override point for customization after application launch.
     return YES;
 }

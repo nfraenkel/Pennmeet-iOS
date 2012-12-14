@@ -51,8 +51,9 @@
     NSLog(@"GENERATE QR CODE SCANNER!!!");
     // TODO: bring up qr code scanner/ camera
     
-    PennMeetRequests *pm = [[PennMeetRequests alloc] init];
-    [pm retrieveUser:@"fraenkel@seas.upenn.edu"];
+//    PennMeetRequests *pm = [[PennMeetRequests alloc] init];
+//    [pm retrieveUser:@"fraenkel@seas.upenn.edu"];
+//    [pm retrieveGroup:@"KoolKidsKlub"];
     
 //    NuMongoDB *mongo = [NuMongoDB new];
 //	[mongo connectWithOptions:[NSDictionary dictionaryWithObjectsAndKeys:

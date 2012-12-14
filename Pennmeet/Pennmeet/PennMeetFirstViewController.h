@@ -7,11 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PennMeetAppDelegate.h"
+#import "PennMeetUser.h"
+#import "PennMeetGroup.h"
 
-@interface PennMeetFirstViewController : UIViewController
+@interface PennMeetFirstViewController : UIViewController <NSURLConnectionDataDelegate> {
+    NSMutableData *_data;
+}
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
+
 - (IBAction)editButtonPressed:(id)sender;
+
+-(void)retrieveUser:(NSString *)identifier;
 
 @end

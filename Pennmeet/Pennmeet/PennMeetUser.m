@@ -12,7 +12,7 @@
 
 @synthesize uniqueID, first, last, school, major, birthday;
 
--(id)initWithId:(NSString *)newID andFirst:(NSString *)newFirst andLast:(NSString *)newLast andSchool:(NSString *)newSchool andMajor:(NSString *)newMajor andBirthday:(NSString *)newBirthday{
+-(id)initWithId:(NSString *)newID andFirst:(NSString *)newFirst andLast:(NSString *)newLast andSchool:(NSString *)newSchool andMajor:(NSString *)newMajor andBirthday:(NSString *)newBirthday andGroups:(NSMutableArray *)newGroups{
     self = [super init];
     if (self) {
         self.uniqueID = newID;
@@ -21,6 +21,8 @@
         self.school = newSchool;
         self.major = newMajor;
         self.birthday = newBirthday;
+        self.groupIDs = newGroups;
+        self.groups = [NSMutableArray array];
         return self;
     }
     

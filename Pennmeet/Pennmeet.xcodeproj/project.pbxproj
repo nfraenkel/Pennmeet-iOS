@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4C194493167A9E1B002B63E5 /* PennMeetCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.m */; };
-		4C19461A167ADB8E002B63E5 /* PennMeetRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194619167ADB8E002B63E5 /* PennMeetRequests.m */; };
 		4C194684167AE5EE002B63E5 /* PennMeetUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194683167AE5EE002B63E5 /* PennMeetUser.m */; };
 		4C194687167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194686167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m */; };
+		4C1BA283167AF2C40078D2CB /* PennMeetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */; };
 		4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7164167A45E0007C1B87 /* UIKit.framework */; };
 		4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7166167A45E0007C1B87 /* Foundation.framework */; };
 		4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7168167A45E0007C1B87 /* CoreGraphics.framework */; };
@@ -42,12 +42,12 @@
 /* Begin PBXFileReference section */
 		4C194491167A9E1B002B63E5 /* PennMeetCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetCreateGroupViewController.h; sourceTree = "<group>"; };
 		4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetCreateGroupViewController.m; sourceTree = "<group>"; };
-		4C194618167ADB8E002B63E5 /* PennMeetRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetRequests.h; sourceTree = "<group>"; };
-		4C194619167ADB8E002B63E5 /* PennMeetRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetRequests.m; sourceTree = "<group>"; };
 		4C194682167AE5EE002B63E5 /* PennMeetUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetUser.h; sourceTree = "<group>"; };
 		4C194683167AE5EE002B63E5 /* PennMeetUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetUser.m; sourceTree = "<group>"; };
 		4C194685167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetCurrentLoggedInUser.h; sourceTree = "<group>"; };
 		4C194686167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetCurrentLoggedInUser.m; sourceTree = "<group>"; };
+		4C1BA281167AF2C40078D2CB /* PennMeetGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetGroup.h; sourceTree = "<group>"; };
+		4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetGroup.m; sourceTree = "<group>"; };
 		4C7E7160167A45E0007C1B87 /* PennMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7E7164167A45E0007C1B87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C7E7166167A45E0007C1B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,6 +104,8 @@
 				4C194683167AE5EE002B63E5 /* PennMeetUser.m */,
 				4C194685167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.h */,
 				4C194686167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m */,
+				4C1BA281167AF2C40078D2CB /* PennMeetGroup.h */,
+				4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -152,8 +154,6 @@
 				4C7E7187167A45E0007C1B87 /* PennMeetSecondViewController.m */,
 				4CA49DAD167A9499005B8D44 /* PennMeetThirdViewController.h */,
 				4CA49DAE167A9499005B8D44 /* PennMeetThirdViewController.m */,
-				4C194618167ADB8E002B63E5 /* PennMeetRequests.h */,
-				4C194619167ADB8E002B63E5 /* PennMeetRequests.m */,
 				4C7E7189167A45E0007C1B87 /* second.png */,
 				4C7E718B167A45E0007C1B87 /* second@2x.png */,
 				4C7E716B167A45E0007C1B87 /* Supporting Files */,
@@ -271,9 +271,9 @@
 				4C7E7188167A45E0007C1B87 /* PennMeetSecondViewController.m in Sources */,
 				4CA49DAF167A9499005B8D44 /* PennMeetThirdViewController.m in Sources */,
 				4C194493167A9E1B002B63E5 /* PennMeetCreateGroupViewController.m in Sources */,
-				4C19461A167ADB8E002B63E5 /* PennMeetRequests.m in Sources */,
 				4C194684167AE5EE002B63E5 /* PennMeetUser.m in Sources */,
 				4C194687167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m in Sources */,
+				4C1BA283167AF2C40078D2CB /* PennMeetGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

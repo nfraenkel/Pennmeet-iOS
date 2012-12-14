@@ -50,6 +50,28 @@
 - (void) handleImageTap:(UIGestureRecognizer *)gestureRecognizer {
     NSLog(@"GENERATE QR CODE SCANNER!!!");
     // TODO: bring up qr code scanner/ camera
+    
+    PennMeetRequests *pm = [[PennMeetRequests alloc] init];
+    [pm retrieveUser:@"fraenkel@seas.upenn.edu"];
+    
+//    NuMongoDB *mongo = [NuMongoDB new];
+//	[mongo connectWithOptions:[NSDictionary dictionaryWithObjectsAndKeys:
+//							   @"127.0.0.1", @"host", nil]];
+//    
+//	NSString *collection = @"test.sample";
+//    
+//	[mongo dropCollection:@"sample" inDatabase:@"test"];
+//    
+//	id sample = [NSDictionary dictionaryWithObjectsAndKeys:
+//				 [NSNumber numberWithInt:1], @"one",
+//				 [NSNumber numberWithDouble:2.0], @"two",
+//				 @"3", @"three",
+//				 [NSArray arrayWithObjects:@"zero", @"one", @"two", @"three", nil], @"four",
+//				 nil];
+//	[mongo insertObject:sample intoCollection:collection];
+//    
+//	id first = [mongo findOne:nil inCollection:collection];
+//	NSLog(@"%@", first);
 }
 
 

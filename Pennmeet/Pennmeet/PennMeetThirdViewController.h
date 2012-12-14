@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NuBSON.h"
+#import "NuMongoDB.h"
+#import "PennMeetRequests.h"
+//#import "MongoHQObjC.h"
 
 @interface PennMeetThirdViewController : UIViewController <UIGestureRecognizerDelegate>
 

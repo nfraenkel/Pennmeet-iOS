@@ -48,7 +48,7 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
 
 -(void)configureView {
     // call helper - get image from url
-    UIImage* cvtho = [self imageFromURLString:groupImageUrl];
+    UIImage* cvtho = [self imageFromURLString:self.group.photoUrl];
     
     // set group cover photo
     [self.groupCoverPhotoTho setImage:cvtho];
@@ -179,15 +179,16 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
     NSLog(@"connectiondidfinishloading!");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
-    if (dictResponse.count == 2){ // retrieveGroup
+    if (dictResponse.count == 3){ // retrieveGroup
         NSMutableArray* mems = [NSMutableArray array];
         NSString* identy = [dictResponse objectForKey:@"_id"];
+        NSString* url = [dictResponse objectForKey:@"photoUrl"];
         NSDictionary *membersDict = [dictResponse objectForKey:@"members"];
         for (int i = 1; i <= membersDict.count; i++){
             NSString* memb = [membersDict objectForKey:[NSString stringWithFormat:@"id%d", i]];
             [mems addObject:memb];
         }
-        self.group = [[PennMeetGroup alloc] initWithName:identy andArray:mems];
+        self.group = [[PennMeetGroup alloc] initWithName:identy andPhotoUrl:url andArray:mems];
 
         
         [self configureView];

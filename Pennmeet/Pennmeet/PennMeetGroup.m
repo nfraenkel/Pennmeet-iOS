@@ -10,12 +10,13 @@
 
 @implementation PennMeetGroup
 
-@synthesize name, memberIDs;
+@synthesize name, photoUrl, memberIDs;
 
--(id)initWithName:(NSString *)newID andArray:(NSMutableArray *)array{
+-(id)initWithName:(NSString *)newID andPhotoUrl:(NSString *)url andArray:(NSMutableArray *)array{
     self = [super init];
     if (self) {
         self.name = newID;
+        self.photoUrl = url;
         self.memberIDs = array;
         return self;
     }

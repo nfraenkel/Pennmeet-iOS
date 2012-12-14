@@ -10,10 +10,10 @@
 
 @interface PennMeetGroup : NSObject
 
-@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *name, *photoUrl;
 @property (nonatomic) NSMutableArray *memberIDs;
 
--(id)initWithName:(NSString *)newID andArray:(NSMutableArray *)array;
+-(id)initWithName:(NSString *)newID andPhotoUrl:(NSString *)url andArray:(NSMutableArray *)array;
 
 
 @end

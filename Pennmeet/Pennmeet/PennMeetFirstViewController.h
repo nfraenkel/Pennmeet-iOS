@@ -12,12 +12,13 @@
 #import "PennMeetGroup.h"
 #import "PennMeetCurrentLoggedInUser.h"
 
-@interface PennMeetFirstViewController : UIViewController <NSURLConnectionDataDelegate> {
+@interface PennMeetFirstViewController : UIViewController <NSURLConnectionDataDelegate, UIAlertViewDelegate> {
     NSMutableData *_data;
 }
 @property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *refresher;
 
 @property (retain) PennMeetCurrentLoggedInUser *currentUser;
 
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *birthdayLabel;
 
 - (IBAction)editButtonPressed:(id)sender;
+- (IBAction)refresherPressed:(id)sender;
 
 -(void)retrieveUser:(NSString *)identifier;
 

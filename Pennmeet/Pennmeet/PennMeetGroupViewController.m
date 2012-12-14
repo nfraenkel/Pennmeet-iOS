@@ -16,6 +16,8 @@
 
 @synthesize groupID, group;
 
+NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AAAAAAAAAH4/v7O7t0l26Cw/s1600/the-cool-kids-2.jpg";
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,20 +34,69 @@
         groupID = newGroup;
         
         // set title of navbar item
-        // TODO: uncomment?
-//        self.navItem.title = groupID;
+        self.navItem.title = groupID;
         
         // get group info from DB
         [self retrieveGroup:groupID];
     }
 }
 
+- (IBAction)refresherPressed:(id)sender {
+    
+    [self retrieveGroup:groupImageUrl];
+}
+
 -(void)configureView {
+    // call helper - get image from url
+    UIImage* cvtho = [self imageFromURLString:groupImageUrl];
     
-    self.groupName.text = group.name;
+    // set group cover photo
+    [self.groupCoverPhotoTho setImage:cvtho];
+
+    // add swipe gesture recognizer to go back
+    // TODO: FIX IT DOESNT WORK - doesnt get recognized on ios simulator?
+    UISwipeGestureRecognizer *rec = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(leftSwipOnImage:)];
+    rec.direction = UISwipeGestureRecognizerDirectionRight;
+    [rec setNumberOfTouchesRequired:1];
+    [self.groupCoverPhotoTho addGestureRecognizer:rec];
     
+    // refresh dat table
     [self.tableForGroupMembers reloadData];
     
+}
+
+- (void)leftSwipOnImage:(UISwipeGestureRecognizer*)gestureRecognizer {
+    NSLog(@"SWIPING");
+    [[self navigationController] popViewControllerAnimated:YES];
+    
+}
+
+
+// HELPER - returns image from url. so sexy
+- (UIImage *)imageFromURLString:(NSString *)urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *result = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+//    [request release];
+//    [self handleError:error];
+    UIImage *resultImage = [UIImage imageWithData:(NSData *)result];
+    
+    NSLog(@"urlString: %@",urlString);
+    return resultImage;
+}
+
++ (UIImage *)imageResize:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 -(void)retrieveGroup:(NSString *)identifier{
@@ -106,12 +157,22 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
     UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: @"Error with your request"
-                          message: @"There was an error with your request."
+                          initWithTitle: @"Error: group"
+                          message: @"There was a network error while retrieving group info."
                           delegate: self
                           cancelButtonTitle:@"OK BYE"
                           otherButtonTitles:@"Retry", nil];
     [alert show];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0){
+        // CANCEL
+    }
+    else if (buttonIndex == 1) {
+        // RETRY
+        [self retrieveGroup:groupImageUrl];
+    }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {

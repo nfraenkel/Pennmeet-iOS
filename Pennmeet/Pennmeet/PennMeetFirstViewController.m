@@ -16,6 +16,8 @@
 
 @synthesize currentUser, nameLabel, emailLabel, schoolLabel, majorLabel, birthdayLabel;
 
+NSString* username = @"fraenkel@seas.upenn.edu";
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -24,7 +26,7 @@
     self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
     
     // TODO: make this get the user who just logged in
-    [self retrieveUser:@"fraenkel@seas.upenn.edu"];
+    [self retrieveUser:username];
     
     
 }
@@ -36,6 +38,11 @@
 }
 - (IBAction)editButtonPressed:(id)sender {
     NSLog(@"EDITBUTTONPRESSED THO");
+    // TODO: editing
+}
+
+- (IBAction)refresherPressed:(id)sender {
+    [self retrieveUser:username];
 }
 
 -(void)populateProfile:(PennMeetUser *)user {
@@ -80,12 +87,22 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
     UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: @"Error with your request"
-                          message: @"There was an error with your request."
+                          initWithTitle: @"Error: User Info"
+                          message: @"There was a network error when trying to fetch your profile information."
                           delegate: self
-                          cancelButtonTitle:@"OK BYE"
+                          cancelButtonTitle:@"NVMD"
                           otherButtonTitles:@"Retry", nil];
     [alert show];
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0){
+        // CANCEL
+        
+    }
+    else if (buttonIndex == 1){
+        // RETRY
+        [self retrieveUser:username];
+    }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
@@ -117,16 +134,16 @@
         
         
     }
-    else if (dictResponse.count == 2){ // retrieveGroup
-        NSMutableArray* members = [NSMutableArray array];
-        NSString* identy = [dictResponse objectForKey:@"_id"];
-        NSDictionary *membersDict = [dictResponse objectForKey:@"members"];
-        for (int i = 1; i <= membersDict.count; i++){
-            NSString* memb = [membersDict objectForKey:[NSString stringWithFormat:@"id%d", i]];
-            [members addObject:memb];
-        }
-        PennMeetGroup *group = [[PennMeetGroup alloc] initWithName:identy andArray:members];
-    }
+//    else if (dictResponse.count == 2){ // retrieveGroup
+//        NSMutableArray* members = [NSMutableArray array];
+//        NSString* identy = [dictResponse objectForKey:@"_id"];
+//        NSDictionary *membersDict = [dictResponse objectForKey:@"members"];
+//        for (int i = 1; i <= membersDict.count; i++){
+//            NSString* memb = [membersDict objectForKey:[NSString stringWithFormat:@"id%d", i]];
+//            [members addObject:memb];
+//        }
+//        PennMeetGroup *group = [[PennMeetGroup alloc] initWithName:identy andArray:members];
+//    }
     
     
     // TODO: do something with user

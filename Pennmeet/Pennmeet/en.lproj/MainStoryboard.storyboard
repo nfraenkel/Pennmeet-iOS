@@ -55,6 +55,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="My Profile" id="fyV-ym-hEL">
+                                        <barButtonItem key="leftBarButtonItem" image="01-refresh.png" id="yHC-tf-gNW">
+                                            <connections>
+                                                <action selector="refresherPressed:" destination="2" id="8oZ-Qf-lAe"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="08g-Kw-YKp">
                                             <connections>
                                                 <action selector="editButtonPressed:" destination="2" id="FHX-Kc-E1c"/>
@@ -98,6 +103,7 @@
                         <outlet property="majorLabel" destination="ahR-KB-96w" id="vMW-dP-xZH"/>
                         <outlet property="nameLabel" destination="20" id="buw-Dx-Dky"/>
                         <outlet property="navBar" destination="aez-tJ-h1Z" id="2Xk-ng-vqW"/>
+                        <outlet property="refresher" destination="yHC-tf-gNW" id="C72-ZD-G46"/>
                         <outlet property="schoolLabel" destination="yrr-cg-9gm" id="r98-Rc-Dpv"/>
                     </connections>
                 </viewController>
@@ -113,6 +119,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" id="tgf-ri-HXc">
+                            <rect key="frame" x="0.0" y="66" width="320" height="301"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupCell" textLabel="dTN-UT-OF8" style="IBUITableViewCellStyleDefault" id="tub-tW-0qT">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -170,7 +180,7 @@
             </objects>
             <point key="canvasLocation" x="-101" y="443"/>
         </scene>
-        <!--Penn Meet Group View Controller - Group-->
+        <!--Penn Meet Group View Controller-->
         <scene sceneID="8T0-Hu-2Ud">
             <objects>
                 <viewController id="vr2-np-ynB" customClass="PennMeetGroupViewController" sceneMemberID="viewController">
@@ -179,25 +189,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="foggy_birds_@2X.png" translatesAutoresizingMaskIntoConstraints="NO" id="Is0-tV-ky7"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPW-Jh-3NK">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="jfP-9q-SHy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="26"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hzr-jm-HrF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="35" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hzr-jm-HrF">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="238" id="9Qd-Fp-uau"/>
+                                    <constraint firstAttribute="height" constant="212" id="fsL-3Q-e7M"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memberCell" textLabel="gdi-6G-NFU" detailTextLabel="aBb-LJ-fHl" style="IBUITableViewCellStyleValue2" id="sQn-cq-Ouc">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memberCell" textLabel="gdi-6G-NFU" detailTextLabel="aBb-LJ-fHl" rowHeight="35" style="IBUITableViewCellStyleValue2" id="sQn-cq-Ouc">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="35"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="34"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdi-6G-NFU">
@@ -220,49 +222,56 @@
                                     <outlet property="delegate" destination="vr2-np-ynB" id="lRz-Pk-gF1"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Group Info would go here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTY-XV-wFm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yp-0B-vhd">
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="rkW-Tu-YhM"/>
+                                    <constraint firstAttribute="height" constant="157" id="je3-QD-C9l"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6yp-0B-vhd" firstAttribute="top" secondItem="Yme-bJ-LPb" secondAttribute="top" type="default" id="1Sj-q3-gxF"/>
                             <constraint firstItem="Hzr-jm-HrF" firstAttribute="bottom" secondItem="Yme-bJ-LPb" secondAttribute="bottom" type="default" id="5AP-x8-5ZF"/>
                             <constraint firstItem="Is0-tV-ky7" firstAttribute="bottom" secondItem="Yme-bJ-LPb" secondAttribute="bottom" type="default" id="DYx-IF-Gb8"/>
                             <constraint firstItem="Hzr-jm-HrF" firstAttribute="leading" secondItem="Yme-bJ-LPb" secondAttribute="leading" type="default" id="LCT-GF-IxR"/>
                             <constraint firstItem="Hzr-jm-HrF" firstAttribute="trailing" secondItem="Yme-bJ-LPb" secondAttribute="trailing" type="default" id="O1D-kW-Ybf"/>
                             <constraint firstItem="Is0-tV-ky7" firstAttribute="top" secondItem="Yme-bJ-LPb" secondAttribute="top" type="default" id="aeT-AE-WtV"/>
-                            <constraint firstItem="BTY-XV-wFm" firstAttribute="leading" secondItem="Yme-bJ-LPb" secondAttribute="leading" type="default" id="ayA-gl-ftC"/>
-                            <constraint firstItem="SPW-Jh-3NK" firstAttribute="leading" secondItem="Yme-bJ-LPb" secondAttribute="leading" type="default" id="bLC-Qs-M2e"/>
-                            <constraint firstItem="BTY-XV-wFm" firstAttribute="trailing" secondItem="Yme-bJ-LPb" secondAttribute="trailing" type="default" id="d68-E0-2ha"/>
                             <constraint firstItem="Is0-tV-ky7" firstAttribute="leading" secondItem="Yme-bJ-LPb" secondAttribute="leading" type="default" id="fKH-Ze-G0J"/>
-                            <constraint firstItem="SPW-Jh-3NK" firstAttribute="top" secondItem="Yme-bJ-LPb" secondAttribute="top" constant="41" id="jnD-yV-s1R"/>
-                            <constraint firstItem="SPW-Jh-3NK" firstAttribute="trailing" secondItem="Yme-bJ-LPb" secondAttribute="trailing" type="default" id="rLh-Da-n9A"/>
+                            <constraint firstItem="6yp-0B-vhd" firstAttribute="leading" secondItem="Yme-bJ-LPb" secondAttribute="leading" type="default" id="otf-FC-fv4"/>
                             <constraint firstItem="Is0-tV-ky7" firstAttribute="trailing" secondItem="Yme-bJ-LPb" secondAttribute="trailing" type="default" id="sjP-s7-HBr"/>
-                            <constraint firstItem="BTY-XV-wFm" firstAttribute="top" secondItem="SPW-Jh-3NK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="yIz-of-Rqj"/>
+                            <constraint firstItem="6yp-0B-vhd" firstAttribute="trailing" secondItem="Yme-bJ-LPb" secondAttribute="trailing" type="default" id="tmm-90-aq7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Group" id="t9M-ta-eeX"/>
+                    <navigationItem key="navigationItem" id="t9M-ta-eeX">
+                        <barButtonItem key="rightBarButtonItem" image="refresh.png" id="6wZ-fH-HLa">
+                            <connections>
+                                <action selector="refresherPressed:" destination="vr2-np-ynB" id="62g-sn-taw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="groupName" destination="SPW-Jh-3NK" id="ocV-qc-3ee"/>
+                        <outlet property="groupCoverPhotoTho" destination="6yp-0B-vhd" id="de8-DW-hvr"/>
                         <outlet property="navItem" destination="t9M-ta-eeX" id="bhC-Sb-JvN"/>
+                        <outlet property="refesher" destination="6wZ-fH-HLa" id="IoV-0P-ODY"/>
                         <outlet property="tableForGroupMembers" destination="Hzr-jm-HrF" id="iFu-Hl-LvC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7oc-uY-WYS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="pRY-G8-AxX">
+                    <connections>
+                        <segue destination="WbC-v2-vYF" kind="push" id="5NK-bJ-oZo"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="82" y="1084"/>
+            <point key="canvasLocation" x="141" y="1101"/>
         </scene>
         <!--Penn Meet Create Group View Controller - Create Group-->
         <scene sceneID="xlf-xB-8La">
             <objects>
                 <viewController id="KdK-I0-CEX" customClass="PennMeetCreateGroupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AzL-2T-Y8b">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -390,9 +399,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="01-refresh.png" width="20" height="21"/>
         <image name="first" width="16" height="16"/>
         <image name="foggy_birds_@2X.png" width="412" height="412"/>
         <image name="plus_black.png" width="512" height="512"/>
+        <image name="refresh.png" width="22" height="22"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -409,20 +420,24 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetFirstViewController.h"/>
             <relationships>
                 <relationship kind="action" name="editButtonPressed:"/>
+                <relationship kind="action" name="refresherPressed:"/>
                 <relationship kind="outlet" name="birthdayLabel" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="emailLabel" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="majorLabel" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="refresher" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="schoolLabel" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="PennMeetGroupViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetGroupViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="groupName" candidateClass="UILabel"/>
+                <relationship kind="action" name="refresherPressed:"/>
+                <relationship kind="outlet" name="groupCoverPhotoTho" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="refesher" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="tableForGroupMembers" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -430,6 +445,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSecondViewController.h"/>
             <relationships>
                 <relationship kind="action" name="newGroupTouched:"/>
+                <relationship kind="action" name="refresherTouched:"/>
             </relationships>
         </class>
         <class className="PennMeetThirdViewController" superclassName="UIViewController">
@@ -444,4 +460,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="5NK-bJ-oZo"/>
+    </inferredMetricsTieBreakers>
 </document>

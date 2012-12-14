@@ -38,6 +38,10 @@
 //    [self performSegueWithIdentifier:@"createNewGroup" sender:self];
 }
 
+- (IBAction)refresherTouched:(id)sender {
+    [self.tableView reloadData];
+}
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.currentUser.currentUser.groupIDs.count;

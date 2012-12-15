@@ -12,6 +12,9 @@
 		4C194687167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194686167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m */; };
 		4C1BA283167AF2C40078D2CB /* PennMeetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */; };
 		4C1BA286167B0CD00078D2CB /* PennMeetGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA285167B0CD00078D2CB /* PennMeetGroupViewController.m */; };
+		4C2D76FA167CE068001071B3 /* group_glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D76F9167CE068001071B3 /* group_glyph.png */; };
+		4C2D76FD167CE092001071B3 /* glyphicons_003_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D76FC167CE092001071B3 /* glyphicons_003_user.png */; };
+		4C2D76FF167CE113001071B3 /* glyphicons_011_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D76FE167CE113001071B3 /* glyphicons_011_camera.png */; };
 		4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7164167A45E0007C1B87 /* UIKit.framework */; };
 		4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7166167A45E0007C1B87 /* Foundation.framework */; };
 		4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7168167A45E0007C1B87 /* CoreGraphics.framework */; };
@@ -53,6 +56,9 @@
 		4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetGroup.m; sourceTree = "<group>"; };
 		4C1BA284167B0CD00078D2CB /* PennMeetGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetGroupViewController.h; sourceTree = "<group>"; };
 		4C1BA285167B0CD00078D2CB /* PennMeetGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetGroupViewController.m; sourceTree = "<group>"; };
+		4C2D76F9167CE068001071B3 /* group_glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group_glyph.png; sourceTree = "<group>"; };
+		4C2D76FC167CE092001071B3 /* glyphicons_003_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_003_user.png; sourceTree = "<group>"; };
+		4C2D76FE167CE113001071B3 /* glyphicons_011_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_011_camera.png; sourceTree = "<group>"; };
 		4C7E7160167A45E0007C1B87 /* PennMeet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PennMeet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C7E7164167A45E0007C1B87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C7E7166167A45E0007C1B87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -173,6 +179,9 @@
 		4C7E716B167A45E0007C1B87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4C2D76FE167CE113001071B3 /* glyphicons_011_camera.png */,
+				4C2D76FC167CE092001071B3 /* glyphicons_003_user.png */,
+				4C2D76F9167CE068001071B3 /* group_glyph.png */,
 				4CBC47BF167B325100B20DF6 /* 01-refresh.png */,
 				4CE1FED8167B279C003ED5A8 /* refresh.png */,
 				4CA49DA8167A9416005B8D44 /* plus_black.png */,
@@ -268,6 +277,9 @@
 				4CA49DAB167A9416005B8D44 /* plus_white.png in Resources */,
 				4CE1FED9167B279C003ED5A8 /* refresh.png in Resources */,
 				4CBC47C0167B325100B20DF6 /* 01-refresh.png in Resources */,
+				4C2D76FA167CE068001071B3 /* group_glyph.png in Resources */,
+				4C2D76FD167CE092001071B3 /* glyphicons_003_user.png in Resources */,
+				4C2D76FF167CE113001071B3 /* glyphicons_011_camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

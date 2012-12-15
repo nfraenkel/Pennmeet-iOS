@@ -10,9 +10,9 @@
 
 @implementation PennMeetUser
 
-@synthesize uniqueID, first, last, school, major, birthday;
+@synthesize uniqueID, first, last, school, major, birthday, groupsSimplified;
 
--(id)initWithId:(NSString *)newID andFirst:(NSString *)newFirst andLast:(NSString *)newLast andSchool:(NSString *)newSchool andMajor:(NSString *)newMajor andBirthday:(NSString *)newBirthday andGroups:(NSMutableArray *)newGroups andAdminBools:(NSMutableArray *)admins{
+-(id)initWithId:(NSString *)newID andFirst:(NSString *)newFirst andLast:(NSString *)newLast andSchool:(NSString *)newSchool andMajor:(NSString *)newMajor andBirthday:(NSString *)newBirthday andGroups:(NSMutableArray *)newGroups{
     self = [super init];
     if (self) {
         self.uniqueID = newID;
@@ -21,8 +21,7 @@
         self.school = newSchool;
         self.major = newMajor;
         self.birthday = newBirthday;
-        self.groupIDs = newGroups;
-        self.groupAdminBools = admins;
+        self.groupsSimplified = newGroups;
         return self;
     }
     

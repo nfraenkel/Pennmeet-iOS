@@ -21,7 +21,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
-    NSLog(@"current user has %d groups", self.currentUser.currentUser.groupIDs.count);
+    NSLog(@"current user has %d groups", self.currentUser.currentUser.groupsSimplified.count);
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -48,15 +48,15 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.currentUser.currentUser.groupIDs.count;
+    return self.currentUser.currentUser.groupsSimplified.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groupCell" forIndexPath:indexPath];
     
-    NSString* groupID = _currentUser.currentUser.groupIDs[indexPath.row];
-    cell.textLabel.text = groupID;
-    if ([_currentUser.currentUser.groupAdminBools[indexPath.row] isEqualToString:@"YES"])
+    PennMeetSimplifiedGroup *sGroup = _currentUser.currentUser.groupsSimplified[indexPath.row];
+    cell.textLabel.text = sGroup.name;
+    if ([sGroup.admin isEqualToString:@"YES"])
         cell.detailTextLabel.text = @"Admin";
     else
         cell.detailTextLabel.text = @"";
@@ -67,8 +67,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showGroup"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSString *groupID = self.currentUser.currentUser.groupIDs[indexPath.row];
-        [[segue destinationViewController] setGroupItem:groupID];
+        PennMeetSimplifiedGroup *g = self.currentUser.currentUser.groupsSimplified[indexPath.row];
+        [[segue destinationViewController] setGroupItem:g.identifier];
     }
 }
 

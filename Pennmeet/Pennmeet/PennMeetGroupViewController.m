@@ -16,8 +16,6 @@
 
 @synthesize groupID, group;
 
-NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AAAAAAAAAH4/v7O7t0l26Cw/s1600/the-cool-kids-2.jpg";
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,9 +31,7 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
     if (groupID != newGroup) {
         groupID = newGroup;
         
-        // set title of navbar item
-        self.navItem.title = groupID;
-        
+        NSLog(@"groupid: \"%@\"", groupID);
         // get group info from DB
         [self retrieveGroup:groupID];
     }
@@ -102,11 +98,7 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
 -(void)retrieveGroup:(NSString *)identifier{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    // TODO: FIGURE OUT HOW TO ENCODE URL
-//    NSString *encoded = [identifier stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSString *encoded = identifier;
-    
-    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/groups/documents/%@?_apikey=%@", encoded, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/groups/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     
     [request setHTTPMethod:@"GET"];
@@ -185,23 +177,33 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
     NSLog(@"connectiondidfinishloading!");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
-    if (dictResponse.count == 3){ // retrieveGroup
-        NSMutableArray* mems = [NSMutableArray array];
-        NSMutableArray* memNames = [NSMutableArray array];
-        NSString* identy = [dictResponse objectForKey:@"_id"];
-        NSString* url = [dictResponse objectForKey:@"photoUrl"];
-        NSDictionary *membersDict = [dictResponse objectForKey:@"members"];
-        for (int i = 1; i <= (membersDict.count / 2); i++){
-            NSString* memb = [membersDict objectForKey:[NSString stringWithFormat:@"id%d", i]];
-            [mems addObject:memb];
-            NSString* memName = [membersDict objectForKey:[NSString stringWithFormat:@"name%d", i]];
-            [memNames addObject:memName];
-        }
-        self.group = [[PennMeetGroup alloc] initWithName:identy andPhotoUrl:url andMemberIDArray:mems andMemberNamesArray:memNames];
-
-        
-        [self configureView];
+    
+    NSMutableArray* mems = [NSMutableArray array];
+    NSMutableArray* memNames = [NSMutableArray array];
+    // get ID
+    NSString* identy = [[dictResponse objectForKey:@"_id"] objectForKey:@"$oid"];
+    // get name
+    NSString* name = [dictResponse objectForKey:@"name"];
+    
+    // SET TOP BAR TITLE
+    self.navItem.title = name;
+    
+    // get photo URL
+    NSString* url = [dictResponse objectForKey:@"photoUrl"];
+    // extract members 
+    NSDictionary *membersDict = [dictResponse objectForKey:@"members"];
+    for (int i = 1; i <= (membersDict.count / 2); i++){
+        NSString* memb = [membersDict objectForKey:[NSString stringWithFormat:@"id%d", i]];
+        [mems addObject:memb];
+        NSString* memName = [membersDict objectForKey:[NSString stringWithFormat:@"name%d", i]];
+        [memNames addObject:memName];
     }
+    
+    // create group model object 
+    self.group = [[PennMeetGroup alloc] initWithID:identy andName:name andPhotoUrl:url andMemberIDArray:mems andMemberNamesArray:memNames];
+    
+    // update field on page view
+    [self configureView];
 }
 
 

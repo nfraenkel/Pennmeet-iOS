@@ -16,7 +16,8 @@
 
 @synthesize currentUser, nameLabel, emailLabel, schoolLabel, majorLabel, birthdayLabel;
 
-NSString* username = @"fraenkel@seas.upenn.edu";
+//NSString* username = @"fraenkel@seas.upenn.edu";
+NSString* username = @"zhangb@seas.upenn.edu";
 
 - (void)viewDidLoad
 {
@@ -117,16 +118,21 @@ NSString* username = @"fraenkel@seas.upenn.edu";
         NSString* major = [dictResponse objectForKey:@"major"];
         NSString* birthday = [dictResponse objectForKey:@"birthday"];
         NSMutableArray* groups = [NSMutableArray array];
-        NSMutableArray* admins = [NSMutableArray array];
         NSDictionary *groupsDict = [dictResponse objectForKey:@"groups"];
         NSLog(@"count: %d", groupsDict.count);
-        for (int i = 1; i <= (groupsDict.count / 2); i++){
-            NSString* groupID = [groupsDict objectForKey:[NSString stringWithFormat:@"group%d", i]];
-            NSString* adminBool = [groupsDict objectForKey:[NSString stringWithFormat:@"admin%d", i]];
-            [groups addObject:groupID];
-            [admins addObject:adminBool];
+        for (int i = 1; i <= groupsDict.count; i++){
+            NSDictionary *singleGroupDict = [groupsDict objectForKey:[NSString stringWithFormat:@"group%d", i]];
+            
+            NSString *gID = [singleGroupDict objectForKey:@"id"];
+            NSString *gName = [singleGroupDict objectForKey:@"name"];
+            NSString *gAdminPref = [singleGroupDict objectForKey:@"admin"];
+            
+            PennMeetSimplifiedGroup *sGroup = [[PennMeetSimplifiedGroup alloc] initWithID:gID andName:gName andAdmin:gAdminPref];
+                        
+            [groups addObject:sGroup];
+            
         }
-        PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups andAdminBools:admins];
+        PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups];
     
         // UPDATE OUR SINGLETON
         currentUser.currentUser = user;
@@ -136,16 +142,6 @@ NSString* username = @"fraenkel@seas.upenn.edu";
         
         
     }
-//    else if (dictResponse.count == 2){ // retrieveGroup
-//        NSMutableArray* members = [NSMutableArray array];
-//        NSString* identy = [dictResponse objectForKey:@"_id"];
-//        NSDictionary *membersDict = [dictResponse objectForKey:@"members"];
-//        for (int i = 1; i <= membersDict.count; i++){
-//            NSString* memb = [membersDict objectForKey:[NSString stringWithFormat:@"id%d", i]];
-//            [members addObject:memb];
-//        }
-//        PennMeetGroup *group = [[PennMeetGroup alloc] initWithName:identy andArray:members];
-//    }
     
     
     // TODO: do something with user

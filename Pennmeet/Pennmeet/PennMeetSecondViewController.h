@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PennMeetCurrentLoggedInUser.h"
 #import "PennMeetGroupViewController.h"
+#import "PennMeetSimplifiedGroup.h"
 
 
 @interface PennMeetSecondViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>

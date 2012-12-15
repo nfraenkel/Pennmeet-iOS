@@ -11,6 +11,7 @@
 #import "PennMeetUser.h"
 #import "PennMeetGroup.h"
 #import "PennMeetCurrentLoggedInUser.h"
+#import "PennMeetSimplifiedGroup.h"
 
 @interface PennMeetFirstViewController : UIViewController <NSURLConnectionDataDelegate, UIAlertViewDelegate> {
     NSMutableData *_data;

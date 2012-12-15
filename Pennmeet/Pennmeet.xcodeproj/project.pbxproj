@@ -12,6 +12,7 @@
 		4C194687167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194686167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m */; };
 		4C1BA283167AF2C40078D2CB /* PennMeetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */; };
 		4C1BA286167B0CD00078D2CB /* PennMeetGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA285167B0CD00078D2CB /* PennMeetGroupViewController.m */; };
+		4C276C4C167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C276C4B167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.m */; };
 		4C2D76FA167CE068001071B3 /* group_glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D76F9167CE068001071B3 /* group_glyph.png */; };
 		4C2D76FD167CE092001071B3 /* glyphicons_003_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D76FC167CE092001071B3 /* glyphicons_003_user.png */; };
 		4C2D76FF167CE113001071B3 /* glyphicons_011_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D76FE167CE113001071B3 /* glyphicons_011_camera.png */; };
@@ -56,6 +57,8 @@
 		4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetGroup.m; sourceTree = "<group>"; };
 		4C1BA284167B0CD00078D2CB /* PennMeetGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetGroupViewController.h; sourceTree = "<group>"; };
 		4C1BA285167B0CD00078D2CB /* PennMeetGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetGroupViewController.m; sourceTree = "<group>"; };
+		4C276C4A167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetSimplifiedGroup.h; sourceTree = "<group>"; };
+		4C276C4B167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetSimplifiedGroup.m; sourceTree = "<group>"; };
 		4C2D76F9167CE068001071B3 /* group_glyph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group_glyph.png; sourceTree = "<group>"; };
 		4C2D76FC167CE092001071B3 /* glyphicons_003_user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_003_user.png; sourceTree = "<group>"; };
 		4C2D76FE167CE113001071B3 /* glyphicons_011_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glyphicons_011_camera.png; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				4C194686167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m */,
 				4C1BA281167AF2C40078D2CB /* PennMeetGroup.h */,
 				4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */,
+				4C276C4A167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.h */,
+				4C276C4B167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				4C194687167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m in Sources */,
 				4C1BA283167AF2C40078D2CB /* PennMeetGroup.m in Sources */,
 				4C1BA286167B0CD00078D2CB /* PennMeetGroupViewController.m in Sources */,
+				4C276C4C167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

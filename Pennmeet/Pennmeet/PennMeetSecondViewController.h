@@ -17,6 +17,7 @@
 
 @property (retain) PennMeetCurrentLoggedInUser *currentUser;
 
+@property (weak, nonatomic) IBOutlet UILabel *title;
 
 
 @end

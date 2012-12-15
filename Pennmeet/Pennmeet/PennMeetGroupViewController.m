@@ -43,7 +43,7 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
 
 - (IBAction)refresherPressed:(id)sender {
     
-    [self retrieveGroup:groupImageUrl];
+    [self retrieveGroup:groupID];
 }
 
 -(void)configureView {
@@ -102,7 +102,11 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
 -(void)retrieveGroup:(NSString *)identifier{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/groups/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
+    // TODO: FIGURE OUT HOW TO ENCODE URL
+//    NSString *encoded = [identifier stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *encoded = identifier;
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/groups/documents/%@?_apikey=%@", encoded, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     
     [request setHTTPMethod:@"GET"];
@@ -110,6 +114,7 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [connection start];
 }
+
 
 - (void)viewDidLoad
 {
@@ -128,7 +133,8 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"memberCell"];
     
     NSString *memberID = self.group.memberIDs[indexPath.row];
-    cell.textLabel.text = memberID;
+    NSString *memberName = self.group.memberNames[indexPath.row];
+    cell.textLabel.text = memberName;
     cell.detailTextLabel.text = memberID;
 
     
@@ -171,7 +177,7 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
     }
     else if (buttonIndex == 1) {
         // RETRY
-        [self retrieveGroup:groupImageUrl];
+        [self retrieveGroup:groupID];
     }
 }
 
@@ -181,14 +187,17 @@ NSString* groupImageUrl = @"http://3.bp.blogspot.com/-h_utGfKAS_4/T4dEB40eGVI/AA
     NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
     if (dictResponse.count == 3){ // retrieveGroup
         NSMutableArray* mems = [NSMutableArray array];
+        NSMutableArray* memNames = [NSMutableArray array];
         NSString* identy = [dictResponse objectForKey:@"_id"];
         NSString* url = [dictResponse objectForKey:@"photoUrl"];
         NSDictionary *membersDict = [dictResponse objectForKey:@"members"];
-        for (int i = 1; i <= membersDict.count; i++){
+        for (int i = 1; i <= (membersDict.count / 2); i++){
             NSString* memb = [membersDict objectForKey:[NSString stringWithFormat:@"id%d", i]];
             [mems addObject:memb];
+            NSString* memName = [membersDict objectForKey:[NSString stringWithFormat:@"name%d", i]];
+            [memNames addObject:memName];
         }
-        self.group = [[PennMeetGroup alloc] initWithName:identy andPhotoUrl:url andArray:mems];
+        self.group = [[PennMeetGroup alloc] initWithName:identy andPhotoUrl:url andMemberIDArray:mems andMemberNamesArray:memNames];
 
         
         [self configureView];

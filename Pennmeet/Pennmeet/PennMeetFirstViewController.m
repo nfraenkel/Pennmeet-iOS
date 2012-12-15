@@ -117,14 +117,16 @@ NSString* username = @"fraenkel@seas.upenn.edu";
         NSString* major = [dictResponse objectForKey:@"major"];
         NSString* birthday = [dictResponse objectForKey:@"birthday"];
         NSMutableArray* groups = [NSMutableArray array];
+        NSMutableArray* admins = [NSMutableArray array];
         NSDictionary *groupsDict = [dictResponse objectForKey:@"groups"];
-        for (int i = 1; i <= groupsDict.count; i++){
+        NSLog(@"count: %d", groupsDict.count);
+        for (int i = 1; i <= (groupsDict.count / 2); i++){
             NSString* groupID = [groupsDict objectForKey:[NSString stringWithFormat:@"group%d", i]];
-            NSLog(@"groupID for group%d: %@", i, groupID);
+            NSString* adminBool = [groupsDict objectForKey:[NSString stringWithFormat:@"admin%d", i]];
             [groups addObject:groupID];
+            [admins addObject:adminBool];
         }
-        NSLog(@"user has %d groups", groups.count);
-        PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups];
+        PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups andAdminBools:admins];
     
         // UPDATE OUR SINGLETON
         currentUser.currentUser = user;

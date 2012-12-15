@@ -22,8 +22,12 @@
     
     self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
     NSLog(@"current user has %d groups", self.currentUser.currentUser.groupIDs.count);
-    
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    NSLog(@"viewdidappear");
     [self populateTableWithCurrentUsersGroups];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +56,10 @@
     
     NSString* groupID = _currentUser.currentUser.groupIDs[indexPath.row];
     cell.textLabel.text = groupID;
+    if ([_currentUser.currentUser.groupAdminBools[indexPath.row] isEqualToString:@"YES"])
+        cell.detailTextLabel.text = @"Admin";
+    else
+        cell.detailTextLabel.text = @"";
     return cell;
 }
 

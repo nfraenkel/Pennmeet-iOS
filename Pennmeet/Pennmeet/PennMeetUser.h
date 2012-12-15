@@ -11,9 +11,9 @@
 @interface PennMeetUser : NSObject
 
 @property (nonatomic) NSString *uniqueID, *first, *last, *school, *major, *birthday;
-@property (nonatomic, retain) NSMutableArray *groups;
+@property (nonatomic, retain) NSMutableArray *groupAdminBools;
 @property (nonatomic, retain) NSMutableArray *groupIDs;
 
--(id)initWithId:(NSString *)newID andFirst:(NSString *)newFirst andLast:(NSString *)newLast andSchool:(NSString *)newSchool andMajor:(NSString *)newMajor andBirthday:(NSString *)newBirthday andGroups:(NSMutableArray *)newGroupIDs;
+-(id)initWithId:(NSString *)newID andFirst:(NSString *)newFirst andLast:(NSString *)newLast andSchool:(NSString *)newSchool andMajor:(NSString *)newMajor andBirthday:(NSString *)newBirthday andGroups:(NSMutableArray *)newGroupIDs andAdminBools:(NSMutableArray *)admins;
 
 @end

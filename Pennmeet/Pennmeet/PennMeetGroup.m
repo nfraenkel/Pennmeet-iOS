@@ -12,12 +12,14 @@
 
 @synthesize name, photoUrl, memberIDs;
 
--(id)initWithName:(NSString *)newID andPhotoUrl:(NSString *)url andArray:(NSMutableArray *)array{
+-(id)initWithName:(NSString *)newID andPhotoUrl:(NSString *)url andMemberIDArray:(NSMutableArray *)array andMemberNamesArray:(NSMutableArray *)array2{
+    
     self = [super init];
     if (self) {
         self.name = newID;
         self.photoUrl = url;
         self.memberIDs = array;
+        self.memberNames = array2;
         return self;
     }
     

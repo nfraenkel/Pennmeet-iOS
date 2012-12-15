@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "PennMeetCurrentLoggedInUser.h"
+#import "PennMeetAppDelegate.h"
+#import "PennMeetUser.h"
+#import "PennMeetGroup.h"
+#import "PennMeetCurrentLoggedInUser.h"
+#import "PennMeetSimplifiedGroup.h"
+//#import "QREncoder.h"
 
-@interface PennMeetCreateGroupViewController : UIViewController
+@interface PennMeetCreateGroupViewController : UIViewController <NSURLConnectionDataDelegate, UIAlertViewDelegate> {
+    NSMutableData *_data;
+}
 
 
 - (IBAction)cancelButtonTouched:(id)sender;

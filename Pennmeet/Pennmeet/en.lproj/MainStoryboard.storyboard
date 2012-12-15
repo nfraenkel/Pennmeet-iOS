@@ -13,6 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="foggy_birds_@2X.png" translatesAutoresizingMaskIntoConstraints="NO" id="NPq-57-NCB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="az_subtle.png" translatesAutoresizingMaskIntoConstraints="NO" id="M1K-qE-bQ9"/>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yrr-cg-9gm">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="PEc-l6-Bwl"/>
@@ -71,6 +72,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="M1K-qE-bQ9" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="2Jw-cc-IcP"/>
                             <constraint firstItem="yrr-cg-9gm" firstAttribute="top" secondItem="16" secondAttribute="top" constant="184" id="731-0C-Urd"/>
                             <constraint firstAttribute="bottom" secondItem="bwZ-Vh-5c7" secondAttribute="bottom" constant="97" id="7gD-8I-ZCD"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="9nw-aH-CiW"/>
@@ -78,6 +80,7 @@
                             <constraint firstItem="NPq-57-NCB" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="GRY-aj-y1O"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="HCY-kA-1zB"/>
                             <constraint firstAttribute="trailing" secondItem="bwZ-Vh-5c7" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IgR-PH-cs0"/>
+                            <constraint firstItem="M1K-qE-bQ9" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="L14-K7-OTN"/>
                             <constraint firstItem="bwZ-Vh-5c7" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PaI-xf-kIX"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="Pct-eg-Nbt"/>
                             <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QBg-X6-fBV"/>
@@ -89,13 +92,15 @@
                             <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="80" id="e0Y-U6-Seu"/>
                             <constraint firstItem="21" firstAttribute="top" secondItem="16" secondAttribute="top" constant="138" id="ftW-8v-MuW"/>
                             <constraint firstItem="ahR-KB-96w" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gsl-oC-2OQ"/>
+                            <constraint firstItem="M1K-qE-bQ9" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="jXD-AO-RTW"/>
+                            <constraint firstItem="M1K-qE-bQ9" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="qh1-MX-6hv"/>
                             <constraint firstAttribute="trailing" secondItem="yrr-cg-9gm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rfq-fU-C4B"/>
                             <constraint firstItem="20" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="sl1-bY-CXI"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="x3M-WZ-FlZ"/>
                             <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="xCT-3s-kXT"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="My Profile" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" image="glyphicons_003_user.png" id="7"/>
                     <connections>
                         <outlet property="birthdayLabel" destination="bwZ-Vh-5c7" id="6q9-op-yWu"/>
                         <outlet property="editButton" destination="08g-Kw-YKp" id="DQ7-BT-geH"/>
@@ -115,24 +120,25 @@
         <scene sceneID="0iU-Ih-pmG">
             <objects>
                 <tableViewController id="WbC-v2-vYF" customClass="PennMeetSecondViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hVn-Td-abx">
-                        <rect key="frame" x="0.0" y="20" width="320" height="367"/>
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="49" sectionHeaderHeight="22" sectionFooterHeight="22" id="hVn-Td-abx">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" image="foggy_birds.png" id="tgf-ri-HXc">
-                            <rect key="frame" x="0.0" y="66" width="320" height="301"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.0" green="0.028664994629999999" blue="0.38457455839999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <imageView key="tableFooterView" userInteractionEnabled="NO" contentMode="scaleToFill" image="billie_holiday.png" id="tgf-ri-HXc">
+                            <rect key="frame" x="0.0" y="71" width="320" height="301"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupCell" textLabel="rG1-vC-4qO" detailTextLabel="Ig8-NR-rfY" style="IBUITableViewCellStyleValue1" id="tub-tW-0qT">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupCell" textLabel="rG1-vC-4qO" detailTextLabel="Ig8-NR-rfY" rowHeight="49" style="IBUITableViewCellStyleValue1" id="tub-tW-0qT">
+                                <rect key="frame" x="0.0" y="22" width="320" height="49"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="48"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rG1-vC-4qO">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -190,21 +196,21 @@
             <objects>
                 <viewController id="vr2-np-ynB" customClass="PennMeetGroupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yme-bJ-LPb">
-                        <rect key="frame" x="0.0" y="20" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="foggy_birds_@2X.png" translatesAutoresizingMaskIntoConstraints="NO" id="Is0-tV-ky7"/>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="36" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hzr-jm-HrF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="41" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hzr-jm-HrF">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="212" id="fsL-3Q-e7M"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memberCell" textLabel="gdi-6G-NFU" detailTextLabel="aBb-LJ-fHl" rowHeight="36" style="IBUITableViewCellStyleValue2" id="sQn-cq-Ouc">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="36"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memberCell" textLabel="gdi-6G-NFU" detailTextLabel="aBb-LJ-fHl" rowHeight="41" style="IBUITableViewCellStyleValue2" id="sQn-cq-Ouc">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="41"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdi-6G-NFU">
@@ -301,7 +307,7 @@
         <scene sceneID="pYN-6X-sZb">
             <objects>
                 <navigationController definesPresentationContext="YES" id="R6e-Um-l6x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Groups" id="2oK-oz-3I6"/>
+                    <tabBarItem key="tabBarItem" title="My Groups" image="group_glyph.png" id="2oK-oz-3I6"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="Tup-OF-H62">
@@ -324,59 +330,7 @@
         <scene sceneID="LIr-NI-Ovr">
             <objects>
                 <viewController id="1xf-Wx-CWl" customClass="PennMeetThirdViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="TyE-FG-fka">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="With PennMeet, you join groups by scanning QR codes that represent each group. " textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="MYL-Lg-DQv">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" type="user" id="XPa-Mc-uDf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="9El-ho-XOA">
-                                <items>
-                                    <navigationItem title="Join Group" id="wtZ-E8-z1c"/>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Click the plus button above to open your QR Code reader!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="UVw-Bh-A6Z">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="bc8-ad-NCu"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView contentMode="scaleAspectFit" image="plus_black.png" translatesAutoresizingMaskIntoConstraints="NO" id="AbO-nS-GTv">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="NWG-da-8d4"/>
-                                    <constraint firstAttribute="height" constant="130" id="ihP-EN-Fpo"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="AbO-nS-GTv" firstAttribute="centerX" secondItem="UVw-Bh-A6Z" secondAttribute="centerX" type="default" id="1Hx-5s-y7E"/>
-                            <constraint firstItem="MYL-Lg-DQv" firstAttribute="top" secondItem="TyE-FG-fka" secondAttribute="top" constant="79" type="user" id="4sE-4t-FYj"/>
-                            <constraint firstItem="AbO-nS-GTv" firstAttribute="top" secondItem="TyE-FG-fka" secondAttribute="top" constant="171" id="NMS-0l-Qn3"/>
-                            <constraint firstItem="9El-ho-XOA" firstAttribute="top" secondItem="TyE-FG-fka" secondAttribute="top" type="default" id="OYg-IR-2YU"/>
-                            <constraint firstItem="UVw-Bh-A6Z" firstAttribute="leading" secondItem="TyE-FG-fka" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="TlD-e5-03T"/>
-                            <constraint firstAttribute="bottom" secondItem="UVw-Bh-A6Z" secondAttribute="bottom" constant="35" type="user" id="Xjw-xP-mAu"/>
-                            <constraint firstItem="9El-ho-XOA" firstAttribute="trailing" secondItem="TyE-FG-fka" secondAttribute="trailing" type="default" id="c77-E4-Boz"/>
-                            <constraint firstAttribute="trailing" secondItem="MYL-Lg-DQv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="glF-xT-wOd"/>
-                            <constraint firstItem="MYL-Lg-DQv" firstAttribute="leading" secondItem="TyE-FG-fka" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="mJo-zT-2Qn"/>
-                            <constraint firstAttribute="trailing" secondItem="UVw-Bh-A6Z" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ntF-XR-NqH"/>
-                            <constraint firstItem="9El-ho-XOA" firstAttribute="leading" secondItem="TyE-FG-fka" secondAttribute="leading" type="default" id="wx2-as-4s3"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Join Group" id="AZI-Aa-tOd"/>
-                    <connections>
-                        <outlet property="plusButton" destination="AbO-nS-GTv" id="DXC-GW-hct"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Join Group" image="second@2x.png" id="AZI-Aa-tOd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3p-Tj-gip" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -405,11 +359,13 @@
     </scenes>
     <resources>
         <image name="01-refresh.png" width="20" height="21"/>
-        <image name="first" width="16" height="16"/>
-        <image name="foggy_birds.png" width="206" height="206"/>
+        <image name="az_subtle.png" width="100" height="100"/>
+        <image name="billie_holiday.png" width="100" height="100"/>
         <image name="foggy_birds_@2X.png" width="412" height="412"/>
-        <image name="plus_black.png" width="512" height="512"/>
+        <image name="glyphicons_003_user.png" width="23" height="22"/>
+        <image name="group_glyph.png" width="35" height="22"/>
         <image name="refresh.png" width="22" height="22"/>
+        <image name="second@2x.png" width="60" height="60"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -451,7 +407,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSecondViewController.h"/>
             <relationships>
                 <relationship kind="action" name="newGroupTouched:"/>
-                <relationship kind="action" name="refresherTouched:"/>
                 <relationship kind="outlet" name="title" candidateClass="UILabel"/>
             </relationships>
         </class>

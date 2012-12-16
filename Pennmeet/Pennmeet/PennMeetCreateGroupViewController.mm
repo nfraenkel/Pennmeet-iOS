@@ -14,6 +14,10 @@
 
 @implementation PennMeetCreateGroupViewController
 
+UIImage* qrcodeImage;
+
+@synthesize qrCode = _qrCode;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,7 +30,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    int qrcodeImageDimension = 250;
+    
+    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:@"NIGGERS IN PARIS"];
+    
+    //then render the matrix
+     qrcodeImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:qrcodeImageDimension];
+    
+    //put the image into the view
+    [_qrCode setImage:qrcodeImage];
+    
+
 	// Do any additional setup after loading the view.
+    
+    
+}
+- (IBAction)saveQRImage:(id)sender {
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,7 +56,7 @@
 }
 
 -(void)generateQR:(NSString *)groupKey{
-    
+    UIImageWriteToSavedPhotosAlbum(qrcodeImage, nil, nil, nil);
 }
 
 -(void)createGroup:(NSString *)identifier{

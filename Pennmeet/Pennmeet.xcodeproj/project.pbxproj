@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C194493167A9E1B002B63E5 /* PennMeetCreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.m */; };
+		4C194493167A9E1B002B63E5 /* PennMeetCreateGroupViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.mm */; };
 		4C194684167AE5EE002B63E5 /* PennMeetUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194683167AE5EE002B63E5 /* PennMeetUser.m */; };
 		4C194687167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194686167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m */; };
 		4C1BA283167AF2C40078D2CB /* PennMeetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */; };
@@ -38,43 +38,21 @@
 		4C7E719B167A45FC007C1B87 /* foggy_birds.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7194167A45FC007C1B87 /* foggy_birds.png */; };
 		4C7E719C167A45FC007C1B87 /* groups1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7195167A45FC007C1B87 /* groups1.png */; };
 		4C7E719D167A45FC007C1B87 /* pennmeet-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7196167A45FC007C1B87 /* pennmeet-icon.png */; };
-		4C7E719E167A45FC007C1B87 /* qrcodeicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7197167A45FC007C1B87 /* qrcodeicon.png */; };
 		4C7E719F167A45FC007C1B87 /* twitter_circ.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C7E7198167A45FC007C1B87 /* twitter_circ.png */; };
 		4CA49DAA167A9416005B8D44 /* plus_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA49DA8167A9416005B8D44 /* plus_black.png */; };
 		4CA49DAB167A9416005B8D44 /* plus_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA49DA9167A9416005B8D44 /* plus_white.png */; };
 		4CA49DAF167A9499005B8D44 /* PennMeetThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA49DAE167A9499005B8D44 /* PennMeetThirdViewController.m */; };
 		4CBC47C0167B325100B20DF6 /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC47BF167B325100B20DF6 /* 01-refresh.png */; };
 		4CE1FED9167B279C003ED5A8 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1FED8167B279C003ED5A8 /* refresh.png */; };
-		B8F09DA4167D7CD900373F25 /* libQREncoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F09D9F167D7C5900373F25 /* libQREncoder.a */; };
+		B82AC00F167D967E00D85472 /* DataMatrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = B82AC006167D967E00D85472 /* DataMatrix.mm */; };
+		B82AC010167D967E00D85472 /* QR_Encode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B82AC007167D967E00D85472 /* QR_Encode.cpp */; };
+		B82AC011167D967E00D85472 /* QRCodeEncoderDemoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B82AC00A167D967E00D85472 /* QRCodeEncoderDemoViewController.mm */; };
+		B82AC012167D967E00D85472 /* QREncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = B82AC00E167D967E00D85472 /* QREncoder.mm */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B8F09D9E167D7C5900373F25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = QREncoder;
-		};
-		B8F09DA0167D7C5900373F25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EB7DA3AE10A4F5D90071984A;
-			remoteInfo = QREncoderTest;
-		};
-		B8F09DA2167D7CCA00373F25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = QREncoder;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4C194491167A9E1B002B63E5 /* PennMeetCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetCreateGroupViewController.h; sourceTree = "<group>"; };
-		4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetCreateGroupViewController.m; sourceTree = "<group>"; };
+		4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PennMeetCreateGroupViewController.mm; sourceTree = "<group>"; };
 		4C194682167AE5EE002B63E5 /* PennMeetUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetUser.h; sourceTree = "<group>"; };
 		4C194683167AE5EE002B63E5 /* PennMeetUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetUser.m; sourceTree = "<group>"; };
 		4C194685167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetCurrentLoggedInUser.h; sourceTree = "<group>"; };
@@ -125,7 +103,15 @@
 		4CA49DAE167A9499005B8D44 /* PennMeetThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetThirdViewController.m; sourceTree = "<group>"; };
 		4CBC47BF167B325100B20DF6 /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		4CE1FED8167B279C003ED5A8 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
-		B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QREncoder.xcodeproj; path = QR/QREncoder.xcodeproj; sourceTree = "<group>"; };
+		B82AC005167D967E00D85472 /* DataMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMatrix.h; sourceTree = "<group>"; };
+		B82AC006167D967E00D85472 /* DataMatrix.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DataMatrix.mm; sourceTree = "<group>"; };
+		B82AC007167D967E00D85472 /* QR_Encode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QR_Encode.cpp; sourceTree = "<group>"; };
+		B82AC008167D967E00D85472 /* QR_Encode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QR_Encode.h; sourceTree = "<group>"; };
+		B82AC009167D967E00D85472 /* QRCodeEncoderDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeEncoderDemoViewController.h; sourceTree = "<group>"; };
+		B82AC00A167D967E00D85472 /* QRCodeEncoderDemoViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QRCodeEncoderDemoViewController.mm; sourceTree = "<group>"; };
+		B82AC00C167D967E00D85472 /* QREncoder-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QREncoder-Prefix.pch"; sourceTree = "<group>"; };
+		B82AC00D167D967E00D85472 /* QREncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QREncoder.h; sourceTree = "<group>"; };
+		B82AC00E167D967E00D85472 /* QREncoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QREncoder.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8F09DA4167D7CD900373F25 /* libQREncoder.a in Frameworks */,
 				4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */,
 				4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */,
 				4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */,
@@ -161,7 +146,7 @@
 		4C7E7155167A45E0007C1B87 = {
 			isa = PBXGroup;
 			children = (
-				B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */,
+				B82AC004167D967E00D85472 /* QR */,
 				4C7E716A167A45E0007C1B87 /* PennMeet */,
 				4C7E7163167A45E0007C1B87 /* Frameworks */,
 				4C7E7161167A45E0007C1B87 /* Products */,
@@ -204,7 +189,7 @@
 				4C1BA284167B0CD00078D2CB /* PennMeetGroupViewController.h */,
 				4C1BA285167B0CD00078D2CB /* PennMeetGroupViewController.m */,
 				4C194491167A9E1B002B63E5 /* PennMeetCreateGroupViewController.h */,
-				4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.m */,
+				4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.mm */,
 				4C524F5A167D60D80080E15C /* PennMeetEditProfileViewController.h */,
 				4C524F5B167D60D80080E15C /* PennMeetEditProfileViewController.m */,
 				4C7E7189167A45E0007C1B87 /* second.png */,
@@ -242,13 +227,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B8F09D97167D7C5900373F25 /* Products */ = {
+		B82AC004167D967E00D85472 /* QR */ = {
 			isa = PBXGroup;
 			children = (
-				B8F09D9F167D7C5900373F25 /* libQREncoder.a */,
-				B8F09DA1167D7C5900373F25 /* QREncoderTest.octest */,
+				B82AC005167D967E00D85472 /* DataMatrix.h */,
+				B82AC006167D967E00D85472 /* DataMatrix.mm */,
+				B82AC007167D967E00D85472 /* QR_Encode.cpp */,
+				B82AC008167D967E00D85472 /* QR_Encode.h */,
+				B82AC009167D967E00D85472 /* QRCodeEncoderDemoViewController.h */,
+				B82AC00A167D967E00D85472 /* QRCodeEncoderDemoViewController.mm */,
+				B82AC00C167D967E00D85472 /* QREncoder-Prefix.pch */,
+				B82AC00D167D967E00D85472 /* QREncoder.h */,
+				B82AC00E167D967E00D85472 /* QREncoder.mm */,
 			);
-			name = Products;
+			name = QR;
+			path = Pennmeet/QR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +258,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B8F09DA3167D7CCA00373F25 /* PBXTargetDependency */,
 			);
 			name = PennMeet;
 			productName = PennMeet;
@@ -282,7 +274,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Nathan Fraenkel";
 			};
-			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */;
+			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -293,35 +285,12 @@
 			mainGroup = 4C7E7155167A45E0007C1B87;
 			productRefGroup = 4C7E7161167A45E0007C1B87 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B8F09D97167D7C5900373F25 /* Products */;
-					ProjectRef = B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				4C7E715F167A45E0007C1B87 /* PennMeet */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B8F09D9F167D7C5900373F25 /* libQREncoder.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libQREncoder.a;
-			remoteRef = B8F09D9E167D7C5900373F25 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B8F09DA1167D7C5900373F25 /* QREncoderTest.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = QREncoderTest.octest;
-			remoteRef = B8F09DA0167D7C5900373F25 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4C7E715E167A45E0007C1B87 /* Resources */ = {
@@ -342,7 +311,6 @@
 				4C7E719B167A45FC007C1B87 /* foggy_birds.png in Resources */,
 				4C7E719C167A45FC007C1B87 /* groups1.png in Resources */,
 				4C7E719D167A45FC007C1B87 /* pennmeet-icon.png in Resources */,
-				4C7E719E167A45FC007C1B87 /* qrcodeicon.png in Resources */,
 				4C7E719F167A45FC007C1B87 /* twitter_circ.png in Resources */,
 				4CA49DAA167A9416005B8D44 /* plus_black.png in Resources */,
 				4CA49DAB167A9416005B8D44 /* plus_white.png in Resources */,
@@ -366,25 +334,21 @@
 				4C7E7181167A45E0007C1B87 /* PennMeetFirstViewController.m in Sources */,
 				4C7E7188167A45E0007C1B87 /* PennMeetSecondViewController.m in Sources */,
 				4CA49DAF167A9499005B8D44 /* PennMeetThirdViewController.m in Sources */,
-				4C194493167A9E1B002B63E5 /* PennMeetCreateGroupViewController.m in Sources */,
+				4C194493167A9E1B002B63E5 /* PennMeetCreateGroupViewController.mm in Sources */,
 				4C194684167AE5EE002B63E5 /* PennMeetUser.m in Sources */,
 				4C194687167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m in Sources */,
 				4C1BA283167AF2C40078D2CB /* PennMeetGroup.m in Sources */,
 				4C1BA286167B0CD00078D2CB /* PennMeetGroupViewController.m in Sources */,
 				4C276C4C167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.m in Sources */,
 				4C524F5C167D60D80080E15C /* PennMeetEditProfileViewController.m in Sources */,
+				B82AC00F167D967E00D85472 /* DataMatrix.mm in Sources */,
+				B82AC010167D967E00D85472 /* QR_Encode.cpp in Sources */,
+				B82AC011167D967E00D85472 /* QRCodeEncoderDemoViewController.mm in Sources */,
+				B82AC012167D967E00D85472 /* QREncoder.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B8F09DA3167D7CCA00373F25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = QREncoder;
-			targetProxy = B8F09DA2167D7CCA00373F25 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4C7E716D167A45E0007C1B87 /* InfoPlist.strings */ = {
@@ -459,13 +423,13 @@
 		4C7E7190167A45E0007C1B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PennMeet/PennMeet-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../QR/Classes;
-				"HEADER_SEARCH_PATHS[arch=*]" = "";
+				HEADER_SEARCH_PATHS = "";
+				"HEADER_SEARCH_PATHS[arch=*]" = "/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/**";
 				INFOPLIST_FILE = "PennMeet/PennMeet-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -477,12 +441,12 @@
 		4C7E7191167A45E0007C1B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PennMeet/PennMeet-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../QR/Classes;
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "PennMeet/PennMeet-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -494,7 +458,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */ = {
+		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C7E718D167A45E0007C1B87 /* Debug */,

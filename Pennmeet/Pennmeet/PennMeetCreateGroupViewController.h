@@ -13,12 +13,13 @@
 #import "PennMeetGroup.h"
 #import "PennMeetCurrentLoggedInUser.h"
 #import "PennMeetSimplifiedGroup.h"
-//#import "QREncoder/QREncoder.h"
+#import "QREncoder.h"
 
 @interface PennMeetCreateGroupViewController : UIViewController <NSURLConnectionDataDelegate, UIAlertViewDelegate> {
     NSMutableData *_data;
 }
 
+@property (weak, nonatomic) IBOutlet UIImageView *qrCode;
 
 - (IBAction)cancelButtonTouched:(id)sender;
 - (IBAction)doneButtonTouched:(id)sender;

@@ -33,7 +33,7 @@ UIImage* qrcodeImage;
     
     int qrcodeImageDimension = 250;
     
-    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:@"NIGGERS IN PARIS"];
+    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:@"SUNSHINELOLIPOPSANDRAINBOWSEVERYWHERE"];
     
     //then render the matrix
      qrcodeImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:qrcodeImageDimension];
@@ -47,16 +47,13 @@ UIImage* qrcodeImage;
     
 }
 - (IBAction)saveQRImage:(id)sender {
+      UIImageWriteToSavedPhotosAlbum(qrcodeImage, nil, nil, nil);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)generateQR:(NSString *)groupKey{
-    UIImageWriteToSavedPhotosAlbum(qrcodeImage, nil, nil, nil);
 }
 
 -(void)createGroup:(NSString *)identifier{

@@ -95,7 +95,6 @@
 		4C7E7194167A45FC007C1B87 /* foggy_birds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foggy_birds.png; sourceTree = "<group>"; };
 		4C7E7195167A45FC007C1B87 /* groups1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = groups1.png; sourceTree = "<group>"; };
 		4C7E7196167A45FC007C1B87 /* pennmeet-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pennmeet-icon.png"; sourceTree = "<group>"; };
-		4C7E7197167A45FC007C1B87 /* qrcodeicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrcodeicon.png; sourceTree = "<group>"; };
 		4C7E7198167A45FC007C1B87 /* twitter_circ.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter_circ.png; sourceTree = "<group>"; };
 		4CA49DA8167A9416005B8D44 /* plus_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_black.png; sourceTree = "<group>"; };
 		4CA49DA9167A9416005B8D44 /* plus_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_white.png; sourceTree = "<group>"; };
@@ -214,7 +213,6 @@
 				4C7E7194167A45FC007C1B87 /* foggy_birds.png */,
 				4C7E7195167A45FC007C1B87 /* groups1.png */,
 				4C7E7196167A45FC007C1B87 /* pennmeet-icon.png */,
-				4C7E7197167A45FC007C1B87 /* qrcodeicon.png */,
 				4C7E7198167A45FC007C1B87 /* twitter_circ.png */,
 				4C7E716C167A45E0007C1B87 /* PennMeet-Info.plist */,
 				4C7E716D167A45E0007C1B87 /* InfoPlist.strings */,

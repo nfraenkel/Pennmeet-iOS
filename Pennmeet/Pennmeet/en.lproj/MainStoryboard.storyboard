@@ -4,6 +4,49 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="r5E-NJ-haK">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="wRM-yL-42H" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="jHn-sA-Ize">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DOq-Lp-4Nt" kind="relationship" relationship="rootViewController" id="ecC-5e-ej1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bf5-vP-TPh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118" y="-880"/>
+        </scene>
+        <!--Penn Meet Edit Profile View Controller - Edit Profile-->
+        <scene sceneID="9yc-ii-jYd">
+            <objects>
+                <viewController id="DOq-Lp-4Nt" customClass="PennMeetEditProfileViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hoj-zC-f08">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="5HJ-ne-zQG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="D15-Im-ddX">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="DOq-Lp-4Nt" id="3PH-Ka-yAQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="L9j-sj-jau">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="DOq-Lp-4Nt" id="Bga-4C-sAa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guM-U6-BPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="-899"/>
+        </scene>
         <!--Penn Meet First View Controller - First-->
         <scene sceneID="11">
             <objects>
@@ -15,21 +58,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="foggy_birds_@2X.png" translatesAutoresizingMaskIntoConstraints="NO" id="NPq-57-NCB"/>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="University of Pennsylvania" translatesAutoresizingMaskIntoConstraints="NO" id="yrr-cg-9gm">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="xYM-sL-lqM"/>
+                                    <constraint firstAttribute="height" constant="30" type="user" id="xYM-sL-lqM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Computer Science" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-KB-96w">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="GsT-rE-C54"/>
+                                    <constraint firstAttribute="height" constant="30" type="user" id="GsT-rE-C54"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="11/09/1991" translatesAutoresizingMaskIntoConstraints="NO" id="bwZ-Vh-5c7">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="g2w-I8-L8d"/>
+                                    <constraint firstAttribute="height" constant="30" type="user" id="g2w-I8-L8d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -54,7 +97,7 @@
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="fraenkel@seas.upenn.edu" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="qup-bQ-OLs"/>
-                                    <constraint firstAttribute="height" constant="30" id="xez-8P-L5Y"/>
+                                    <constraint firstAttribute="height" constant="30" type="user" id="xez-8P-L5Y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -78,10 +121,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVD-DL-A5c">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="guN-N8-CQS">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="bqb-nE-cTk"/>
-                                    <constraint firstAttribute="height" constant="100" id="bwh-Ic-D81"/>
+                                    <constraint firstAttribute="height" constant="110" id="OJO-cD-rXf"/>
+                                    <constraint firstAttribute="width" constant="110" id="nSI-Zj-e7v"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -91,46 +134,48 @@
                             <constraint firstItem="yrr-cg-9gm" firstAttribute="trailing" secondItem="21" secondAttribute="trailing" type="default" id="3RU-ey-Jmz"/>
                             <constraint firstItem="ahR-KB-96w" firstAttribute="trailing" secondItem="yrr-cg-9gm" secondAttribute="trailing" type="default" id="4Sl-wq-1WR"/>
                             <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="76" id="4nQ-xf-kYm"/>
+                            <constraint firstItem="21" firstAttribute="centerX" secondItem="aez-tJ-h1Z" secondAttribute="centerX" type="default" id="55F-qL-gec"/>
+                            <constraint firstItem="aez-tJ-h1Z" firstAttribute="trailing" secondItem="NPq-57-NCB" secondAttribute="trailing" type="default" id="60D-1G-kIL"/>
+                            <constraint firstAttribute="bottom" secondItem="bwZ-Vh-5c7" secondAttribute="bottom" constant="71" id="7OK-1s-5rn"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="9nw-aH-CiW"/>
-                            <constraint firstAttribute="bottom" secondItem="ahR-KB-96w" secondAttribute="bottom" constant="116" id="Aw9-5o-LmM"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="HCY-kA-1zB"/>
                             <constraint firstItem="21" firstAttribute="leading" secondItem="yrr-cg-9gm" secondAttribute="leading" type="default" id="Is1-6q-IHW"/>
                             <constraint firstItem="20" firstAttribute="trailing" secondItem="2ND-nK-CeT" secondAttribute="trailing" type="default" id="Jzd-12-HjZ"/>
-                            <constraint firstAttribute="bottom" secondItem="bwZ-Vh-5c7" secondAttribute="bottom" constant="81" id="K2S-2A-ceD"/>
+                            <constraint firstItem="bwZ-Vh-5c7" firstAttribute="top" secondItem="ahR-KB-96w" secondAttribute="bottom" constant="5" type="user" id="PDs-Lc-xll"/>
                             <constraint firstItem="2ND-nK-CeT" firstAttribute="top" secondItem="16" secondAttribute="top" constant="120" id="PIM-2j-bmg"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="Pct-eg-Nbt"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="RhY-xS-D16"/>
-                            <constraint firstItem="21" firstAttribute="centerX" secondItem="aez-tJ-h1Z" secondAttribute="centerX" type="default" id="T5i-RU-Pho"/>
-                            <constraint firstItem="yrr-cg-9gm" firstAttribute="centerX" secondItem="NPq-57-NCB" secondAttribute="centerX" type="default" id="UZn-he-scN"/>
-                            <constraint firstItem="21" firstAttribute="top" secondItem="16" secondAttribute="top" constant="194" id="V1O-2X-KNN"/>
                             <constraint firstItem="bwZ-Vh-5c7" firstAttribute="trailing" secondItem="ahR-KB-96w" secondAttribute="trailing" type="default" id="aDx-w5-fxx"/>
-                            <constraint firstAttribute="bottom" secondItem="yrr-cg-9gm" secondAttribute="bottom" constant="151" id="bwb-oe-uuS"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="top" secondItem="aez-tJ-h1Z" secondAttribute="bottom" type="default" id="bxg-VW-GI1"/>
-                            <constraint firstItem="kVD-DL-A5c" firstAttribute="top" secondItem="16" secondAttribute="top" constant="69" id="bzn-7K-6Dz"/>
                             <constraint firstItem="ahR-KB-96w" firstAttribute="leading" secondItem="bwZ-Vh-5c7" secondAttribute="leading" type="default" id="eS1-OB-Jlf"/>
-                            <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="155" id="fNc-Zh-mqS"/>
-                            <constraint firstItem="21" firstAttribute="leading" secondItem="kVD-DL-A5c" secondAttribute="leading" type="default" id="llI-HJ-mOw"/>
+                            <constraint firstItem="aez-tJ-h1Z" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="ii3-ee-i4a"/>
+                            <constraint firstAttribute="trailing" secondItem="20" secondAttribute="trailing" constant="10" id="jFv-tz-jv8"/>
+                            <constraint firstItem="guN-N8-CQS" firstAttribute="top" secondItem="16" secondAttribute="top" constant="69" id="lQm-ld-52k"/>
+                            <constraint firstItem="ahR-KB-96w" firstAttribute="top" secondItem="yrr-cg-9gm" secondAttribute="bottom" constant="5" type="user" id="pwl-MS-RTg"/>
                             <constraint firstItem="yrr-cg-9gm" firstAttribute="leading" secondItem="ahR-KB-96w" secondAttribute="leading" type="default" id="sTR-3M-X81"/>
-                            <constraint firstItem="bwZ-Vh-5c7" firstAttribute="centerX" secondItem="16" secondAttribute="centerX" type="default" id="xiu-fu-w39"/>
+                            <constraint firstItem="21" firstAttribute="leading" secondItem="guN-N8-CQS" secondAttribute="leading" type="default" id="uqd-BG-maP"/>
+                            <constraint firstItem="21" firstAttribute="top" secondItem="16" secondAttribute="top" constant="204" id="znM-zb-mNT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" image="glyphicons_003_user.png" id="7"/>
+                    <navigationItem key="navigationItem" id="xnc-ci-jXV"/>
                     <connections>
                         <outlet property="birthdayLabel" destination="bwZ-Vh-5c7" id="6q9-op-yWu"/>
                         <outlet property="editButton" destination="08g-Kw-YKp" id="DQ7-BT-geH"/>
-                        <outlet property="emailLabel" destination="21" id="lsp-dU-4Fc"/>
+                        <outlet property="emailLabel" destination="21" id="pQE-1G-AYq"/>
                         <outlet property="firstNameLabel" destination="20" id="jyf-yM-dsH"/>
                         <outlet property="lastNameLabel" destination="2ND-nK-CeT" id="guq-gy-PwJ"/>
                         <outlet property="majorLabel" destination="ahR-KB-96w" id="vMW-dP-xZH"/>
                         <outlet property="navBar" destination="aez-tJ-h1Z" id="2Xk-ng-vqW"/>
                         <outlet property="refresher" destination="yHC-tf-gNW" id="C72-ZD-G46"/>
                         <outlet property="schoolLabel" destination="yrr-cg-9gm" id="r98-Rc-Dpv"/>
-                        <outlet property="userImage" destination="kVD-DL-A5c" id="vkr-05-ClF"/>
+                        <outlet property="userImage" destination="guN-N8-CQS" id="3hN-3B-fMf"/>
+                        <segue destination="wRM-yL-42H" kind="modal" identifier="showEditProfile" id="yYV-qf-2ly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-101" y="-284"/>
+            <point key="canvasLocation" x="-186" y="-205"/>
         </scene>
         <!--Penn Meet Second View Controller - My Groups-->
         <scene sceneID="0iU-Ih-pmG">
@@ -297,7 +342,7 @@
             <objects>
                 <viewController id="KdK-I0-CEX" customClass="PennMeetCreateGroupViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AzL-2T-Y8b">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="foggy_birds_@2X.png" translatesAutoresizingMaskIntoConstraints="NO" id="eYW-qh-BiH"/>
@@ -496,6 +541,13 @@
                 <relationship kind="action" name="doneButtonTouched:"/>
             </relationships>
         </class>
+        <class className="PennMeetEditProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetEditProfileViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonPressed:"/>
+                <relationship kind="action" name="saveButtonPressed:"/>
+            </relationships>
+        </class>
         <class className="PennMeetFirstViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetFirstViewController.h"/>
             <relationships>
@@ -503,14 +555,16 @@
                 <relationship kind="action" name="refresherPressed:"/>
                 <relationship kind="outlet" name="birthdayLabel" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editorz" candidateClass="PennMeetEditProfileViewController"/>
                 <relationship kind="outlet" name="emailLabel" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="firstNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="lastNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="majorLabel" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="navy" candidateClass="UINavigationController"/>
                 <relationship kind="outlet" name="refresher" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="schoolLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="userImage" candidateClass="UIImage"/>
+                <relationship kind="outlet" name="userImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="PennMeetGroupViewController" superclassName="UIViewController">
@@ -527,7 +581,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSecondViewController.h"/>
             <relationships>
                 <relationship kind="action" name="newGroupTouched:"/>
-                <relationship kind="action" name="refresherTouched:"/>
                 <relationship kind="outlet" name="title" candidateClass="UILabel"/>
             </relationships>
         </class>
@@ -544,6 +597,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Pox-u8-jEt"/>
+        <segue reference="5NK-bJ-oZo"/>
     </inferredMetricsTieBreakers>
 </document>

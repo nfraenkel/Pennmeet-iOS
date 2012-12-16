@@ -44,30 +44,30 @@
 		4CA49DAF167A9499005B8D44 /* PennMeetThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA49DAE167A9499005B8D44 /* PennMeetThirdViewController.m */; };
 		4CBC47C0167B325100B20DF6 /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC47BF167B325100B20DF6 /* 01-refresh.png */; };
 		4CE1FED9167B279C003ED5A8 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1FED8167B279C003ED5A8 /* refresh.png */; };
-		B8C8C532167D29C400E731FE /* libqrencoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C8C52C167D28BC00E731FE /* libqrencoder.a */; };
+		B8F09DA4167D7CD900373F25 /* libQREncoder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8F09D9F167D7C5900373F25 /* libQREncoder.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B8C8C52B167D28BC00E731FE /* PBXContainerItemProxy */ = {
+		B8F09D9E167D7C5900373F25 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B8C8C522167D28BC00E731FE /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+			containerPortal = B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9672D35713BD662F0002B0E2;
-			remoteInfo = qrencoder;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = QREncoder;
 		};
-		B8C8C52D167D28BC00E731FE /* PBXContainerItemProxy */ = {
+		B8F09DA0167D7C5900373F25 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B8C8C522167D28BC00E731FE /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+			containerPortal = B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 9621844115431DBA00447877;
-			remoteInfo = QRCodeEncoderDemo;
+			remoteGlobalIDString = EB7DA3AE10A4F5D90071984A;
+			remoteInfo = QREncoderTest;
 		};
-		B8C8C530167D29A100E731FE /* PBXContainerItemProxy */ = {
+		B8F09DA2167D7CCA00373F25 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B8C8C522167D28BC00E731FE /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+			containerPortal = B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 9672D35613BD662F0002B0E2;
-			remoteInfo = qrencoder;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = QREncoder;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -122,7 +122,7 @@
 		4CA49DAE167A9499005B8D44 /* PennMeetThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetThirdViewController.m; sourceTree = "<group>"; };
 		4CBC47BF167B325100B20DF6 /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		4CE1FED8167B279C003ED5A8 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
-		B8C8C522167D28BC00E731FE /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QRCodeEncoderObjectiveCAtGithub.xcodeproj; path = ../QRCodeEncoderObjectiveCAtGithub.xcodeproj; sourceTree = "<group>"; };
+		B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QREncoder.xcodeproj; path = QR/QREncoder.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8C8C532167D29C400E731FE /* libqrencoder.a in Frameworks */,
+				B8F09DA4167D7CD900373F25 /* libQREncoder.a in Frameworks */,
 				4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */,
 				4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */,
 				4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */,
@@ -158,7 +158,7 @@
 		4C7E7155167A45E0007C1B87 = {
 			isa = PBXGroup;
 			children = (
-				B8C8C522167D28BC00E731FE /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */,
+				B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */,
 				4C7E716A167A45E0007C1B87 /* PennMeet */,
 				4C7E7163167A45E0007C1B87 /* Frameworks */,
 				4C7E7161167A45E0007C1B87 /* Products */,
@@ -237,11 +237,11 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B8C8C523167D28BC00E731FE /* Products */ = {
+		B8F09D97167D7C5900373F25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B8C8C52C167D28BC00E731FE /* libqrencoder.a */,
-				B8C8C52E167D28BC00E731FE /* QRCodeEncoderDemo.app */,
+				B8F09D9F167D7C5900373F25 /* libQREncoder.a */,
+				B8F09DA1167D7C5900373F25 /* QREncoderTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				B8C8C531167D29A100E731FE /* PBXTargetDependency */,
+				B8F09DA3167D7CCA00373F25 /* PBXTargetDependency */,
 			);
 			name = PennMeet;
 			productName = PennMeet;
@@ -290,8 +290,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B8C8C523167D28BC00E731FE /* Products */;
-					ProjectRef = B8C8C522167D28BC00E731FE /* QRCodeEncoderObjectiveCAtGithub.xcodeproj */;
+					ProductGroup = B8F09D97167D7C5900373F25 /* Products */;
+					ProjectRef = B8F09D96167D7C5900373F25 /* QREncoder.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -302,18 +302,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B8C8C52C167D28BC00E731FE /* libqrencoder.a */ = {
+		B8F09D9F167D7C5900373F25 /* libQREncoder.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libqrencoder.a;
-			remoteRef = B8C8C52B167D28BC00E731FE /* PBXContainerItemProxy */;
+			path = libQREncoder.a;
+			remoteRef = B8F09D9E167D7C5900373F25 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B8C8C52E167D28BC00E731FE /* QRCodeEncoderDemo.app */ = {
+		B8F09DA1167D7C5900373F25 /* QREncoderTest.octest */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = QRCodeEncoderDemo.app;
-			remoteRef = B8C8C52D167D28BC00E731FE /* PBXContainerItemProxy */;
+			fileType = wrapper.cfbundle;
+			path = QREncoderTest.octest;
+			remoteRef = B8F09DA0167D7C5900373F25 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -373,10 +373,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B8C8C531167D29A100E731FE /* PBXTargetDependency */ = {
+		B8F09DA3167D7CCA00373F25 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = qrencoder;
-			targetProxy = B8C8C530167D29A100E731FE /* PBXContainerItemProxy */;
+			name = QREncoder;
+			targetProxy = B8F09DA2167D7CCA00373F25 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -453,13 +453,16 @@
 		4C7E7190167A45E0007C1B87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PennMeet/PennMeet-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../QR/Classes;
 				"HEADER_SEARCH_PATHS[arch=*]" = "";
 				INFOPLIST_FILE = "PennMeet/PennMeet-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../QRCodeEncoderObjectiveCAtGithub/ <Multiple values>";
+				USER_HEADER_SEARCH_PATHS = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -468,12 +471,16 @@
 		4C7E7191167A45E0007C1B87 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PennMeet/PennMeet-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../QR/Classes;
 				INFOPLIST_FILE = "PennMeet/PennMeet-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../QRCodeEncoderObjectiveCAtGithub/ <Multiple values>";
+				USER_HEADER_SEARCH_PATHS = "";
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

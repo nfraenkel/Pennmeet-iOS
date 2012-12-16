@@ -17,6 +17,8 @@
 UIImage* qrcodeImage;
 
 @synthesize qrCode = _qrCode;
+@synthesize groupNameField = _groupNameField;
+@synthesize bannerURLField = _bannerURLField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,41 +33,36 @@ UIImage* qrcodeImage;
 {
     [super viewDidLoad];
     
-    int qrcodeImageDimension = 250;
+    self.groupNameField.delegate = self;
+    self.bannerURLField.delegate = self;
+        
+}
+
+- (IBAction)generateQRImage:(id)sender {
     
-    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:@"SUNSHINELOLIPOPSANDRAINBOWSEVERYWHERE"];
+    int qrcodeImageDimension = 320;
+    UIButton *button = (UIButton *)sender;
+    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:self.groupNameField.text];
     
     //then render the matrix
-     qrcodeImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:qrcodeImageDimension];
+    qrcodeImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:qrcodeImageDimension];
     
     //put the image into the view
     [_qrCode setImage:qrcodeImage];
     
-
-	// Do any additional setup after loading the view.
     
-    
+    [button removeFromSuperview];
 }
+
 - (IBAction)saveQRImage:(id)sender {
-      UIImageWriteToSavedPhotosAlbum(qrcodeImage, nil, nil, nil);
+    
+    UIImageWriteToSavedPhotosAlbum(qrcodeImage, nil, nil, nil);
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)createGroup:(NSString *)identifier{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    
-    [request setHTTPMethod:@"POST"];
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [connection start];
 }
 
 
@@ -77,9 +74,22 @@ UIImage* qrcodeImage;
 }
 
 - (IBAction)doneButtonTouched:(id)sender {
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    [request setHTTPMethod:@"POST"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
+    
     [self dismissViewControllerAnimated:YES completion:^{
         NSLog(@"DONE WITH GROUP CREATION");
     }];
+    
+    
     
 }
 
@@ -114,5 +124,16 @@ UIImage* qrcodeImage;
        
     // TODO: do something with user
     
+}
+
+//TextView delegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    if ([string isEqualToString:@"\n"]){
+        [textField resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 @end

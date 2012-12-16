@@ -121,7 +121,7 @@ usingDelegate:(id <ZBarReaderDelegate>) delegate{
     for(symbol in results)
         break;
     
-=
+    
     NSString* text = symbol.data;
     
     [reader dismissViewControllerAnimated: YES completion:nil];

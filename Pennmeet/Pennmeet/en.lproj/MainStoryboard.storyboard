@@ -538,14 +538,11 @@
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V5L-ql-4lk">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="CRA-SO-sYY"/>
-                                    <constraint firstAttribute="width" constant="250" id="Ihu-XU-5sp"/>
+                                    <constraint firstAttribute="height" constant="201" id="LR5-el-sNF"/>
+                                    <constraint firstAttribute="width" constant="200" id="oUC-fn-mKX"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Banner URL" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-Km-bO6">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="282" id="Tz6-gU-pb6"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -562,25 +559,44 @@
                                     <action selector="saveQRImage:" destination="KdK-I0-CEX" eventType="touchUpInside" id="CZ4-XC-Aop"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmg-1a-1Cj">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="RZB-dH-JJV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Generate QR Code">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="generateQRImage:" destination="KdK-I0-CEX" eventType="touchUpInside" id="IBb-G8-QgA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fn1-Xy-Imk" firstAttribute="trailing" secondItem="V5L-ql-4lk" secondAttribute="trailing" type="default" id="000-yA-xM3"/>
+                            <constraint firstItem="Hmg-1a-1Cj" firstAttribute="top" secondItem="V5L-ql-4lk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3TC-U0-iX6"/>
                             <constraint firstItem="bFX-wa-KJj" firstAttribute="top" secondItem="AzL-2T-Y8b" secondAttribute="top" constant="8" id="Hn7-AY-Ci8"/>
                             <constraint firstItem="eYW-qh-BiH" firstAttribute="top" secondItem="AzL-2T-Y8b" secondAttribute="top" type="default" id="NJw-lN-OFX"/>
+                            <constraint firstItem="XMG-Km-bO6" firstAttribute="leading" secondItem="AzL-2T-Y8b" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OIE-P8-U1i"/>
+                            <constraint firstItem="bFX-wa-KJj" firstAttribute="leading" secondItem="AzL-2T-Y8b" secondAttribute="leading" constant="18" id="Q5Z-2s-Wyb"/>
                             <constraint firstItem="eYW-qh-BiH" firstAttribute="trailing" secondItem="AzL-2T-Y8b" secondAttribute="trailing" type="default" id="QFM-hf-3e8"/>
-                            <constraint firstAttribute="trailing" secondItem="XMG-Km-bO6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="RzX-5F-CqA"/>
-                            <constraint firstItem="V5L-ql-4lk" firstAttribute="leading" secondItem="fn1-Xy-Imk" secondAttribute="leading" type="default" id="ShV-hl-881"/>
-                            <constraint firstItem="V5L-ql-4lk" firstAttribute="centerX" secondItem="LYx-aD-X2s" secondAttribute="centerX" type="default" id="Syg-iQ-zSI"/>
-                            <constraint firstItem="V5L-ql-4lk" firstAttribute="top" secondItem="XMG-Km-bO6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Uys-dp-cg8"/>
+                            <constraint firstItem="V5L-ql-4lk" firstAttribute="top" secondItem="XMG-Km-bO6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="S62-16-XT7"/>
+                            <constraint firstItem="V5L-ql-4lk" firstAttribute="centerX" secondItem="XMG-Km-bO6" secondAttribute="centerX" type="default" id="UM6-z3-lWS"/>
+                            <constraint firstItem="Hmg-1a-1Cj" firstAttribute="trailing" secondItem="fn1-Xy-Imk" secondAttribute="trailing" type="default" id="Wxl-Nx-IGg"/>
+                            <constraint firstItem="Hmg-1a-1Cj" firstAttribute="baseline" secondItem="fn1-Xy-Imk" secondAttribute="baseline" type="default" id="YLS-nJ-5yq"/>
                             <constraint firstItem="XMG-Km-bO6" firstAttribute="top" secondItem="LYx-aD-X2s" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bVk-nQ-9h2"/>
                             <constraint firstItem="eYW-qh-BiH" firstAttribute="bottom" secondItem="AzL-2T-Y8b" secondAttribute="bottom" type="default" id="btw-MP-AXL"/>
                             <constraint firstItem="LYx-aD-X2s" firstAttribute="leading" secondItem="AzL-2T-Y8b" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="cmS-FR-8bc"/>
-                            <constraint firstAttribute="trailing" secondItem="LYx-aD-X2s" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="eJc-Jh-4lz"/>
-                            <constraint firstItem="XMG-Km-bO6" firstAttribute="leading" secondItem="bFX-wa-KJj" secondAttribute="leading" type="default" id="ecY-Uf-VcF"/>
-                            <constraint firstItem="fn1-Xy-Imk" firstAttribute="top" secondItem="V5L-ql-4lk" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fVe-wh-k4g"/>
+                            <constraint firstItem="V5L-ql-4lk" firstAttribute="centerX" secondItem="fn1-Xy-Imk" secondAttribute="centerX" type="default" id="e6c-rL-Wpk"/>
+                            <constraint firstAttribute="trailing" secondItem="LYx-aD-X2s" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="gPK-SW-6ay"/>
                             <constraint firstItem="LYx-aD-X2s" firstAttribute="top" secondItem="bFX-wa-KJj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="q2C-Bl-Oom"/>
                             <constraint firstItem="eYW-qh-BiH" firstAttribute="leading" secondItem="AzL-2T-Y8b" secondAttribute="leading" type="default" id="qCu-6i-A0E"/>
+                            <constraint firstAttribute="trailing" secondItem="XMG-Km-bO6" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uGf-jb-8v5"/>
+                            <constraint firstItem="Hmg-1a-1Cj" firstAttribute="leading" secondItem="fn1-Xy-Imk" secondAttribute="leading" type="default" id="x7u-ax-zBt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create Group" id="7tb-sx-y2t">
@@ -596,6 +612,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerURLField" destination="XMG-Km-bO6" id="0IP-IO-qsX"/>
+                        <outlet property="groupNameField" destination="LYx-aD-X2s" id="30O-c8-u8U"/>
                         <outlet property="qrCode" destination="V5L-ql-4lk" id="EaJ-Sf-WqN"/>
                     </connections>
                 </viewController>
@@ -848,7 +866,10 @@
             <relationships>
                 <relationship kind="action" name="cancelButtonTouched:"/>
                 <relationship kind="action" name="doneButtonTouched:"/>
+                <relationship kind="action" name="generateQRImage:"/>
                 <relationship kind="action" name="saveQRImage:"/>
+                <relationship kind="outlet" name="bannerURLField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="groupNameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="qrCode" candidateClass="UIImageView"/>
             </relationships>
         </class>
@@ -912,12 +933,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSecondViewController.h"/>
             <relationships>
                 <relationship kind="action" name="newGroupTouched:"/>
-                <relationship kind="action" name="refresherTouched:"/>
                 <relationship kind="outlet" name="title" candidateClass="UILabel"/>
             </relationships>
-        </class>
-        <class className="PennMeetSignUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSignUpViewController.h"/>
         </class>
         <class className="PennMeetThirdViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetThirdViewController.h"/>

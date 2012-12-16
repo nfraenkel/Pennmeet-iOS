@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+
 #import "PennMeetCurrentLoggedInUser.h"
 #import "PennMeetAppDelegate.h"
 #import "PennMeetUser.h"
@@ -15,7 +17,7 @@
 #import "PennMeetSimplifiedGroup.h"
 #import "QREncoder.h"
 
-@interface PennMeetCreateGroupViewController : UIViewController <NSURLConnectionDataDelegate, UIAlertViewDelegate> {
+@interface PennMeetCreateGroupViewController : UIViewController <NSURLConnectionDataDelegate, UIAlertViewDelegate, UITextFieldDelegate> {
     NSMutableData *_data;
 }
 
@@ -24,6 +26,10 @@
 - (IBAction)cancelButtonTouched:(id)sender;
 - (IBAction)doneButtonTouched:(id)sender;
 
+
+@property (weak, nonatomic) IBOutlet UITextField *groupNameField;
+
+@property (weak, nonatomic) IBOutlet UITextField *bannerURLField;
 
 @property (retain) PennMeetCurrentLoggedInUser *currentUser;
 

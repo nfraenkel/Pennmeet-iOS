@@ -13,7 +13,7 @@
 #import "PennMeetGroup.h"
 #import "PennMeetCurrentLoggedInUser.h"
 #import "PennMeetSimplifiedGroup.h"
-//#import "QREncoder.h"
+#import "QREncoder/QREncoder.h"
 
 @interface PennMeetCreateGroupViewController : UIViewController <NSURLConnectionDataDelegate, UIAlertViewDelegate> {
     NSMutableData *_data;

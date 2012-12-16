@@ -74,22 +74,7 @@ UIImage* qrcodeImage;
 }
 
 - (IBAction)doneButtonTouched:(id)sender {
-    
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
-    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    
-    [request setHTTPMethod:@"POST"];
-    
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [connection start];
-    
-    [self dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"DONE WITH GROUP CREATION");
-    }];
-    
-    
+        
     
 }
 

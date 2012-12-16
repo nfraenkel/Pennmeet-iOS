@@ -18,7 +18,7 @@
 ;
 
 //NSString* username = @"fraenkel@seas.upenn.edu";
-NSString* username = @"zhangb@seas.upenn.edu";
+//NSString* username = @"zhangb@seas.upenn.edu";
 BOOL userRetrieved;
 
 - (void)viewDidLoad
@@ -42,7 +42,7 @@ BOOL userRetrieved;
     self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
         
     // TODO: make this get the user who just logged in
-    [self retrieveUser:username];
+    [self retrieveUser:self.currentUser.currentUser.uniqueID];
     
     
 }
@@ -64,7 +64,7 @@ BOOL userRetrieved;
 
 - (IBAction)refresherPressed:(id)sender {
     NSLog(@"refresh!!!!!!");
-    [self retrieveUser:username];
+    [self retrieveUser:self.currentUser.currentUser.uniqueID];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -180,7 +180,7 @@ BOOL userRetrieved;
     }
     else if (buttonIndex == 1){
         // RETRY
-        [self retrieveUser:username];
+        [self retrieveUser:self.currentUser.currentUser.uniqueID];
     }
 }
 

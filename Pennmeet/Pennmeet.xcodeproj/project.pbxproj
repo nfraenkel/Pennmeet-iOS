@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1440A0167DB7C1006478A6 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C14409F167DB7C1006478A6 /* FacebookSDK.framework */; };
+		4C1440A4167DB7D2006478A6 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C1440A2167DB7D2006478A6 /* FacebookSDKResources.bundle */; };
+		4C1440A5167DB7D2006478A6 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C1440A3167DB7D2006478A6 /* FBUserSettingsViewResources.bundle */; };
+		4C1440A7167DB801006478A6 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1440A6167DB801006478A6 /* AdSupport.framework */; };
+		4C1440A9167DB807006478A6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1440A8167DB807006478A6 /* Accounts.framework */; };
+		4C1440AB167DB81D006478A6 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1440AA167DB81D006478A6 /* Social.framework */; };
 		4C194493167A9E1B002B63E5 /* PennMeetCreateGroupViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.mm */; };
 		4C194684167AE5EE002B63E5 /* PennMeetUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194683167AE5EE002B63E5 /* PennMeetUser.m */; };
 		4C194687167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194686167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m */; };
@@ -51,6 +57,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C14409F167DB7C1006478A6 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		4C1440A2167DB7D2006478A6 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../../../FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
+		4C1440A3167DB7D2006478A6 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBUserSettingsViewResources.bundle; path = ../../../FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		4C1440A6167DB801006478A6 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		4C1440A8167DB807006478A6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		4C1440AA167DB81D006478A6 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4C194491167A9E1B002B63E5 /* PennMeetCreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetCreateGroupViewController.h; sourceTree = "<group>"; };
 		4C194492167A9E1B002B63E5 /* PennMeetCreateGroupViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PennMeetCreateGroupViewController.mm; sourceTree = "<group>"; };
 		4C194682167AE5EE002B63E5 /* PennMeetUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetUser.h; sourceTree = "<group>"; };
@@ -118,9 +130,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1440A9167DB807006478A6 /* Accounts.framework in Frameworks */,
+				4C1440A7167DB801006478A6 /* AdSupport.framework in Frameworks */,
 				4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */,
+				4C1440AB167DB81D006478A6 /* Social.framework in Frameworks */,
 				4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */,
 				4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */,
+				4C1440A0167DB7C1006478A6 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +179,12 @@
 		4C7E7163167A45E0007C1B87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C1440AA167DB81D006478A6 /* Social.framework */,
+				4C1440A8167DB807006478A6 /* Accounts.framework */,
+				4C1440A6167DB801006478A6 /* AdSupport.framework */,
+				4C1440A2167DB7D2006478A6 /* FacebookSDKResources.bundle */,
+				4C1440A3167DB7D2006478A6 /* FBUserSettingsViewResources.bundle */,
+				4C14409F167DB7C1006478A6 /* FacebookSDK.framework */,
 				4C7E7164167A45E0007C1B87 /* UIKit.framework */,
 				4C7E7166167A45E0007C1B87 /* Foundation.framework */,
 				4C7E7168167A45E0007C1B87 /* CoreGraphics.framework */,
@@ -272,7 +294,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Nathan Fraenkel";
 			};
-			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */;
+			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -317,6 +339,8 @@
 				4C2D76FA167CE068001071B3 /* group_glyph.png in Resources */,
 				4C2D76FD167CE092001071B3 /* glyphicons_003_user.png in Resources */,
 				4C2D76FF167CE113001071B3 /* glyphicons_011_camera.png in Resources */,
+				4C1440A4167DB7D2006478A6 /* FacebookSDKResources.bundle in Resources */,
+				4C1440A5167DB7D2006478A6 /* FBUserSettingsViewResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,13 +446,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../FacebookSDK\"",
+				);
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PennMeet/PennMeet-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
 				"HEADER_SEARCH_PATHS[arch=*]" = "/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/**";
 				INFOPLIST_FILE = "PennMeet/PennMeet-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
@@ -440,12 +468,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../FacebookSDK\"",
+				);
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PennMeet/PennMeet-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "PennMeet/PennMeet-Info.plist";
+				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
@@ -456,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */ = {
+		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C7E718D167A45E0007C1B87 /* Debug */,

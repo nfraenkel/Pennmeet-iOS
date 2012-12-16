@@ -55,6 +55,11 @@
 		B82AC010167D967E00D85472 /* QR_Encode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B82AC007167D967E00D85472 /* QR_Encode.cpp */; };
 		B82AC011167D967E00D85472 /* QRCodeEncoderDemoViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B82AC00A167D967E00D85472 /* QRCodeEncoderDemoViewController.mm */; };
 		B82AC012167D967E00D85472 /* QREncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = B82AC00E167D967E00D85472 /* QREncoder.mm */; };
+		B83F123E167E763B0008384B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83F1239167E763B0008384B /* AVFoundation.framework */; };
+		B83F123F167E763B0008384B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83F123A167E763B0008384B /* CoreMedia.framework */; };
+		B83F1240167E763B0008384B /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83F123B167E763B0008384B /* CoreVideo.framework */; };
+		B83F1241167E763B0008384B /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B83F123C167E763B0008384B /* libiconv.dylib */; };
+		B83F1242167E763B0008384B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83F123D167E763B0008384B /* QuartzCore.framework */; };
 		B8CE01E8167E6697002DFBF5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CE01E7167E6697002DFBF5 /* MobileCoreServices.framework */; };
 		B8CE0207167E6E9D002DFBF5 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CE0201167E6E9D002DFBF5 /* libzbar.a */; };
 		B8CE0208167E6E9D002DFBF5 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CE0203167E6E9D002DFBF5 /* zbar-back.png */; };
@@ -132,6 +137,11 @@
 		B82AC00C167D967E00D85472 /* QREncoder-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QREncoder-Prefix.pch"; sourceTree = "<group>"; };
 		B82AC00D167D967E00D85472 /* QREncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QREncoder.h; sourceTree = "<group>"; };
 		B82AC00E167D967E00D85472 /* QREncoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QREncoder.mm; sourceTree = "<group>"; };
+		B83F1239167E763B0008384B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B83F123A167E763B0008384B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B83F123B167E763B0008384B /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		B83F123C167E763B0008384B /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		B83F123D167E763B0008384B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B8CE01E7167E6697002DFBF5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B8CE01ED167E6E9D002DFBF5 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		B8CE01EE167E6E9D002DFBF5 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
@@ -165,6 +175,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B83F123E167E763B0008384B /* AVFoundation.framework in Frameworks */,
+				B83F123F167E763B0008384B /* CoreMedia.framework in Frameworks */,
+				B83F1240167E763B0008384B /* CoreVideo.framework in Frameworks */,
+				B83F1241167E763B0008384B /* libiconv.dylib in Frameworks */,
+				B83F1242167E763B0008384B /* QuartzCore.framework in Frameworks */,
 				B8CE01E8167E6697002DFBF5 /* MobileCoreServices.framework in Frameworks */,
 				4C4AAA00167E4FDD00A546CF /* Social.framework in Frameworks */,
 				4C4AAA01167E4FDD00A546CF /* Accounts.framework in Frameworks */,
@@ -220,6 +235,11 @@
 		4C7E7155167A45E0007C1B87 = {
 			isa = PBXGroup;
 			children = (
+				B83F1239167E763B0008384B /* AVFoundation.framework */,
+				B83F123A167E763B0008384B /* CoreMedia.framework */,
+				B83F123B167E763B0008384B /* CoreVideo.framework */,
+				B83F123C167E763B0008384B /* libiconv.dylib */,
+				B83F123D167E763B0008384B /* QuartzCore.framework */,
 				B8CE01E9167E6E9D002DFBF5 /* ZBarSDK */,
 				B8CE01E7167E6697002DFBF5 /* MobileCoreServices.framework */,
 				B82AC004167D967E00D85472 /* QR */,
@@ -407,7 +427,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Nathan Fraenkel";
 			};
-			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */;
+			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -624,7 +644,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */ = {
+		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C7E718D167A45E0007C1B87 /* Debug */,

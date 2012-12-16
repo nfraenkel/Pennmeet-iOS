@@ -76,71 +76,57 @@
 // handle method
 - (void) handleImageTap:(UIGestureRecognizer *)gestureRecognizer {
     NSLog(@"GENERATE QR CODE SCANNER!!!");
-    
-    [self startCameraControllerFromViewController:self usingDelegate:self];
-    
-    
-    
-    // TODO: bring up qr code scanner/ camera
-    
-//    PennMeetRequests *pm = [[PennMeetRequests alloc] init];
-//    [pm retrieveUser:@"fraenkel@seas.upenn.edu"];
-//    [pm retrieveGroup:@"KoolKidsKlub"];
-    
-//    NuMongoDB *mongo = [NuMongoDB new];
-//	[mongo connectWithOptions:[NSDictionary dictionaryWithObjectsAndKeys:
-//							   @"127.0.0.1", @"host", nil]];
-//    
-//	NSString *collection = @"test.sample";
-//    
-//	[mongo dropCollection:@"sample" inDatabase:@"test"];
-//    
-//	id sample = [NSDictionary dictionaryWithObjectsAndKeys:
-//				 [NSNumber numberWithInt:1], @"one",
-//				 [NSNumber numberWithDouble:2.0], @"two",
-//				 @"3", @"three",
-//				 [NSArray arrayWithObjects:@"zero", @"one", @"two", @"three", nil], @"four",
-//				 nil];
-//	[mongo insertObject:sample intoCollection:collection];
-//    
-//	id first = [mongo findOne:nil inCollection:collection];
-//	NSLog(@"%@", first);
-}
+    /*
+     [self startCameraControllerFromViewController:self usingDelegate:self];
+     */
+    [self startZBarController:self usingDelegate:self];
 
-// Camera Controller delegate
 
-// For responding to the user tapping Cancel.
-- (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
-    
-    [[picker parentViewController] dismissViewControllerAnimated:YES completion:nil];
 
 }
 
-// For responding to the user accepting a newly-captured picture or movie
-- (void) imagePickerController: (UIImagePickerController *) picker
- didFinishPickingMediaWithInfo: (NSDictionary *) info {
+-(BOOL) startZBarController: (UIViewController*) controller
+usingDelegate:(id <ZBarReaderDelegate>) delegate{
     
-    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
-    UIImage *originalImage, *editedImage, *imageToSave;
+    if (([UIImagePickerController isSourceTypeAvailable:
+          UIImagePickerControllerSourceTypeCamera] == NO)
+        || (delegate == nil)
+        || (controller == nil))
+        return NO;
     
-    // Handle a still image capture
-    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
-        == kCFCompareEqualTo) {
-        
-        editedImage = (UIImage *) [info objectForKey:
-                                   UIImagePickerControllerEditedImage];
-        originalImage = (UIImage *) [info objectForKey:
-                                     UIImagePickerControllerOriginalImage];
-        
-        if (editedImage) {
-            imageToSave = editedImage;
-        } else {
-            imageToSave = originalImage;
-        }
+    ZBarReaderViewController *reader = [ZBarReaderViewController new];
+    reader.readerDelegate = self;
+    reader.supportedOrientationsMask = ZBarOrientationMaskAll;
     
-        
-        // Save the new image (original or edited) to the Camera Roll
-        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
-    }
+    ZBarImageScanner *scanner = reader.scanner;
+
+    [scanner setSymbology: ZBAR_I25
+                   config: ZBAR_CFG_ENABLE
+                       to: 0];
+    
+    // present and release the controller
+    [self presentViewController:reader
+                       animated:YES completion:nil];
+    return YES;
 }
+
+
+//ZBAR DELEGATE
+- (void) imagePickerController: (UIImagePickerController*) reader
+ didFinishPickingMediaWithInfo: (NSDictionary*) info
+{
+    id<NSFastEnumeration> results =
+    [info objectForKey: ZBarReaderControllerResults];
+    ZBarSymbol *symbol = nil;
+    for(symbol in results)
+        break;
+    
+=
+    NSString* text = symbol.data;
+    
+    [reader dismissViewControllerAnimated: YES completion:nil];
+}
+
+
+
 @end

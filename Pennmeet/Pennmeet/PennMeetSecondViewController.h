@@ -10,9 +10,12 @@
 #import "PennMeetCurrentLoggedInUser.h"
 #import "PennMeetGroupViewController.h"
 #import "PennMeetSimplifiedGroup.h"
+#import "PennMeetAppDelegate.h"
 
 
-@interface PennMeetSecondViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface PennMeetSecondViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate> {
+    NSMutableData *_data;
+}
 
 - (IBAction)newGroupTouched:(id)sender;
 

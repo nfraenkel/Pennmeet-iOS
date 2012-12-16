@@ -20,6 +20,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
     self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
     NSLog(@"current user has %d groups", self.currentUser.currentUser.groupsSimplified.count);
 }
@@ -63,6 +65,23 @@
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"DELETED ROW");
+        [_currentUser.currentUser.groupsSimplified removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showGroup"]) {
@@ -75,4 +94,7 @@
 -(void)populateTableWithCurrentUsersGroups {
     [self.tableView reloadData];
 }
+
+
+
 @end

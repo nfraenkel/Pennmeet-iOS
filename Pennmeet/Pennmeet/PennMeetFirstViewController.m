@@ -14,11 +14,12 @@
 
 @implementation PennMeetFirstViewController
 
-@synthesize currentUser, firstNameLabel, lastNameLabel, emailLabel, schoolLabel, majorLabel, birthdayLabel, userImage;
+@synthesize currentUser, firstNameLabel, lastNameLabel, emailLabel, schoolLabel, majorLabel, birthdayLabel, userImage, navy, editorz
+;
 
 //NSString* username = @"fraenkel@seas.upenn.edu";
 NSString* username = @"zhangb@seas.upenn.edu";
-BOOL userRetrieved = NO;
+BOOL userRetrieved;
 
 - (void)viewDidLoad
 {
@@ -36,6 +37,7 @@ BOOL userRetrieved = NO;
     majorLabel.text = @"";
     birthdayLabel.text = @"";
     
+    userRetrieved = NO;
     
     self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
         
@@ -53,16 +55,28 @@ BOOL userRetrieved = NO;
 - (IBAction)editButtonPressed:(id)sender {
     NSLog(@"EDITBUTTONPRESSED THO");
     // TODO: editing
+//    [self populateProfile:currentUser.currentUser];
+//    [self presentViewController:[[PennMeetEditProfileViewController alloc] init] animated:YES completion:^{
+        NSLog(@"YAAAAAA");
+//    }];
+    [self performSegueWithIdentifier:@"showEditProfile" sender:self];
 }
 
 - (IBAction)refresherPressed:(id)sender {
+    NSLog(@"refresh!!!!!!");
     [self retrieveUser:username];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     NSLog(@"PROFILE viewdidappear");
-    if (userRetrieved)
-        [self populateProfile:currentUser.currentUser];
+    [self refresherPressed:self];
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    NSLog(@"PROFILE viewdiddisappear");
+
+//    [self populateProfile:currentUser.currentUser];
+
 }
 
 -(void)populateProfile:(PennMeetUser *)user {
@@ -71,26 +85,28 @@ BOOL userRetrieved = NO;
     // get profile picture from online
     UIImage *profImage = [self imageFromURLString:user.photoUrl];
     
-    // determine new width/height based on ratio of photo
-    double width = profImage.size.width;
-    double height = profImage.size.height;
-    double heightOverWidth = height / width;
+//    // determine new width/height based on ratio of photo
+//    double width = profImage.size.width;
+//    double height = profImage.size.height;
+//    double heightOverWidth = height / width;
+//    
+//    double newHeight = userImage.frame.size.width * heightOverWidth;
     
-    double newHeight = userImage.frame.size.width * heightOverWidth;
     
     // get height change/diff
-    double diff = newHeight - userImage.frame.size.height;
+//    double diff = newHeight - userImage.frame.size.height;
     
     [self.userImage setImage:profImage];
     
     // create new frame based on image width/height ratio
-    self.userImage.frame = CGRectMake(userImage.frame.origin.x, userImage.frame.origin.y, userImage.frame.size.width, newHeight);
+//    self.userImage.frame = CGRectMake(userImage.frame.origin.x, userImage.frame.origin.y, userImage.frame.size.width, newHeight);
+    
     
     // move all labels accordingly to new height diff
-    emailLabel.frame = CGRectMake(emailLabel.frame.origin.x, emailLabel.frame.origin.y + diff, emailLabel.frame.size.width, emailLabel.frame.size.height);
-    schoolLabel.frame = CGRectMake(schoolLabel.frame.origin.x, schoolLabel.frame.origin.y + diff, schoolLabel.frame.size.width, schoolLabel.frame.size.height);
-    majorLabel.frame = CGRectMake(majorLabel.frame.origin.x, majorLabel.frame.origin.y + diff, majorLabel.frame.size.width, majorLabel.frame.size.height);
-    birthdayLabel.frame = CGRectMake(birthdayLabel.frame.origin.x, birthdayLabel.frame.origin.y + diff, birthdayLabel.frame.size.width, birthdayLabel.frame.size.height);
+//    emailLabel.frame = CGRectMake(emailLabel.frame.origin.x, self.userImage.frame.origin.y + self.userImage.frame.size.height + 30, emailLabel.frame.size.width, emailLabel.frame.size.height);
+//    schoolLabel.frame = CGRectMake(schoolLabel.frame.origin.x, self.emailLabel.frame.origin.y + self.emailLabel.frame.size.height + 6, schoolLabel.frame.size.width, schoolLabel.frame.size.height);
+//    majorLabel.frame = CGRectMake(majorLabel.frame.origin.x, schoolLabel.frame.origin.y + schoolLabel.frame.size.height + 6, majorLabel.frame.size.width, majorLabel.frame.size.height);
+//    birthdayLabel.frame = CGRectMake(birthdayLabel.frame.origin.x, majorLabel.frame.origin.y + majorLabel.frame.size.height + 6, birthdayLabel.frame.size.width, birthdayLabel.frame.size.height);
     
     // set labels texts
     firstNameLabel.text = [NSString stringWithFormat:@"%@", user.first];
@@ -115,7 +131,7 @@ BOOL userRetrieved = NO;
     //    [self handleError:error];
     UIImage *resultImage = [UIImage imageWithData:(NSData *)result];
     
-    NSLog(@"urlString: %@",urlString);
+//    NSLog(@"urlString: %@",urlString);
     return resultImage;
 }
 
@@ -211,4 +227,12 @@ BOOL userRetrieved = NO;
     // TODO: do something with user
     
 }
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showEditProfile"]){
+//        [self refresherPressed:self];
+    }
+}
+
 @end

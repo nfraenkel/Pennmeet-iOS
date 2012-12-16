@@ -46,9 +46,41 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL) startCameraControllerFromViewController: (UIViewController*) controller
+                                   usingDelegate: (id <UIImagePickerControllerDelegate,
+                                                   UINavigationControllerDelegate>) delegate {
+   
+    if (([UIImagePickerController isSourceTypeAvailable:
+          UIImagePickerControllerSourceTypeCamera] == NO)
+        || (delegate == nil)
+        || (controller == nil))
+        return NO;
+    
+    
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    //Set to still captures only
+   cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
+    
+    // Hides the controls for moving & scaling pictures, or for
+    // trimming movies. To instead show the controls, use YES.
+    cameraUI.allowsEditing = NO;
+    
+    cameraUI.delegate = delegate;
+    
+    [controller presentViewController:cameraUI animated:YES completion:nil];
+    return YES;
+}
+
 // handle method
 - (void) handleImageTap:(UIGestureRecognizer *)gestureRecognizer {
     NSLog(@"GENERATE QR CODE SCANNER!!!");
+    
+    [self startCameraControllerFromViewController:self usingDelegate:self];
+    
+    
+    
     // TODO: bring up qr code scanner/ camera
     
 //    PennMeetRequests *pm = [[PennMeetRequests alloc] init];
@@ -75,5 +107,40 @@
 //	NSLog(@"%@", first);
 }
 
+// Camera Controller delegate
 
+// For responding to the user tapping Cancel.
+- (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
+    
+    [[picker parentViewController] dismissViewControllerAnimated:YES completion:nil];
+
+}
+
+// For responding to the user accepting a newly-captured picture or movie
+- (void) imagePickerController: (UIImagePickerController *) picker
+ didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    UIImage *originalImage, *editedImage, *imageToSave;
+    
+    // Handle a still image capture
+    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
+        == kCFCompareEqualTo) {
+        
+        editedImage = (UIImage *) [info objectForKey:
+                                   UIImagePickerControllerEditedImage];
+        originalImage = (UIImage *) [info objectForKey:
+                                     UIImagePickerControllerOriginalImage];
+        
+        if (editedImage) {
+            imageToSave = editedImage;
+        } else {
+            imageToSave = originalImage;
+        }
+    
+        
+        // Save the new image (original or edited) to the Camera Roll
+        UIImageWriteToSavedPhotosAlbum (imageToSave, nil, nil , nil);
+    }
+}
 @end

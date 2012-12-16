@@ -7,15 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/UTCoreTypes.h>
 #import "PennMeetCurrentLoggedInUser.h"
+#import "ZBarSDK.h"
 
 
-@interface PennMeetThirdViewController : UIViewController <UIGestureRecognizerDelegate>
+
+
+@interface PennMeetThirdViewController : UIViewController <UIGestureRecognizerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ZBarReaderDelegate>
 
 @property (nonatomic, weak) IBOutlet UIImageView *plusButton;
 
 @property (retain) PennMeetCurrentLoggedInUser *currentUser;
 
+@property (weak, nonatomic) IBOutlet UIImageView *cameraOutlet;
 
 
 @end

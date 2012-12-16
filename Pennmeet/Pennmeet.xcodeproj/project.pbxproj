@@ -277,7 +277,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Nathan Fraenkel";
 			};
-			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */;
+			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -481,7 +481,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */ = {
+		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C7E718D167A45E0007C1B87 /* Debug */,

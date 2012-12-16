@@ -14,18 +14,31 @@
 
 @implementation PennMeetFirstViewController
 
-@synthesize currentUser, nameLabel, emailLabel, schoolLabel, majorLabel, birthdayLabel;
+@synthesize currentUser, firstNameLabel, lastNameLabel, emailLabel, schoolLabel, majorLabel, birthdayLabel, userImage;
 
 //NSString* username = @"fraenkel@seas.upenn.edu";
 NSString* username = @"zhangb@seas.upenn.edu";
+BOOL userRetrieved = NO;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
+    NSLog(@"PROFILE viewdidload");
     
+    
+    // clear all labels initially
+    firstNameLabel.text = @"";
+    lastNameLabel.text = @"";
+    emailLabel.text = @"";
+    schoolLabel.text = @"";
+    majorLabel.text = @"";
+    birthdayLabel.text = @"";
+    
+    
+    self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
+        
     // TODO: make this get the user who just logged in
     [self retrieveUser:username];
     
@@ -46,15 +59,64 @@ NSString* username = @"zhangb@seas.upenn.edu";
     [self retrieveUser:username];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    NSLog(@"PROFILE viewdidappear");
+    if (userRetrieved)
+        [self populateProfile:currentUser.currentUser];
+}
+
 -(void)populateProfile:(PennMeetUser *)user {
     NSLog(@"POPULATE PROFILE AT THIS TIME");
     
-    nameLabel.text = [NSString stringWithFormat:@"%@ %@", user.first, user.last];
+    // get profile picture from online
+    UIImage *profImage = [self imageFromURLString:user.photoUrl];
+    
+    // determine new width/height based on ratio of photo
+    double width = profImage.size.width;
+    double height = profImage.size.height;
+    double heightOverWidth = height / width;
+    
+    double newHeight = userImage.frame.size.width * heightOverWidth;
+    
+    // get height change/diff
+    double diff = newHeight - userImage.frame.size.height;
+    
+    [self.userImage setImage:profImage];
+    
+    // create new frame based on image width/height ratio
+    self.userImage.frame = CGRectMake(userImage.frame.origin.x, userImage.frame.origin.y, userImage.frame.size.width, newHeight);
+    
+    // move all labels accordingly to new height diff
+    emailLabel.frame = CGRectMake(emailLabel.frame.origin.x, emailLabel.frame.origin.y + diff, emailLabel.frame.size.width, emailLabel.frame.size.height);
+    schoolLabel.frame = CGRectMake(schoolLabel.frame.origin.x, schoolLabel.frame.origin.y + diff, schoolLabel.frame.size.width, schoolLabel.frame.size.height);
+    majorLabel.frame = CGRectMake(majorLabel.frame.origin.x, majorLabel.frame.origin.y + diff, majorLabel.frame.size.width, majorLabel.frame.size.height);
+    birthdayLabel.frame = CGRectMake(birthdayLabel.frame.origin.x, birthdayLabel.frame.origin.y + diff, birthdayLabel.frame.size.width, birthdayLabel.frame.size.height);
+    
+    // set labels texts
+    firstNameLabel.text = [NSString stringWithFormat:@"%@", user.first];
+    lastNameLabel.text = [NSString stringWithFormat:@"%@", user.last];
     emailLabel.text = [NSString stringWithFormat:@"%@", user.uniqueID];
     schoolLabel.text = [NSString stringWithFormat:@"%@", user.school];
     majorLabel.text = [NSString stringWithFormat:@"%@", user.major];
     birthdayLabel.text = [NSString stringWithFormat:@"%@", user.birthday];
+}
+
+// HELPER - returns image from url. so sexy
+- (UIImage *)imageFromURLString:(NSString *)urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"GET"];
     
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *result = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    //    [request release];
+    //    [self handleError:error];
+    UIImage *resultImage = [UIImage imageWithData:(NSData *)result];
+    
+    NSLog(@"urlString: %@",urlString);
+    return resultImage;
 }
 
 
@@ -110,34 +172,36 @@ NSString* username = @"zhangb@seas.upenn.edu";
     NSLog(@"connectiondidfinishloading!");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
-    if (dictResponse.count == 7){ // retrieveUser
-        NSString* identy = [dictResponse objectForKey:@"_id"];
-        NSString* first = [dictResponse objectForKey:@"first"];
-        NSString* last = [dictResponse objectForKey:@"last"];
-        NSString* school = [dictResponse objectForKey:@"school"];
-        NSString* major = [dictResponse objectForKey:@"major"];
-        NSString* birthday = [dictResponse objectForKey:@"birthday"];
-        NSMutableArray* groups = [NSMutableArray array];
-        NSDictionary *groupsDict = [dictResponse objectForKey:@"groups"];
-        NSLog(@"count: %d", groupsDict.count);
-        for (int i = 1; i <= groupsDict.count; i++){
-            NSDictionary *singleGroupDict = [groupsDict objectForKey:[NSString stringWithFormat:@"group%d", i]];
-            
-            NSString *gID = [singleGroupDict objectForKey:@"id"];
-            NSString *gName = [singleGroupDict objectForKey:@"name"];
-            NSString *gAdminPref = [singleGroupDict objectForKey:@"admin"];
-            
-            PennMeetSimplifiedGroup *sGroup = [[PennMeetSimplifiedGroup alloc] initWithID:gID andName:gName andAdmin:gAdminPref];
-                        
-            [groups addObject:sGroup];
-            
-        }
+    NSString* identy = [dictResponse objectForKey:@"_id"];
+    NSString* first = [dictResponse objectForKey:@"first"];
+    NSString* last = [dictResponse objectForKey:@"last"];
+    NSString* school = [dictResponse objectForKey:@"school"];
+    NSString* major = [dictResponse objectForKey:@"major"];
+    NSString* birthday = [dictResponse objectForKey:@"birthday"];
+    NSString* photoUrlTho = [dictResponse objectForKey:@"photoUrl"];
+    NSMutableArray* groups = [NSMutableArray array];
+    NSDictionary *groupsDict = [dictResponse objectForKey:@"groups"];
+    NSLog(@"count: %d", groupsDict.count);
+    for (int i = 1; i <= groupsDict.count; i++){
+        NSDictionary *singleGroupDict = [groupsDict objectForKey:[NSString stringWithFormat:@"group%d", i]];
+        
+        NSString *gID = [singleGroupDict objectForKey:@"id"];
+        NSString *gName = [singleGroupDict objectForKey:@"name"];
+        NSString *gAdminPref = [singleGroupDict objectForKey:@"admin"];
+        
+        PennMeetSimplifiedGroup *sGroup = [[PennMeetSimplifiedGroup alloc] initWithID:gID andName:gName andAdmin:gAdminPref];
+                    
+        [groups addObject:sGroup];
         PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups];
+        
+        user.photoUrl = photoUrlTho;
     
         // UPDATE OUR SINGLETON
         currentUser.currentUser = user;
         
-        // populate user profile page/ labels with singleton info
+        
+        userRetrieved = YES;
+        
         [self populateProfile:user];
         
         

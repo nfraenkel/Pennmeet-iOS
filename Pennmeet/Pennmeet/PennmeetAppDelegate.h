@@ -12,7 +12,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) NSString* apiToken;
-@property (strong, nonatomic) NSString* accountToken;
+@property (strong, nonatomic) NSString *apiToken, *accountToken, *defaultPhotoUrl;
 
 @end

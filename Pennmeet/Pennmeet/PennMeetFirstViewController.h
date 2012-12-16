@@ -23,7 +23,10 @@
 
 @property (retain) PennMeetCurrentLoggedInUser *currentUser;
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
+
+@property (weak, nonatomic) IBOutlet UILabel *firstNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lastNameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *emailLabel;
 @property (weak, nonatomic) IBOutlet UITextView *schoolLabel;
 @property (weak, nonatomic) IBOutlet UITextView *majorLabel;

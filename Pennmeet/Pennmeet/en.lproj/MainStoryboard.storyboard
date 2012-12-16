@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -13,38 +13,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="foggy_birds_@2X.png" translatesAutoresizingMaskIntoConstraints="NO" id="NPq-57-NCB"/>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yrr-cg-9gm">
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="University of Pennsylvania" translatesAutoresizingMaskIntoConstraints="NO" id="yrr-cg-9gm">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="PEc-l6-Bwl"/>
+                                    <constraint firstAttribute="height" constant="30" id="xYM-sL-lqM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-KB-96w">
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Computer Science" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-KB-96w">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="GMc-FZ-Pbt"/>
+                                    <constraint firstAttribute="height" constant="30" id="GsT-rE-C54"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bwZ-Vh-5c7">
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="11/09/1991" translatesAutoresizingMaskIntoConstraints="NO" id="bwZ-Vh-5c7">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="NEo-Rj-0D1"/>
+                                    <constraint firstAttribute="height" constant="30" id="g2w-I8-L8d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Light" family="Heiti TC" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="-" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="20">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Nathan" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="20">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="6Bg-3O-OR8"/>
+                                    <constraint firstAttribute="width" constant="150" id="Mcj-om-Aac"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="-" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fraenkel" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2ND-nK-CeT">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="VqO-cM-gF2"/>
+                                    <constraint firstAttribute="height" constant="43" id="EJq-s9-igc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="fraenkel@seas.upenn.edu" translatesAutoresizingMaskIntoConstraints="NO" id="21">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="qup-bQ-OLs"/>
+                                    <constraint firstAttribute="height" constant="30" id="xez-8P-L5Y"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -68,31 +78,40 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kVD-DL-A5c">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="bqb-nE-cTk"/>
+                                    <constraint firstAttribute="height" constant="100" id="bwh-Ic-D81"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yrr-cg-9gm" firstAttribute="top" secondItem="16" secondAttribute="top" constant="184" id="731-0C-Urd"/>
-                            <constraint firstAttribute="bottom" secondItem="bwZ-Vh-5c7" secondAttribute="bottom" constant="97" id="7gD-8I-ZCD"/>
+                            <constraint firstItem="20" firstAttribute="leading" secondItem="2ND-nK-CeT" secondAttribute="leading" type="default" id="2xm-wM-XUK"/>
+                            <constraint firstItem="yrr-cg-9gm" firstAttribute="trailing" secondItem="21" secondAttribute="trailing" type="default" id="3RU-ey-Jmz"/>
+                            <constraint firstItem="ahR-KB-96w" firstAttribute="trailing" secondItem="yrr-cg-9gm" secondAttribute="trailing" type="default" id="4Sl-wq-1WR"/>
+                            <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="76" id="4nQ-xf-kYm"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="9nw-aH-CiW"/>
-                            <constraint firstAttribute="bottom" secondItem="ahR-KB-96w" secondAttribute="bottom" constant="144" id="AqD-LB-pMS"/>
-                            <constraint firstItem="NPq-57-NCB" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="GRY-aj-y1O"/>
+                            <constraint firstAttribute="bottom" secondItem="ahR-KB-96w" secondAttribute="bottom" constant="116" id="Aw9-5o-LmM"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="HCY-kA-1zB"/>
-                            <constraint firstAttribute="trailing" secondItem="bwZ-Vh-5c7" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IgR-PH-cs0"/>
-                            <constraint firstItem="bwZ-Vh-5c7" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PaI-xf-kIX"/>
+                            <constraint firstItem="21" firstAttribute="leading" secondItem="yrr-cg-9gm" secondAttribute="leading" type="default" id="Is1-6q-IHW"/>
+                            <constraint firstItem="20" firstAttribute="trailing" secondItem="2ND-nK-CeT" secondAttribute="trailing" type="default" id="Jzd-12-HjZ"/>
+                            <constraint firstAttribute="bottom" secondItem="bwZ-Vh-5c7" secondAttribute="bottom" constant="81" id="K2S-2A-ceD"/>
+                            <constraint firstItem="2ND-nK-CeT" firstAttribute="top" secondItem="16" secondAttribute="top" constant="120" id="PIM-2j-bmg"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="Pct-eg-Nbt"/>
-                            <constraint firstAttribute="trailing" secondItem="21" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="QBg-X6-fBV"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="RhY-xS-D16"/>
-                            <constraint firstItem="yrr-cg-9gm" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="RqF-lq-lML"/>
-                            <constraint firstItem="21" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Zmm-k2-2L7"/>
-                            <constraint firstAttribute="trailing" secondItem="ahR-KB-96w" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ala-e5-v1j"/>
+                            <constraint firstItem="21" firstAttribute="centerX" secondItem="aez-tJ-h1Z" secondAttribute="centerX" type="default" id="T5i-RU-Pho"/>
+                            <constraint firstItem="yrr-cg-9gm" firstAttribute="centerX" secondItem="NPq-57-NCB" secondAttribute="centerX" type="default" id="UZn-he-scN"/>
+                            <constraint firstItem="21" firstAttribute="top" secondItem="16" secondAttribute="top" constant="194" id="V1O-2X-KNN"/>
+                            <constraint firstItem="bwZ-Vh-5c7" firstAttribute="trailing" secondItem="ahR-KB-96w" secondAttribute="trailing" type="default" id="aDx-w5-fxx"/>
+                            <constraint firstAttribute="bottom" secondItem="yrr-cg-9gm" secondAttribute="bottom" constant="151" id="bwb-oe-uuS"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="top" secondItem="aez-tJ-h1Z" secondAttribute="bottom" type="default" id="bxg-VW-GI1"/>
-                            <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="80" id="e0Y-U6-Seu"/>
-                            <constraint firstItem="21" firstAttribute="top" secondItem="16" secondAttribute="top" constant="138" id="ftW-8v-MuW"/>
-                            <constraint firstItem="ahR-KB-96w" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="gsl-oC-2OQ"/>
-                            <constraint firstAttribute="trailing" secondItem="yrr-cg-9gm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="rfq-fU-C4B"/>
-                            <constraint firstItem="20" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="sl1-bY-CXI"/>
-                            <constraint firstItem="aez-tJ-h1Z" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="x3M-WZ-FlZ"/>
-                            <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="xCT-3s-kXT"/>
+                            <constraint firstItem="kVD-DL-A5c" firstAttribute="top" secondItem="16" secondAttribute="top" constant="69" id="bzn-7K-6Dz"/>
+                            <constraint firstItem="ahR-KB-96w" firstAttribute="leading" secondItem="bwZ-Vh-5c7" secondAttribute="leading" type="default" id="eS1-OB-Jlf"/>
+                            <constraint firstItem="20" firstAttribute="leading" secondItem="16" secondAttribute="leading" constant="155" id="fNc-Zh-mqS"/>
+                            <constraint firstItem="21" firstAttribute="leading" secondItem="kVD-DL-A5c" secondAttribute="leading" type="default" id="llI-HJ-mOw"/>
+                            <constraint firstItem="yrr-cg-9gm" firstAttribute="leading" secondItem="ahR-KB-96w" secondAttribute="leading" type="default" id="sTR-3M-X81"/>
+                            <constraint firstItem="bwZ-Vh-5c7" firstAttribute="centerX" secondItem="16" secondAttribute="centerX" type="default" id="xiu-fu-w39"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Profile" image="glyphicons_003_user.png" id="7"/>
@@ -100,11 +119,13 @@
                         <outlet property="birthdayLabel" destination="bwZ-Vh-5c7" id="6q9-op-yWu"/>
                         <outlet property="editButton" destination="08g-Kw-YKp" id="DQ7-BT-geH"/>
                         <outlet property="emailLabel" destination="21" id="lsp-dU-4Fc"/>
+                        <outlet property="firstNameLabel" destination="20" id="jyf-yM-dsH"/>
+                        <outlet property="lastNameLabel" destination="2ND-nK-CeT" id="guq-gy-PwJ"/>
                         <outlet property="majorLabel" destination="ahR-KB-96w" id="vMW-dP-xZH"/>
-                        <outlet property="nameLabel" destination="20" id="buw-Dx-Dky"/>
                         <outlet property="navBar" destination="aez-tJ-h1Z" id="2Xk-ng-vqW"/>
                         <outlet property="refresher" destination="yHC-tf-gNW" id="C72-ZD-G46"/>
                         <outlet property="schoolLabel" destination="yrr-cg-9gm" id="r98-Rc-Dpv"/>
+                        <outlet property="userImage" destination="kVD-DL-A5c" id="vkr-05-ClF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
@@ -490,11 +511,13 @@
                 <relationship kind="outlet" name="birthdayLabel" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="emailLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="firstNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lastNameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="majorLabel" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="refresher" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="schoolLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="userImage" candidateClass="UIImage"/>
             </relationships>
         </class>
         <class className="PennMeetGroupViewController" superclassName="UIViewController">
@@ -511,6 +534,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSecondViewController.h"/>
             <relationships>
                 <relationship kind="action" name="newGroupTouched:"/>
+                <relationship kind="action" name="refresherTouched:"/>
                 <relationship kind="outlet" name="title" candidateClass="UILabel"/>
             </relationships>
         </class>

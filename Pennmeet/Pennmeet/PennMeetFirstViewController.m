@@ -188,6 +188,7 @@ BOOL userRetrieved;
     NSLog(@"connectiondidfinishloading!");
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
+    NSLog(@"dict response: %@", dictResponse);
     NSString* identy = [dictResponse objectForKey:@"_id"];
     NSString* first = [dictResponse objectForKey:@"first"];
     NSString* last = [dictResponse objectForKey:@"last"];
@@ -197,7 +198,8 @@ BOOL userRetrieved;
     NSString* photoUrlTho = [dictResponse objectForKey:@"photoUrl"];
     NSMutableArray* groups = [NSMutableArray array];
     NSDictionary *groupsDict = [dictResponse objectForKey:@"groups"];
-    NSLog(@"count: %d", groupsDict.count);
+    NSLog(@"%@ %@ %@ %@ %@ %@", identy, first, last, school, major, birthday);
+    NSLog(@"groups count: %d", groupsDict.count);
     for (int i = 1; i <= groupsDict.count; i++){
         NSDictionary *singleGroupDict = [groupsDict objectForKey:[NSString stringWithFormat:@"group%d", i]];
         
@@ -208,20 +210,18 @@ BOOL userRetrieved;
         PennMeetSimplifiedGroup *sGroup = [[PennMeetSimplifiedGroup alloc] initWithID:gID andName:gName andAdmin:gAdminPref];
                     
         [groups addObject:sGroup];
-        PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups];
-        
-        user.photoUrl = photoUrlTho;
-    
-        // UPDATE OUR SINGLETON
-        currentUser.currentUser = user;
-        
-        
-        userRetrieved = YES;
-        
-        [self populateProfile:user];
-        
-        
     }
+    PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups];
+    
+    user.photoUrl = photoUrlTho;
+
+    // UPDATE OUR SINGLETON
+    currentUser.currentUser = user;
+    
+    
+    userRetrieved = YES;
+    
+    [self populateProfile:user];
     
     
     // TODO: do something with user

@@ -18,9 +18,11 @@
 UIImage* qrcodeImage;
 int groupCount = -1;
 
+
 @synthesize qrCode = _qrCode;
 @synthesize groupNameField = _groupNameField;
 @synthesize bannerURLField = _bannerURLField;
+@synthesize groupies;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -107,12 +109,18 @@ int groupCount = -1;
         groupCount++;
         groupNumberInUser = [NSString stringWithFormat:@"group%d", groupCount];
     }
-    NSDictionary* groupInUser = [[NSDictionary alloc] initWithObjectsAndKeys:self.groupNameField.text, @"id", self.groupNameField.text, @"name", @"YES", @"admin", nil];
+    NSDictionary* groupInUser = [[NSDictionary alloc] initWithObjectsAndKeys:hashedID, @"id", self.groupNameField.text, @"name", @"YES", @"admin", nil];
     if(groupNumberInUser != nil) {
-        NSDictionary* groupInUserWrapper = [[NSDictionary alloc]initWithObjectsAndKeys:groupInUser, groupNumberInUser, nil];
+//        NSDictionary* groupInUserWrapper = [[NSDictionary alloc]initWithObjectsAndKeys:groupInUser, groupNumberInUser, nil];
         
-        NSDictionary* userPutRequest = [[NSDictionary alloc] initWithObjectsAndKeys:groupInUserWrapper, @"groups", nil];
-        NSDictionary* incRequest = [[NSDictionary alloc] initWithObjectsAndKeys:userPutRequest, @"$inc", nil];
+        NSLog(@"groups before: %@", groupies);
+                
+        [groupies setObject:groupInUser forKey:groupNumberInUser];
+        
+        NSLog(@"groups after: %@", groupies);
+        
+        NSDictionary* userPutRequest = [[NSDictionary alloc] initWithObjectsAndKeys:groupies, @"groups", nil];
+        NSDictionary* incRequest = [[NSDictionary alloc] initWithObjectsAndKeys:userPutRequest, @"$set", nil];
         NSDictionary* putDict = [[NSDictionary alloc] initWithObjectsAndKeys:incRequest, @"document", nil];
         NSLog(@"userPostrequest: %@", putDict);
         [self putInUser:putDict];
@@ -224,9 +232,10 @@ int groupCount = -1;
     NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
     
     if([dictResponse objectForKey:@"password"] != nil) {
-        NSDictionary* groups = [dictResponse objectForKey:@"groups"];
         
-        groupCount = [groups count];
+        groupies = [[NSMutableDictionary alloc] initWithDictionary:[dictResponse objectForKey:@"groups"]];
+        
+        groupCount = [groupies count];
         
     }
     NSLog(@"response dict: %@", dictResponse);

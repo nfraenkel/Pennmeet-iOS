@@ -181,7 +181,8 @@
     NSMutableArray* mems = [NSMutableArray array];
     NSMutableArray* memNames = [NSMutableArray array];
     // get ID
-    NSString* identy = [[dictResponse objectForKey:@"_id"] objectForKey:@"$oid"];
+//    NSString* identy = [[dictResponse objectForKey:@"_id"] objectForKey:@"$oid"];
+    NSString* identy = [dictResponse objectForKey:@"_id"];
     // get name
     NSString* name = [dictResponse objectForKey:@"name"];
     

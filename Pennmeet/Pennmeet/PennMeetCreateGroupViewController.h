@@ -26,6 +26,8 @@
 - (IBAction)cancelButtonTouched:(id)sender;
 - (IBAction)doneButtonTouched:(id)sender;
 
+@property (retain, nonatomic) NSMutableDictionary *groupies;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *groupNameField;
 

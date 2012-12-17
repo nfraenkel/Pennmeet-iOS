@@ -846,7 +846,7 @@
                                             <constraint firstAttribute="height" constant="30" id="O78-mq-A48"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo Url" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bx-OP-qCN">
                                         <constraints>
@@ -872,7 +872,7 @@
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="doh-lS-1sl">
                                         <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Create a new PennMeet account:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8W-9B-iSX">
                                         <constraints>
@@ -900,6 +900,7 @@
                                     <constraint firstItem="A8W-9B-iSX" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="11" id="OW4-EA-Zh9"/>
                                     <constraint firstItem="9bx-OP-qCN" firstAttribute="baseline" secondItem="w6w-sq-Wvc" secondAttribute="baseline" type="default" id="Oin-8o-sgb"/>
                                     <constraint firstItem="9bx-OP-qCN" firstAttribute="trailing" secondItem="cu2-1A-ORg" secondAttribute="trailing" type="default" id="Rdh-0z-Wj8"/>
+                                    <constraint firstAttribute="trailing" secondItem="djP-KA-oEx" secondAttribute="trailing" constant="14" id="WOL-Zh-dRD"/>
                                     <constraint firstItem="w6w-sq-Wvc" firstAttribute="trailing" secondItem="3yB-YD-Jkh" secondAttribute="trailing" type="default" id="ZwN-Jp-SPq"/>
                                     <constraint firstItem="doh-lS-1sl" firstAttribute="leading" secondItem="9bx-OP-qCN" secondAttribute="leading" type="default" id="bCi-BS-bRG"/>
                                     <constraint firstItem="w6w-sq-Wvc" firstAttribute="trailing" secondItem="cu2-1A-ORg" secondAttribute="trailing" type="default" id="bDf-XG-N6q"/>
@@ -911,11 +912,10 @@
                                     <constraint firstItem="cu2-1A-ORg" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="266" id="iiR-Hb-M0Q"/>
                                     <constraint firstItem="doh-lS-1sl" firstAttribute="leading" secondItem="BZE-es-NCk" secondAttribute="leading" type="default" id="mth-on-QqM"/>
                                     <constraint firstItem="T2o-U8-mch" firstAttribute="leading" secondItem="IYt-Bh-V51" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="omw-SS-fFk"/>
-                                    <constraint firstItem="T2o-U8-mch" firstAttribute="centerX" secondItem="IYt-Bh-V51" secondAttribute="centerX" type="default" id="rHe-zB-8iP"/>
                                     <constraint firstItem="9bx-OP-qCN" firstAttribute="baseline" secondItem="BZE-es-NCk" secondAttribute="baseline" type="default" id="t50-7G-2Z9"/>
-                                    <constraint firstAttribute="trailing" secondItem="T2o-U8-mch" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tJp-q6-g8F"/>
                                     <constraint firstItem="a7T-Bj-jBx" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="45" id="wIJ-98-3Gy"/>
                                     <constraint firstItem="doh-lS-1sl" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="132" id="wdJ-GR-fhW"/>
+                                    <constraint firstItem="A8W-9B-iSX" firstAttribute="centerX" secondItem="IYt-Bh-V51" secondAttribute="centerX" type="default" id="yDG-8u-GCQ"/>
                                     <constraint firstItem="a7T-Bj-jBx" firstAttribute="baseline" secondItem="djP-KA-oEx" secondAttribute="baseline" type="default" id="z8Q-rD-ie9"/>
                                 </constraints>
                             </scrollView>
@@ -1017,6 +1017,8 @@
             <relationships>
                 <relationship kind="action" name="cancelButtonTouched:"/>
                 <relationship kind="action" name="doneButtonTouched:"/>
+                <relationship kind="action" name="generateQRImage:"/>
+                <relationship kind="action" name="saveQRImage:"/>
                 <relationship kind="outlet" name="bannerURLField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="groupNameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="qrCode" candidateClass="UIImageView"/>
@@ -1082,6 +1084,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSecondViewController.h"/>
             <relationships>
                 <relationship kind="action" name="newGroupTouched:"/>
+                <relationship kind="action" name="refresherTouched:"/>
                 <relationship kind="outlet" name="title" candidateClass="UILabel"/>
             </relationships>
         </class>

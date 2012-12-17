@@ -50,6 +50,7 @@
 		4CA49DAB167A9416005B8D44 /* plus_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA49DA9167A9416005B8D44 /* plus_white.png */; };
 		4CA49DAF167A9499005B8D44 /* PennMeetThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA49DAE167A9499005B8D44 /* PennMeetThirdViewController.m */; };
 		4CBC47C0167B325100B20DF6 /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC47BF167B325100B20DF6 /* 01-refresh.png */; };
+		4CD0B893167E7A0000661CC6 /* PennMeetSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0B892167E7A0000661CC6 /* PennMeetSignUpViewController.m */; };
 		4CE1FED9167B279C003ED5A8 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1FED8167B279C003ED5A8 /* refresh.png */; };
 		B82AC00F167D967E00D85472 /* DataMatrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = B82AC006167D967E00D85472 /* DataMatrix.mm */; };
 		B82AC010167D967E00D85472 /* QR_Encode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B82AC007167D967E00D85472 /* QR_Encode.cpp */; };
@@ -127,6 +128,8 @@
 		4CA49DAD167A9499005B8D44 /* PennMeetThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetThirdViewController.h; sourceTree = "<group>"; };
 		4CA49DAE167A9499005B8D44 /* PennMeetThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetThirdViewController.m; sourceTree = "<group>"; };
 		4CBC47BF167B325100B20DF6 /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
+		4CD0B891167E7A0000661CC6 /* PennMeetSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetSignUpViewController.h; sourceTree = "<group>"; };
+		4CD0B892167E7A0000661CC6 /* PennMeetSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetSignUpViewController.m; sourceTree = "<group>"; };
 		4CE1FED8167B279C003ED5A8 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		B82AC005167D967E00D85472 /* DataMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataMatrix.h; sourceTree = "<group>"; };
 		B82AC006167D967E00D85472 /* DataMatrix.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = DataMatrix.mm; sourceTree = "<group>"; };
@@ -296,6 +299,8 @@
 				4C7E7189167A45E0007C1B87 /* second.png */,
 				4C7E718B167A45E0007C1B87 /* second@2x.png */,
 				4C7E716B167A45E0007C1B87 /* Supporting Files */,
+				4CD0B891167E7A0000661CC6 /* PennMeetSignUpViewController.h */,
+				4CD0B892167E7A0000661CC6 /* PennMeetSignUpViewController.m */,
 			);
 			path = PennMeet;
 			sourceTree = "<group>";
@@ -427,7 +432,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Nathan Fraenkel";
 			};
-			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */;
+			buildConfigurationList = 4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -506,6 +511,7 @@
 				B82AC011167D967E00D85472 /* QRCodeEncoderDemoViewController.mm in Sources */,
 				B82AC012167D967E00D85472 /* QREncoder.mm in Sources */,
 				4C1440AE167DBB6E006478A6 /* PennMeetLoginViewController.m in Sources */,
+				4CD0B893167E7A0000661CC6 /* PennMeetSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,7 +650,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "Pennmeet" */ = {
+		4C7E715A167A45E0007C1B87 /* Build configuration list for PBXProject "PennMeet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C7E718D167A45E0007C1B87 /* Debug */,

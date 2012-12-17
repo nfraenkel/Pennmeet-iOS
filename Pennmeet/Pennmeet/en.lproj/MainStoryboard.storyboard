@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0Kq-OV-FX8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0Kq-OV-FX8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -532,7 +532,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Group Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LYx-aD-X2s">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LYx-aD-X2s">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -542,7 +542,7 @@
                                     <constraint firstAttribute="width" constant="200" id="oUC-fn-mKX"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Banner URL" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-Km-bO6">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Banner Url" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMG-Km-bO6">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -802,26 +802,177 @@
                         <outlet property="passwordField" destination="E09-wS-Nlx" id="RyB-CC-1mb"/>
                         <outlet property="scrolley" destination="azA-c7-Tzc" id="EL9-Ew-QsO"/>
                         <segue destination="4" kind="modal" identifier="showTabPage" id="jxd-C2-H3j"/>
-                        <segue destination="PG0-PE-Tln" kind="modal" identifier="showSignUp" id="Hsc-tU-apT"/>
+                        <segue destination="MbA-A1-5Yq" kind="modal" identifier="showSignUp" id="XWD-ty-rkk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLI-bz-pjx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1262" y="-946"/>
         </scene>
-        <!--Penn Meet Sign Up View Controller-->
+        <!--Penn Meet Sign Up View Controller - New Account-->
         <scene sceneID="GxT-Qp-88o">
             <objects>
                 <viewController id="PG0-PE-Tln" customClass="PennMeetSignUpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eaZ-7b-O7T">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IYt-Bh-V51">
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7T-Bj-jBx">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="Pgq-Em-0Sh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djP-KA-oEx">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="CD5-XC-FCg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BZE-es-NCk">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Lf1-IB-L50"/>
+                                            <constraint firstAttribute="width" constant="280" id="dPq-Ri-dfZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2o-U8-mch">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="O78-mq-A48"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo Url" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bx-OP-qCN">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="LmY-XF-6EM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="School" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cu2-1A-ORg">
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Major" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-sq-Wvc">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="d4I-1p-g7U"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birthday" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3yB-YD-Jkh">
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="doh-lS-1sl">
+                                        <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Create a new PennMeet account:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8W-9B-iSX">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="253" id="egA-3L-2oX"/>
+                                            <constraint firstAttribute="height" constant="21" id="xL6-MQ-Xln"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="15"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3yB-YD-Jkh" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="356" id="0eJ-Yg-d7G"/>
+                                    <constraint firstItem="djP-KA-oEx" firstAttribute="leading" secondItem="IYt-Bh-V51" secondAttribute="leading" constant="176" id="5Jc-UO-1gQ"/>
+                                    <constraint firstItem="3yB-YD-Jkh" firstAttribute="leading" secondItem="w6w-sq-Wvc" secondAttribute="leading" type="default" id="9GD-vW-i7V"/>
+                                    <constraint firstItem="w6w-sq-Wvc" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="310" id="9N7-Sg-3ss"/>
+                                    <constraint firstItem="cu2-1A-ORg" firstAttribute="leading" secondItem="w6w-sq-Wvc" secondAttribute="leading" type="default" id="9Of-TH-h6n"/>
+                                    <constraint firstItem="doh-lS-1sl" firstAttribute="trailing" secondItem="9bx-OP-qCN" secondAttribute="trailing" type="default" id="BqS-ch-MHR"/>
+                                    <constraint firstItem="BZE-es-NCk" firstAttribute="leading" secondItem="IYt-Bh-V51" secondAttribute="leading" constant="19" id="DYY-bf-TRs"/>
+                                    <constraint firstItem="BZE-es-NCk" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="88" id="Enj-9i-G3D"/>
+                                    <constraint firstItem="3yB-YD-Jkh" firstAttribute="baseline" secondItem="T2o-U8-mch" secondAttribute="baseline" type="default" id="FBK-Ix-Cy0"/>
+                                    <constraint firstItem="cu2-1A-ORg" firstAttribute="leading" secondItem="9bx-OP-qCN" secondAttribute="leading" type="default" id="GXK-OP-29q"/>
+                                    <constraint firstItem="a7T-Bj-jBx" firstAttribute="leading" secondItem="IYt-Bh-V51" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="J9U-9z-J0Y"/>
+                                    <constraint firstItem="T2o-U8-mch" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="175" id="MYa-T3-bra"/>
+                                    <constraint firstItem="A8W-9B-iSX" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="11" id="OW4-EA-Zh9"/>
+                                    <constraint firstItem="9bx-OP-qCN" firstAttribute="baseline" secondItem="w6w-sq-Wvc" secondAttribute="baseline" type="default" id="Oin-8o-sgb"/>
+                                    <constraint firstItem="9bx-OP-qCN" firstAttribute="trailing" secondItem="cu2-1A-ORg" secondAttribute="trailing" type="default" id="Rdh-0z-Wj8"/>
+                                    <constraint firstItem="w6w-sq-Wvc" firstAttribute="trailing" secondItem="3yB-YD-Jkh" secondAttribute="trailing" type="default" id="ZwN-Jp-SPq"/>
+                                    <constraint firstItem="doh-lS-1sl" firstAttribute="leading" secondItem="9bx-OP-qCN" secondAttribute="leading" type="default" id="bCi-BS-bRG"/>
+                                    <constraint firstItem="w6w-sq-Wvc" firstAttribute="trailing" secondItem="cu2-1A-ORg" secondAttribute="trailing" type="default" id="bDf-XG-N6q"/>
+                                    <constraint firstItem="A8W-9B-iSX" firstAttribute="centerX" secondItem="T2o-U8-mch" secondAttribute="centerX" type="default" id="buw-T7-cnE"/>
+                                    <constraint firstItem="9bx-OP-qCN" firstAttribute="baseline" secondItem="3yB-YD-Jkh" secondAttribute="baseline" type="default" id="chp-cv-yHR"/>
+                                    <constraint firstItem="doh-lS-1sl" firstAttribute="trailing" secondItem="BZE-es-NCk" secondAttribute="trailing" type="default" id="dxd-nm-WXf"/>
+                                    <constraint firstItem="9bx-OP-qCN" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="222" id="gc0-KO-qdT"/>
+                                    <constraint firstAttribute="bottom" secondItem="3yB-YD-Jkh" secondAttribute="bottom" constant="30" id="hzX-Qw-6Ti"/>
+                                    <constraint firstItem="cu2-1A-ORg" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="266" id="iiR-Hb-M0Q"/>
+                                    <constraint firstItem="doh-lS-1sl" firstAttribute="leading" secondItem="BZE-es-NCk" secondAttribute="leading" type="default" id="mth-on-QqM"/>
+                                    <constraint firstItem="T2o-U8-mch" firstAttribute="leading" secondItem="IYt-Bh-V51" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="omw-SS-fFk"/>
+                                    <constraint firstItem="T2o-U8-mch" firstAttribute="centerX" secondItem="IYt-Bh-V51" secondAttribute="centerX" type="default" id="rHe-zB-8iP"/>
+                                    <constraint firstItem="9bx-OP-qCN" firstAttribute="baseline" secondItem="BZE-es-NCk" secondAttribute="baseline" type="default" id="t50-7G-2Z9"/>
+                                    <constraint firstAttribute="trailing" secondItem="T2o-U8-mch" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tJp-q6-g8F"/>
+                                    <constraint firstItem="a7T-Bj-jBx" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="45" id="wIJ-98-3Gy"/>
+                                    <constraint firstItem="doh-lS-1sl" firstAttribute="top" secondItem="IYt-Bh-V51" secondAttribute="top" constant="132" id="wdJ-GR-fhW"/>
+                                    <constraint firstItem="a7T-Bj-jBx" firstAttribute="baseline" secondItem="djP-KA-oEx" secondAttribute="baseline" type="default" id="z8Q-rD-ie9"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IYt-Bh-V51" firstAttribute="top" secondItem="eaZ-7b-O7T" secondAttribute="top" type="default" id="KBj-Q9-B3n"/>
+                            <constraint firstItem="IYt-Bh-V51" firstAttribute="trailing" secondItem="eaZ-7b-O7T" secondAttribute="trailing" type="default" id="MJQ-C4-pp5"/>
+                            <constraint firstItem="IYt-Bh-V51" firstAttribute="bottom" secondItem="eaZ-7b-O7T" secondAttribute="bottom" type="default" id="NVz-Ll-uqr"/>
+                            <constraint firstItem="IYt-Bh-V51" firstAttribute="leading" secondItem="eaZ-7b-O7T" secondAttribute="leading" type="default" id="Xl6-hi-Ved"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="New Account" id="BhQ-6T-7Eu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BIW-eY-jxl">
+                            <connections>
+                                <action selector="cancelPressed:" destination="PG0-PE-Tln" id="LdZ-rv-bSK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="dxh-K4-IYf">
+                            <connections>
+                                <action selector="donePressed:" destination="PG0-PE-Tln" id="Lse-nd-uSB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="birthdayTextField" destination="3yB-YD-Jkh" id="B8t-Lz-eq3"/>
+                        <outlet property="confirmField" destination="T2o-U8-mch" id="6BD-pa-4tM"/>
+                        <outlet property="emailTextField" destination="BZE-es-NCk" id="RJa-b3-pQi"/>
+                        <outlet property="firstNameTextField" destination="a7T-Bj-jBx" id="GFl-J2-2ec"/>
+                        <outlet property="lastNameTextField" destination="djP-KA-oEx" id="Ne9-xv-JAm"/>
+                        <outlet property="majorTextField" destination="w6w-sq-Wvc" id="tfj-2E-kic"/>
+                        <outlet property="passwordField" destination="doh-lS-1sl" id="Ymh-Sd-DCo"/>
+                        <outlet property="photoUrlTextField" destination="9bx-OP-qCN" id="V5A-od-JR0"/>
+                        <outlet property="schoolTextField" destination="cu2-1A-ORg" id="0qu-by-7Ra"/>
+                        <outlet property="scrolley" destination="IYt-Bh-V51" id="gD2-GQ-OIw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d06-tP-VCU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-911" y="-1349"/>
+            <point key="canvasLocation" x="-1262" y="-1549"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iVH-5R-tlt">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="MbA-A1-5Yq" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="v7p-Hb-TtL">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PG0-PE-Tln" kind="relationship" relationship="rootViewController" id="7WF-OP-6iP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwY-ZK-WSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1942" y="-1565"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -934,6 +1085,23 @@
             <relationships>
                 <relationship kind="action" name="newGroupTouched:"/>
                 <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PennMeetSignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSignUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="donePressed:"/>
+                <relationship kind="outlet" name="birthdayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="confirmField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="majorTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="photoUrlTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="schoolTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrolley" candidateClass="UIScrollView"/>
             </relationships>
         </class>
         <class className="PennMeetThirdViewController" superclassName="UIViewController">

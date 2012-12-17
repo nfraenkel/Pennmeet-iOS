@@ -7,6 +7,7 @@
 //
 
 #import "PennMeetCreateGroupViewController.h"
+#import <CommonCrypto/CommonCrypto.h>
 
 @interface PennMeetCreateGroupViewController ()
 
@@ -82,14 +83,18 @@ int groupCount = -1;
     photo = self.bannerURLField.text;
 
     
+    NSString *hashedID = [PennMeetCreateGroupViewController digest:self.groupNameField.text];
+    NSLog(@"hash name: %@", hashedID);
+
+    
     //        [self createUser:emailTextField.text];
     // group post construction
     NSString* nameString = [NSString stringWithFormat:@"%@ %@", self.currentUser.currentUser.first, self.currentUser.currentUser.last];
     
     NSDictionary* userJson =[[NSDictionary alloc] initWithObjectsAndKeys:self.currentUser.currentUser.uniqueID, @"id1", nameString, @"name1", nil];
     
-    NSDictionary *temp = [[NSDictionary alloc] initWithObjectsAndKeys:self.groupNameField.text, @"_id", self.groupNameField.text, @"name", photo, @"photoUrl", userJson, @"members", nil];
-    
+    NSDictionary *temp = [[NSDictionary alloc] initWithObjectsAndKeys:hashedID, @"_id", self.groupNameField.text, @"name", photo, @"photoUrl", userJson, @"members", nil];
+        
     NSLog(@"userJson: %@", userJson);
     
     NSDictionary *groupDict = [[NSDictionary alloc] initWithObjectsAndKeys:temp, @"document", nil];
@@ -105,11 +110,11 @@ int groupCount = -1;
     NSDictionary* groupInUser = [[NSDictionary alloc] initWithObjectsAndKeys:self.groupNameField.text, @"id", self.groupNameField.text, @"name", @"YES", @"admin", nil];
     if(groupNumberInUser != nil) {
         NSDictionary* groupInUserWrapper = [[NSDictionary alloc]initWithObjectsAndKeys:groupInUser, groupNumberInUser, nil];
-    
-    NSDictionary* userPutRequest = [[NSDictionary alloc] initWithObjectsAndKeys:groupInUserWrapper, @"groups", nil];
-    NSDictionary* incRequest = [[NSDictionary alloc] initWithObjectsAndKeys:userPutRequest, @"$inc", nil];
-    NSDictionary* putDict = [[NSDictionary alloc] initWithObjectsAndKeys:incRequest, @"document", nil];
-    NSLog(@"userPostrequest: %@", putDict);
+        
+        NSDictionary* userPutRequest = [[NSDictionary alloc] initWithObjectsAndKeys:groupInUserWrapper, @"groups", nil];
+        NSDictionary* incRequest = [[NSDictionary alloc] initWithObjectsAndKeys:userPutRequest, @"$inc", nil];
+        NSDictionary* putDict = [[NSDictionary alloc] initWithObjectsAndKeys:incRequest, @"document", nil];
+        NSLog(@"userPostrequest: %@", putDict);
         [self putInUser:putDict];
     }
 
@@ -242,5 +247,23 @@ int groupCount = -1;
         return NO;
     }
     return YES;
+}
+
++(NSString*) digest:(NSString*)input
+{
+    const char *cstr = [input cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithBytes:cstr length:input.length];
+    
+    uint8_t digest[CC_SHA1_DIGEST_LENGTH];
+    
+    CC_SHA1(data.bytes, data.length, digest);
+    
+    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    
+    for(int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x", digest[i]];
+    
+    return output;
+    
 }
 @end

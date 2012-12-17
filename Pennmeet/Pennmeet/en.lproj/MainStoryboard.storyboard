@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0Kq-OV-FX8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0Kq-OV-FX8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -1008,6 +1008,108 @@
         <image name="redox_01.png" width="600" height="375"/>
         <image name="refresh.png" width="22" height="22"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PennMeetCreateGroupViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetCreateGroupViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonTouched:"/>
+                <relationship kind="action" name="doneButtonTouched:"/>
+                <relationship kind="outlet" name="bannerURLField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="groupNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="qrCode" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetEditProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetEditProfileViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonPressed:"/>
+                <relationship kind="action" name="saveButtonPressed:"/>
+                <relationship kind="outlet" name="birthdayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="majorTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="photoUrlTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="schoolTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrolley" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetFirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetFirstViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="editButtonPressed:"/>
+                <relationship kind="action" name="refresherPressed:"/>
+                <relationship kind="outlet" name="birthdayLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editorz" candidateClass="PennMeetEditProfileViewController"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="firstNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lastNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="majorLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="navy" candidateClass="UINavigationController"/>
+                <relationship kind="outlet" name="refresher" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="schoolLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="userImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetGroupViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetGroupViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresherPressed:"/>
+                <relationship kind="outlet" name="groupCoverPhotoTho" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="refesher" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableForGroupMembers" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetLoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loginPressed:"/>
+                <relationship kind="action" name="signUpPressed:"/>
+                <relationship kind="outlet" name="bgImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrolley" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetSecondViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSecondViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="newGroupTouched:"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PennMeetSignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSignUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="donePressed:"/>
+                <relationship kind="outlet" name="birthdayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="confirmField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="majorTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="photoUrlTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="schoolTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrolley" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetThirdViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetThirdViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cameraOutlet" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="plusButton" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

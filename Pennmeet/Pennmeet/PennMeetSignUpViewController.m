@@ -113,7 +113,17 @@ CGPoint base;
         
 //        [self createUser:emailTextField.text];
         NSDictionary *temp = [[NSDictionary alloc] initWithObjectsAndKeys:emailTextField.text, @"_id", passwordField.text, @"password", firstNameTextField.text, @"first", lastNameTextField.text, @"last", schoolTextField.text, @"school", majorTextField.text, @"major", birthdayTextField.text, @"birthday", photo, @"photoUrl", [[NSDictionary alloc] init], @"groups", nil];
+        
+        NSData* data;
+        
+        if ([NSJSONSerialization isValidJSONObject:temp]){
+            data = [NSJSONSerialization dataWithJSONObject:temp options:NSJSONWritingPrettyPrinted error:nil];
+        }
+
+        
         NSDictionary *userDict = [[NSDictionary alloc] initWithObjectsAndKeys:temp, @"document", nil];
+        
+        
         
         NSLog(@"user: %@", userDict);
         
@@ -166,8 +176,9 @@ CGPoint base;
     
     NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents?_apikey=%@", api];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    //[request setValuesForKeysWithDictionary:dict];
     [request setHTTPBody:data];
-    
+     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPMethod:@"POST"];
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];

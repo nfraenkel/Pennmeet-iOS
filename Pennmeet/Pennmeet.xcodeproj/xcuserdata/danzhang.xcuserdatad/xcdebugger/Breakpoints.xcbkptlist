@@ -30,12 +30,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PennMeet/PennMeetCreateGroupViewController.mm"
-         timestampString = "377391363.152793"
+         timestampString = "377413604.284203"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "59"
-         endingLineNumber = "59"
+         startingLineNumber = "62"
+         endingLineNumber = "62"
          landmarkName = "-saveQRImage:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "PennMeet/PennMeetSignUpViewController.m"
+         timestampString = "377405016.428965"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "178"
+         endingLineNumber = "178"
+         landmarkName = "-postUser:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

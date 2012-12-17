@@ -15,6 +15,7 @@
 @implementation PennMeetCreateGroupViewController
 
 UIImage* qrcodeImage;
+int groupCount = -1;
 
 @synthesize qrCode = _qrCode;
 @synthesize groupNameField = _groupNameField;
@@ -35,7 +36,9 @@ UIImage* qrcodeImage;
     
     self.groupNameField.delegate = self;
     self.bannerURLField.delegate = self;
-        
+    
+    self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
+    [self getUserGroups:self.currentUser.currentUser.uniqueID];
 }
 
 - (IBAction)generateQRImage:(id)sender {
@@ -74,8 +77,112 @@ UIImage* qrcodeImage;
 }
 
 - (IBAction)doneButtonTouched:(id)sender {
-        
     
+    NSString *photo;
+    photo = self.bannerURLField.text;
+
+    
+    //        [self createUser:emailTextField.text];
+    // group post construction
+    NSString* nameString = [NSString stringWithFormat:@"%@ %@", self.currentUser.currentUser.first, self.currentUser.currentUser.last];
+    
+    NSDictionary* userJson =[[NSDictionary alloc] initWithObjectsAndKeys:self.currentUser.currentUser.uniqueID, @"id1", nameString, @"name1", nil];
+    
+    NSDictionary *temp = [[NSDictionary alloc] initWithObjectsAndKeys:self.groupNameField.text, @"_id", self.groupNameField.text, @"name", photo, @"photoUrl", userJson, @"members", nil];
+    
+    NSLog(@"userJson: %@", userJson);
+    
+    NSDictionary *groupDict = [[NSDictionary alloc] initWithObjectsAndKeys:temp, @"document", nil];
+    
+    NSLog(@"group: %@", groupDict);
+    
+    NSString *groupNumberInUser;
+    // put into user
+    if(groupCount != -1) {
+        groupCount++;
+        groupNumberInUser = [NSString stringWithFormat:@"group%d", groupCount];
+    }
+    NSDictionary* groupInUser = [[NSDictionary alloc] initWithObjectsAndKeys:self.groupNameField.text, @"id", self.groupNameField.text, @"name", @"YES", @"admin", nil];
+    if(groupNumberInUser != nil) {
+        NSDictionary* groupInUserWrapper = [[NSDictionary alloc]initWithObjectsAndKeys:groupInUser, groupNumberInUser, nil];
+    
+    NSDictionary* userPutRequest = [[NSDictionary alloc] initWithObjectsAndKeys:groupInUserWrapper, @"groups", nil];
+    NSDictionary* incRequest = [[NSDictionary alloc] initWithObjectsAndKeys:userPutRequest, @"$inc", nil];
+    NSDictionary* putDict = [[NSDictionary alloc] initWithObjectsAndKeys:incRequest, @"document", nil];
+    NSLog(@"userPostrequest: %@", putDict);
+        [self putInUser:putDict];
+    }
+
+    
+    [self postGroup:groupDict];
+   
+    
+    
+}
+
+-(void)getUserGroups:(NSString*) identifier {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
+}
+
+-(void)putInUser:(NSDictionary *) dict {
+    NSData *data;
+    if ([NSJSONSerialization isValidJSONObject:dict]){
+        data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+    }
+    else {
+        NSLog(@"CANTTTTTTT");
+        return;
+    }
+    
+    NSLog(@"nsdata: %@", data);
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    NSString *api = [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken];
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents/%@?_apikey=%@", self.currentUser.currentUser.uniqueID, api];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    //[request setValuesForKeysWithDictionary:dict];
+    [request setHTTPBody:data];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"PUT"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
+
+}
+
+-(void)postGroup:(NSDictionary *) dict {
+    NSData *data;
+    if ([NSJSONSerialization isValidJSONObject:dict]){
+        data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+    }
+    else {
+        NSLog(@"CANTTTTTTT");
+        return;
+    }
+    
+    NSLog(@"nsdata: %@", data);
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    NSString *api = [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken];
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/groups/documents?_apikey=%@", api];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    //[request setValuesForKeysWithDictionary:dict];
+    [request setHTTPBody:data];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
+
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -107,7 +214,22 @@ UIImage* qrcodeImage;
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
        
-    // TODO: do something with user
+    NSLog(@"connectiondidfinishloading!");
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
+    
+    if([dictResponse objectForKey:@"password"] != nil) {
+        NSDictionary* groups = [dictResponse objectForKey:@"groups"];
+        
+        groupCount = [groups count];
+        
+    }
+    NSLog(@"response dict: %@", dictResponse);
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        
+    }];
     
 }
 

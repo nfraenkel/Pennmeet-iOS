@@ -24,6 +24,7 @@
 		4C4AAA01167E4FDD00A546CF /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AA9FC167E4FC300A546CF /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C4AAA02167E4FDD00A546CF /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4AA9FA167E4FBA00A546CF /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4C524F5C167D60D80080E15C /* PennMeetEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C524F5B167D60D80080E15C /* PennMeetEditProfileViewController.m */; };
+		4C67044B1684E8E40026E8C9 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CE0201167E6E9D002DFBF5 /* libzbar.a */; };
 		4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7164167A45E0007C1B87 /* UIKit.framework */; };
 		4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7166167A45E0007C1B87 /* Foundation.framework */; };
 		4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C7E7168167A45E0007C1B87 /* CoreGraphics.framework */; };
@@ -62,7 +63,6 @@
 		B83F1241167E763B0008384B /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B83F123C167E763B0008384B /* libiconv.dylib */; };
 		B83F1242167E763B0008384B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B83F123D167E763B0008384B /* QuartzCore.framework */; };
 		B8CE01E8167E6697002DFBF5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CE01E7167E6697002DFBF5 /* MobileCoreServices.framework */; };
-		B8CE0207167E6E9D002DFBF5 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8CE0201167E6E9D002DFBF5 /* libzbar.a */; };
 		B8CE0208167E6E9D002DFBF5 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CE0203167E6E9D002DFBF5 /* zbar-back.png */; };
 		B8CE0209167E6E9D002DFBF5 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = B8CE0204167E6E9D002DFBF5 /* zbar-help.html */; };
 		B8CE020A167E6E9D002DFBF5 /* zbar-helpicons.png in Resources */ = {isa = PBXBuildFile; fileRef = B8CE0205167E6E9D002DFBF5 /* zbar-helpicons.png */; };
@@ -166,7 +166,7 @@
 		B8CE01FE167E6E9D002DFBF5 /* ZBarReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarReaderViewController.h; sourceTree = "<group>"; };
 		B8CE01FF167E6E9D002DFBF5 /* ZBarSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSDK.h; sourceTree = "<group>"; };
 		B8CE0200167E6E9D002DFBF5 /* ZBarSymbol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBarSymbol.h; sourceTree = "<group>"; };
-		B8CE0201167E6E9D002DFBF5 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzbar.a; sourceTree = "<group>"; };
+		B8CE0201167E6E9D002DFBF5 /* libzbar.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libzbar.a; path = Pennmeet/ZBarSDK/libzbar.a; sourceTree = "<group>"; };
 		B8CE0203167E6E9D002DFBF5 /* zbar-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-back.png"; sourceTree = "<group>"; };
 		B8CE0204167E6E9D002DFBF5 /* zbar-help.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "zbar-help.html"; sourceTree = "<group>"; };
 		B8CE0205167E6E9D002DFBF5 /* zbar-helpicons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-helpicons.png"; sourceTree = "<group>"; };
@@ -187,10 +187,10 @@
 				4C4AAA00167E4FDD00A546CF /* Social.framework in Frameworks */,
 				4C4AAA01167E4FDD00A546CF /* Accounts.framework in Frameworks */,
 				4C4AAA02167E4FDD00A546CF /* AdSupport.framework in Frameworks */,
+				4C67044B1684E8E40026E8C9 /* libzbar.a in Frameworks */,
 				4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */,
 				4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */,
 				4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */,
-				B8CE0207167E6E9D002DFBF5 /* libzbar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,13 +238,7 @@
 		4C7E7155167A45E0007C1B87 = {
 			isa = PBXGroup;
 			children = (
-				B83F1239167E763B0008384B /* AVFoundation.framework */,
-				B83F123A167E763B0008384B /* CoreMedia.framework */,
-				B83F123B167E763B0008384B /* CoreVideo.framework */,
-				B83F123C167E763B0008384B /* libiconv.dylib */,
-				B83F123D167E763B0008384B /* QuartzCore.framework */,
 				B8CE01E9167E6E9D002DFBF5 /* ZBarSDK */,
-				B8CE01E7167E6697002DFBF5 /* MobileCoreServices.framework */,
 				B82AC004167D967E00D85472 /* QR */,
 				4C7E716A167A45E0007C1B87 /* PennMeet */,
 				4C7E7163167A45E0007C1B87 /* Frameworks */,
@@ -263,6 +257,13 @@
 		4C7E7163167A45E0007C1B87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B8CE0201167E6E9D002DFBF5 /* libzbar.a */,
+				B83F1239167E763B0008384B /* AVFoundation.framework */,
+				B83F123A167E763B0008384B /* CoreMedia.framework */,
+				B83F123B167E763B0008384B /* CoreVideo.framework */,
+				B83F123C167E763B0008384B /* libiconv.dylib */,
+				B83F123D167E763B0008384B /* QuartzCore.framework */,
+				B8CE01E7167E6697002DFBF5 /* MobileCoreServices.framework */,
 				4C4AA9FE167E4FC700A546CF /* Social.framework */,
 				4C4AA9FC167E4FC300A546CF /* Accounts.framework */,
 				4C4AA9FA167E4FBA00A546CF /* AdSupport.framework */,
@@ -341,7 +342,6 @@
 			isa = PBXGroup;
 			children = (
 				B8CE01EA167E6E9D002DFBF5 /* Headers */,
-				B8CE0201167E6E9D002DFBF5 /* libzbar.a */,
 				B8CE0202167E6E9D002DFBF5 /* Resources */,
 			);
 			name = ZBarSDK;
@@ -610,12 +610,13 @@
 				INFOPLIST_FILE = "PennMeet/PennMeet-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../FacebookSDK/FacebookSDK.framework/Versions/A\"",
 					"\"$(SRCROOT)/Pennmeet/ZBarSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -636,13 +637,14 @@
 				INFOPLIST_FILE = "PennMeet/PennMeet-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../../FacebookSDK/FacebookSDK.framework/Versions/A\"",
 					"\"$(SRCROOT)/Pennmeet/ZBarSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

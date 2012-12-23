@@ -17,6 +17,7 @@
 
 UIImage* qrcodeImage;
 int groupCount = -1;
+NSString *hashedID;
 
 
 @synthesize qrCode = _qrCode;
@@ -45,10 +46,10 @@ int groupCount = -1;
 }
 
 - (IBAction)generateQRImage:(id)sender {
-    
+    if(hashedID) {
     int qrcodeImageDimension = 320;
     UIButton *button = (UIButton *)sender;
-    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:self.groupNameField.text];
+    DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:hashedID];
     
     //then render the matrix
     qrcodeImage = [QREncoder renderDataMatrix:qrMatrix imageDimension:qrcodeImageDimension];
@@ -58,6 +59,7 @@ int groupCount = -1;
     
     
     [button removeFromSuperview];
+    }
 }
 
 - (IBAction)saveQRImage:(id)sender {
@@ -82,10 +84,12 @@ int groupCount = -1;
 - (IBAction)doneButtonTouched:(id)sender {
     
     NSString *photo;
-    photo = self.bannerURLField.text;
+
 
     
-    NSString *hashedID = [PennMeetCreateGroupViewController digest:self.groupNameField.text];
+    hashedID = [PennMeetCreateGroupViewController digest:self.groupNameField.text];
+    
+    photo = self.bannerURLField.text;
     NSLog(@"hash name: %@", hashedID);
 
     

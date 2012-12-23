@@ -15,6 +15,10 @@
 @implementation PennMeetThirdViewController
 
 @synthesize plusButton;
+@synthesize usersGroups;
+@synthesize scannedGroup;
+
+int groupCount;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +33,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    //[self getRequest:self.currentUser.currentUser.uniqueID];
+    
     
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
@@ -81,8 +87,6 @@
      */
     [self startZBarController:self usingDelegate:self];
 
-
-
 }
 
 -(BOOL) startZBarController: (UIViewController*) controller
@@ -124,9 +128,80 @@ usingDelegate:(id <ZBarReaderDelegate>) delegate{
     
     NSString* text = symbol.data;
     
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"QRCode"
+                          message: text
+                          delegate: self
+                          cancelButtonTitle:@"Remove"
+                          otherButtonTitles:@"Retry", nil];
+    [alert show];
+    
     [reader dismissViewControllerAnimated: YES completion:nil];
 }
 
+-(void)getRequest:(NSString*) identifier {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
+}
 
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    NSLog(@"connection did receive response!");
+    _data = [[NSMutableData alloc] init];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    NSLog(@"connection did receive data!");
+    [_data appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    // Please do something sensible here, like log the error.
+    NSLog(@"connection failed with error: %@", error.description);
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"Error: User Info"
+                          message: @"There was a network error when trying request group."
+                          delegate: self
+                          cancelButtonTitle:@"NVMD"
+                          otherButtonTitles:@"Retry", nil];
+    [alert show];
+}
+
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+    
+    NSLog(@"connectiondidfinishloading!");
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
+    
+    //Check to see if response is a user
+    if([dictResponse objectForKey:@"password"] != nil) {
+        
+        self.usersGroups = [[NSMutableDictionary alloc] initWithDictionary:[dictResponse objectForKey:@"groups"]];
+        
+        groupCount = [self.usersGroups count];
+        
+    }
+    //Check to see if response is a group
+    if([dictResponse objectForKey:@"members"] != nil) {
+        self.scannedGroup = [[NSMutableDictionary alloc] initWithDictionary:dictResponse];
+    }
+    NSLog(@"response dict: %@", dictResponse);
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        
+    }];
+    
+}
 
 @end

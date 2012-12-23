@@ -149,7 +149,6 @@ CGPoint oldContentOffset;
 
 
 
-
 -(void)retrieveUser:(NSString *)identifier{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     

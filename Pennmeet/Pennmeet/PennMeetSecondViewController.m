@@ -20,6 +20,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(populateTableWithCurrentUsersGroups) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
@@ -93,6 +97,7 @@
 
 -(void)populateTableWithCurrentUsersGroups {
     [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 

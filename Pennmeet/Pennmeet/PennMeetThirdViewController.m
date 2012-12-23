@@ -124,6 +124,14 @@ usingDelegate:(id <ZBarReaderDelegate>) delegate{
     
     NSString* text = symbol.data;
     
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle: @"QRCode"
+                          message: text
+                          delegate: self
+                          cancelButtonTitle:@"Remove"
+                          otherButtonTitles:@"Retry", nil];
+    [alert show];
+    
     [reader dismissViewControllerAnimated: YES completion:nil];
 }
 

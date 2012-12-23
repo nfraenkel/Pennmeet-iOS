@@ -10,13 +10,19 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "PennMeetCurrentLoggedInUser.h"
 #import "ZBarSDK.h"
+#import "PennMeetAppDelegate.h"
 
 
 
 
-@interface PennMeetThirdViewController : UIViewController <UIGestureRecognizerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ZBarReaderDelegate>
+@interface PennMeetThirdViewController : UIViewController <UIGestureRecognizerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, ZBarReaderDelegate, NSURLConnectionDataDelegate, UIAlertViewDelegate> {
+    NSMutableData *_data;
+}
 
 @property (nonatomic, weak) IBOutlet UIImageView *plusButton;
+
+@property (retain, nonatomic) NSMutableDictionary *usersGroups;
+@property(retain, nonatomic) NSMutableDictionary *scannedGroup;
 
 @property (retain) PennMeetCurrentLoggedInUser *currentUser;
 

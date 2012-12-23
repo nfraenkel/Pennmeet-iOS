@@ -33,7 +33,7 @@ int groupCount;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self getRequest:self.currentUser.currentUser.uniqueID];
+    //[self getRequest:self.currentUser.currentUser.uniqueID];
     
     
     

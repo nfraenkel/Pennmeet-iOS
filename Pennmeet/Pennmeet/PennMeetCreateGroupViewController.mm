@@ -46,8 +46,10 @@ NSString *hashedID;
 }
 
 - (IBAction)generateQRImage:(id)sender {
+    hashedID = [PennMeetCreateGroupViewController digest:self.groupNameField.text];
+    
     if(hashedID) {
-    int qrcodeImageDimension = 320;
+    int qrcodeImageDimension = 350;
     UIButton *button = (UIButton *)sender;
     DataMatrix* qrMatrix = [QREncoder encodeWithECLevel:QR_ECLEVEL_AUTO version:QR_VERSION_AUTO string:hashedID];
     
@@ -99,7 +101,8 @@ NSString *hashedID;
     
     NSDictionary* userJson =[[NSDictionary alloc] initWithObjectsAndKeys:self.currentUser.currentUser.uniqueID, @"id1", nameString, @"name1", nil];
     
-    NSDictionary *temp = [[NSDictionary alloc] initWithObjectsAndKeys:hashedID, @"_id", self.groupNameField.text, @"name", photo, @"photoUrl", userJson, @"members", nil];
+    
+    NSDictionary *temp = [[NSDictionary alloc] initWithObjectsAndKeys:hashedID, @"_id", self.groupNameField.text, @"name", photo, @"photoUrl", userJson, @"members",[[NSDictionary alloc] init], @"requests", nil];
         
     NSLog(@"userJson: %@", userJson);
     

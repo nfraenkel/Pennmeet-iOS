@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C3006" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0Kq-OV-FX8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0Kq-OV-FX8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
@@ -494,16 +494,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="t9M-ta-eeX">
-                        <barButtonItem key="rightBarButtonItem" image="refresh.png" id="6wZ-fH-HLa">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="hZq-iT-Av8">
                             <connections>
-                                <action selector="refresherPressed:" destination="vr2-np-ynB" id="62g-sn-taw"/>
+                                <segue destination="W8h-5e-Buc" kind="push" id="c3U-AY-zTS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="groupCoverPhotoTho" destination="6yp-0B-vhd" id="de8-DW-hvr"/>
                         <outlet property="navItem" destination="t9M-ta-eeX" id="bhC-Sb-JvN"/>
-                        <outlet property="refesher" destination="6wZ-fH-HLa" id="IoV-0P-ODY"/>
                         <outlet property="tableForGroupMembers" destination="Hzr-jm-HrF" id="iFu-Hl-LvC"/>
                     </connections>
                 </viewController>
@@ -514,7 +513,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="141" y="1101"/>
+            <point key="canvasLocation" x="-413" y="1022"/>
         </scene>
         <!--Penn Meet Create Group View Controller - Create Group-->
         <scene sceneID="xlf-xB-8La">
@@ -618,6 +617,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MFG-SU-rvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="283" y="253"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iax-Sa-cKR">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="W8h-5e-Buc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="9Lm-sQ-zvs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gcp-ml-zkk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ePA-nb-XRv" kind="push" id="yCL-wR-Hak"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5RE-XC-pP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10" y="1009"/>
+        </scene>
+        <!--View Controller - Groups-->
+        <scene sceneID="T7j-3D-Miy">
+            <objects>
+                <viewController id="ePA-nb-XRv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2kl-t5-cvh">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q9Y-RB-PzN">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Export List Serv">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vk-TO-Sg7">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Generate Group Spreadsheet">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYv-AD-dTH">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Regenerate QR Code">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pbX-Ya-jlA">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="0Gb-7E-toQ"/>
+                                    <constraint firstAttribute="height" constant="178" id="p2W-Dl-dZ2"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Vk-TO-Sg7" firstAttribute="leading" secondItem="2kl-t5-cvh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="5UG-Be-iJb"/>
+                            <constraint firstItem="YYv-AD-dTH" firstAttribute="leading" secondItem="2kl-t5-cvh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="AZI-p3-cbG"/>
+                            <constraint firstAttribute="trailing" secondItem="Q9Y-RB-PzN" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="F3l-uy-mbO"/>
+                            <constraint firstItem="Q9Y-RB-PzN" firstAttribute="leading" secondItem="2kl-t5-cvh" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="FXm-65-Zce"/>
+                            <constraint firstItem="pbX-Ya-jlA" firstAttribute="centerX" secondItem="YYv-AD-dTH" secondAttribute="centerX" type="default" id="Uks-DE-A0u"/>
+                            <constraint firstAttribute="trailing" secondItem="YYv-AD-dTH" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="VzD-lW-knD"/>
+                            <constraint firstAttribute="trailing" secondItem="9Vk-TO-Sg7" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Yeh-L4-9Ji"/>
+                            <constraint firstItem="9Vk-TO-Sg7" firstAttribute="top" secondItem="Q9Y-RB-PzN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="cHn-xu-69U"/>
+                            <constraint firstItem="Q9Y-RB-PzN" firstAttribute="top" secondItem="YYv-AD-dTH" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lKi-be-K2d"/>
+                            <constraint firstAttribute="bottom" secondItem="9Vk-TO-Sg7" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tMN-0j-wWZ"/>
+                            <constraint firstItem="pbX-Ya-jlA" firstAttribute="top" secondItem="2kl-t5-cvh" secondAttribute="top" constant="39" id="x2F-Ck-b4R"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Groups" id="rgX-1b-xHk" colorLabel="IBBuiltInLabel-Gray"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="80d-Up-D7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="425" y="984"/>
         </scene>
         <!--Navigation Controller - My Groups-->
         <scene sceneID="pYN-6X-sZb">
@@ -1004,7 +1085,6 @@
         <image name="pennmeet-icon.png" width="225" height="225"/>
         <image name="plus_black.png" width="512" height="512"/>
         <image name="redox_01.png" width="600" height="375"/>
-        <image name="refresh.png" width="22" height="22"/>
     </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">

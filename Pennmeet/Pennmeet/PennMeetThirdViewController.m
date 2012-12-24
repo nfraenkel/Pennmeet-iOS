@@ -19,6 +19,7 @@
 @synthesize scannedGroup;
 
 int groupCount;
+int userRequests = -1;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,7 +36,7 @@ int groupCount;
 	// Do any additional setup after loading the view.
     //[self getRequest:self.currentUser.currentUser.uniqueID];
     
-    
+    self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
 //    tap.cancelsTouchesInView = YES;
@@ -127,22 +128,17 @@ usingDelegate:(id <ZBarReaderDelegate>) delegate{
     
     
     NSString* text = symbol.data;
-    
-    UIAlertView *alert = [[UIAlertView alloc]
-                          initWithTitle: @"QRCode"
-                          message: text
-                          delegate: self
-                          cancelButtonTitle:@"Remove"
-                          otherButtonTitles:@"Retry", nil];
-    [alert show];
+    NSLog(@"Fetching group with id: %@", text);
+    [self getRequest:text getType:@"groups"];
+
     
     [reader dismissViewControllerAnimated: YES completion:nil];
 }
 
--(void)getRequest:(NSString*) identifier {
+-(void)getRequest:(NSString*) identifier getType:(NSString*) type{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
-    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents/%@?_apikey=%@", identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/%@/documents/%@?_apikey=%@", type, identifier, [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     
     [request setHTTPMethod:@"GET"];
@@ -176,6 +172,31 @@ usingDelegate:(id <ZBarReaderDelegate>) delegate{
     [alert show];
 }
 
+-(void)putRequest:(NSDictionary *) dict getType:(NSString *) type {
+    NSData *data;
+    if ([NSJSONSerialization isValidJSONObject:dict]){
+        data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+    }
+    else {
+        NSLog(@"CANTTTTTTT");
+        return;
+    }
+    
+    NSLog(@"nsdata: %@", data);
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    NSString *api = [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken];
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/%@/documents/%@?_apikey=%@", type, self.currentUser.currentUser.uniqueID, api];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    //[request setValuesForKeysWithDictionary:dict];
+    [request setHTTPBody:data];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"PUT"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
+}
+
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     
@@ -183,6 +204,7 @@ usingDelegate:(id <ZBarReaderDelegate>) delegate{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
     
+    NSLog(@"response dict: %@", dictResponse);
     //Check to see if response is a user
     if([dictResponse objectForKey:@"password"] != nil) {
         
@@ -194,8 +216,42 @@ usingDelegate:(id <ZBarReaderDelegate>) delegate{
     //Check to see if response is a group
     if([dictResponse objectForKey:@"members"] != nil) {
         self.scannedGroup = [[NSMutableDictionary alloc] initWithDictionary:dictResponse];
+        NSLog(@"Recieved group from QR Scan!");
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"QRCode"
+                              message: @"Sent request to group!"
+                              delegate: self
+                              cancelButtonTitle:@"Remove"
+                              otherButtonTitles:@"Retry", nil];
+        [alert show];
+        
+        NSMutableDictionary *totalRequestsInGroup = [[NSMutableDictionary alloc] initWithDictionary:[self.scannedGroup objectForKey:@"requests"]];
+        userRequests = [totalRequestsInGroup count];
+        
+        NSLog(@"userRequest Count: %d", userRequests);
+        NSString* formatRequest;
+        //Put user in group requests
+        if(userRequests > -1) {
+
+            userRequests++;
+            NSLog(@"Sending request for id%d", userRequests);
+            formatRequest = [NSString stringWithFormat:@"id%d", userRequests];
+            
+            [totalRequestsInGroup setObject:self.currentUser.currentUser.uniqueID forKey:formatRequest];
+            
+            NSDictionary* groupPutRequest = [[NSDictionary alloc] initWithObjectsAndKeys:totalRequestsInGroup, @"requests", nil];
+            
+            NSDictionary* incRequest = [[NSDictionary alloc] initWithObjectsAndKeys:groupPutRequest, @"$set", nil];
+            
+            NSDictionary* putDict = [[NSDictionary alloc] initWithObjectsAndKeys:incRequest, @"document", nil];
+            
+            NSLog(@"Attempting to put request");
+            NSLog(@"putRequest: %@", putDict);
+            
+            [self putRequest:putDict getType:@"groups"];
+        }
     }
-    NSLog(@"response dict: %@", dictResponse);
+
     
     [self dismissViewControllerAnimated:YES completion:^{
         

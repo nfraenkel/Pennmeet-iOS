@@ -24,7 +24,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "42"
          endingLineNumber = "42"
-         landmarkName = "-newGroupTouched:"
+         landmarkName = "-didReceiveMemoryWarning"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -56,26 +56,26 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PennMeet/PennMeetLoginViewController.m"
-         timestampString = "377384967.597672"
+         timestampString = "378069770.364923"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "95"
-         endingLineNumber = "95"
-         landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
-         landmarkType = "5">
+         startingLineNumber = "175"
+         endingLineNumber = "175"
+         landmarkName = "@implementation PennMeetLoginViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PennMeet/PennMeetLoginViewController.m"
-         timestampString = "377384967.597672"
+         timestampString = "378069770.364923"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "218"
-         endingLineNumber = "218"
-         landmarkName = "@implementation PennMeetLoginViewController"
-         landmarkType = "3">
+         startingLineNumber = "298"
+         endingLineNumber = "298"
+         landmarkName = "-connectionDidFinishLoading:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"

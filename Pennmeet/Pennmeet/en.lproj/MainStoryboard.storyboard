@@ -1015,6 +1015,8 @@
             <relationships>
                 <relationship kind="action" name="cancelButtonTouched:"/>
                 <relationship kind="action" name="doneButtonTouched:"/>
+                <relationship kind="action" name="generateQRImage:"/>
+                <relationship kind="action" name="saveQRImage:"/>
                 <relationship kind="outlet" name="bannerURLField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="groupNameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="qrCode" candidateClass="UIImageView"/>

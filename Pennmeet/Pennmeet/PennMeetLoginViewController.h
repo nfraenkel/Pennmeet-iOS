@@ -11,8 +11,9 @@
 #import "PennMeetCurrentLoggedInUser.h"
 #import "PennMeetUser.h"
 #import "PennMeetSimplifiedGroup.h"
+#import "FacebookSDK.h"
 
-@interface PennMeetLoginViewController : UIViewController <UITextFieldDelegate, NSURLConnectionDataDelegate> {
+@interface PennMeetLoginViewController : UIViewController <UITextFieldDelegate, NSURLConnectionDataDelegate, FBLoginViewDelegate> {
     NSMutableData *_data;
 }
 

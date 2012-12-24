@@ -16,6 +16,7 @@
 		4C194687167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C194686167AEB1D002B63E5 /* PennMeetCurrentLoggedInUser.m */; };
 		4C1BA283167AF2C40078D2CB /* PennMeetGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA282167AF2C40078D2CB /* PennMeetGroup.m */; };
 		4C1BA286167B0CD00078D2CB /* PennMeetGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA285167B0CD00078D2CB /* PennMeetGroupViewController.m */; };
+		4C2548FE1688DC7900AAB225 /* FacebookSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBAD73916864B8E00142B33 /* FacebookSDK */; };
 		4C276C4C167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C276C4B167CFCEE00D2FD95 /* PennMeetSimplifiedGroup.m */; };
 		4C2D76FA167CE068001071B3 /* group_glyph.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D76F9167CE068001071B3 /* group_glyph.png */; };
 		4C2D76FD167CE092001071B3 /* glyphicons_003_user.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C2D76FC167CE092001071B3 /* glyphicons_003_user.png */; };
@@ -50,18 +51,9 @@
 		4CA49DAA167A9416005B8D44 /* plus_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA49DA8167A9416005B8D44 /* plus_black.png */; };
 		4CA49DAB167A9416005B8D44 /* plus_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CA49DA9167A9416005B8D44 /* plus_white.png */; };
 		4CA49DAF167A9499005B8D44 /* PennMeetThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA49DAE167A9499005B8D44 /* PennMeetThirdViewController.m */; };
-		4CBAD73116864B7D00142B33 /* FacebookSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBAD6DA16864B7D00142B33 /* FacebookSDK */; };
 		4CBAD73216864B7D00142B33 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAD6F216864B7D00142B33 /* FacebookSDKResources.bundle */; };
 		4CBAD73316864B7D00142B33 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAD6F316864B7D00142B33 /* FBUserSettingsViewResources.bundle */; };
 		4CBAD73416864B7D00142B33 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAD6F416864B7D00142B33 /* Info.plist */; };
-		4CBAD73516864B7D00142B33 /* FacebookSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBAD71616864B7D00142B33 /* FacebookSDK */; };
-		4CBAD73616864B7D00142B33 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAD72E16864B7D00142B33 /* FacebookSDKResources.bundle */; };
-		4CBAD73716864B7D00142B33 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAD72F16864B7D00142B33 /* FBUserSettingsViewResources.bundle */; };
-		4CBAD73816864B7D00142B33 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAD73016864B7D00142B33 /* Info.plist */; };
-		4CBAD73A16864B8E00142B33 /* FacebookSDK in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CBAD73916864B8E00142B33 /* FacebookSDK */; };
-		4CBAD73F16864B9700142B33 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAD73C16864B9700142B33 /* FacebookSDKResources.bundle */; };
-		4CBAD74016864B9700142B33 /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAD73D16864B9700142B33 /* FBUserSettingsViewResources.bundle */; };
-		4CBAD74116864B9700142B33 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4CBAD73E16864B9700142B33 /* Info.plist */; };
 		4CBC47C0167B325100B20DF6 /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CBC47BF167B325100B20DF6 /* 01-refresh.png */; };
 		4CD0B893167E7A0000661CC6 /* PennMeetSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD0B892167E7A0000661CC6 /* PennMeetSignUpViewController.m */; };
 		4CE1FED9167B279C003ED5A8 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE1FED8167B279C003ED5A8 /* refresh.png */; };
@@ -275,7 +267,6 @@
 		4CBAD73916864B8E00142B33 /* FacebookSDK */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = FacebookSDK; path = ../../../FacebookSDK/FacebookSDK.framework/Versions/A/FacebookSDK; sourceTree = "<group>"; };
 		4CBAD73C16864B9700142B33 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		4CBAD73D16864B9700142B33 /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
-		4CBAD73E16864B9700142B33 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CBC47BF167B325100B20DF6 /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		4CD0B891167E7A0000661CC6 /* PennMeetSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PennMeetSignUpViewController.h; sourceTree = "<group>"; };
 		4CD0B892167E7A0000661CC6 /* PennMeetSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PennMeetSignUpViewController.m; sourceTree = "<group>"; };
@@ -327,6 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2548FE1688DC7900AAB225 /* FacebookSDK in Frameworks */,
 				B83F123E167E763B0008384B /* AVFoundation.framework in Frameworks */,
 				B83F123F167E763B0008384B /* CoreMedia.framework in Frameworks */,
 				B83F1240167E763B0008384B /* CoreVideo.framework in Frameworks */,
@@ -340,9 +332,6 @@
 				4C7E7169167A45E0007C1B87 /* CoreGraphics.framework in Frameworks */,
 				4C7E7165167A45E0007C1B87 /* UIKit.framework in Frameworks */,
 				4C7E7167167A45E0007C1B87 /* Foundation.framework in Frameworks */,
-				4CBAD73116864B7D00142B33 /* FacebookSDK in Frameworks */,
-				4CBAD73516864B7D00142B33 /* FacebookSDK in Frameworks */,
-				4CBAD73A16864B8E00142B33 /* FacebookSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,11 +439,11 @@
 				4C524F5B167D60D80080E15C /* PennMeetEditProfileViewController.m */,
 				4C1440AC167DBB6E006478A6 /* PennMeetLoginViewController.h */,
 				4C1440AD167DBB6E006478A6 /* PennMeetLoginViewController.m */,
+				4CD0B891167E7A0000661CC6 /* PennMeetSignUpViewController.h */,
+				4CD0B892167E7A0000661CC6 /* PennMeetSignUpViewController.m */,
 				4C7E7189167A45E0007C1B87 /* second.png */,
 				4C7E718B167A45E0007C1B87 /* second@2x.png */,
 				4C7E716B167A45E0007C1B87 /* Supporting Files */,
-				4CD0B891167E7A0000661CC6 /* PennMeetSignUpViewController.h */,
-				4CD0B892167E7A0000661CC6 /* PennMeetSignUpViewController.m */,
 			);
 			path = PennMeet;
 			sourceTree = "<group>";
@@ -692,7 +681,6 @@
 			children = (
 				4CBAD73C16864B9700142B33 /* FacebookSDKResources.bundle */,
 				4CBAD73D16864B9700142B33 /* FBUserSettingsViewResources.bundle */,
-				4CBAD73E16864B9700142B33 /* Info.plist */,
 			);
 			name = Resources;
 			path = ../../../FacebookSDK/FacebookSDK.framework/Versions/A/Resources;
@@ -875,12 +863,6 @@
 				4CBAD73216864B7D00142B33 /* FacebookSDKResources.bundle in Resources */,
 				4CBAD73316864B7D00142B33 /* FBUserSettingsViewResources.bundle in Resources */,
 				4CBAD73416864B7D00142B33 /* Info.plist in Resources */,
-				4CBAD73616864B7D00142B33 /* FacebookSDKResources.bundle in Resources */,
-				4CBAD73716864B7D00142B33 /* FBUserSettingsViewResources.bundle in Resources */,
-				4CBAD73816864B7D00142B33 /* Info.plist in Resources */,
-				4CBAD73F16864B9700142B33 /* FacebookSDKResources.bundle in Resources */,
-				4CBAD74016864B9700142B33 /* FBUserSettingsViewResources.bundle in Resources */,
-				4CBAD74116864B9700142B33 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,13 +985,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PennMeet/PennMeet-Prefix.pch";
 				HEADER_SEARCH_PATHS = "";
-				"HEADER_SEARCH_PATHS[arch=*]" = "/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/**";
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"/QR-Code-Encoder-for-Objective-C/QRCodeEncoderObjectiveCAtGithub/**",
+					"\"$(SRCROOT)/Pennmeet/FacebookSDK/Headers\"/**",
+				);
 				INFOPLIST_FILE = "PennMeet/PennMeet-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Pennmeet/ZBarSDK\"",
-					"\"$(SRCROOT)/FacebookSDK.framework/Versions/A\"",
-					"\"$(SRCROOT)/FacebookSDK.framework/Versions/Current\"",
 					"\"$(SRCROOT)/../../../FacebookSDK/FacebookSDK.framework/Versions/A\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
@@ -1038,14 +1021,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Pennmeet/ZBarSDK\"",
-					"\"$(SRCROOT)/FacebookSDK.framework/Versions/A\"",
-					"\"$(SRCROOT)/FacebookSDK.framework/Versions/Current\"",
 					"\"$(SRCROOT)/../../../FacebookSDK/FacebookSDK.framework/Versions/A\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lsqlite3.0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Pennmeet/FacebookSDK/Headers\"";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;

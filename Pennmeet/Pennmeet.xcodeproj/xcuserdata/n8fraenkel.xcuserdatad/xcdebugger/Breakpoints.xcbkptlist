@@ -56,25 +56,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PennMeet/PennMeetLoginViewController.m"
-         timestampString = "378069770.364923"
+         timestampString = "378073427.10375"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "175"
-         endingLineNumber = "175"
-         landmarkName = "@implementation PennMeetLoginViewController"
-         landmarkType = "3">
+         startingLineNumber = "101"
+         endingLineNumber = "101"
+         landmarkName = "-validateUser:andPass:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "PennMeet/PennMeetLoginViewController.m"
-         timestampString = "378069770.364923"
+         timestampString = "378074033.080467"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "298"
-         endingLineNumber = "298"
-         landmarkName = "-connectionDidFinishLoading:"
+         startingLineNumber = "221"
+         endingLineNumber = "221"
+         landmarkName = "-connection:didFailWithError:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

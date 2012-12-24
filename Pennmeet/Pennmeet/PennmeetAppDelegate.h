@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FacebookSDK.h"
 
 
 @interface PennMeetAppDelegate : UIResponder <UIApplicationDelegate>
@@ -14,6 +15,9 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) NSString *apiToken, *accountToken, *defaultPhotoUrl;
+
+@property (strong, nonatomic) FBSession *session;
+
 
 
 

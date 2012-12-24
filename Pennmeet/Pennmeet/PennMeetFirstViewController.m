@@ -47,6 +47,19 @@ BOOL userRetrieved;
     
 }
 
+- (void)populateUserDetails {
+    if (FBSession.activeSession.isOpen) {
+        [[FBRequest requestForMe] startWithCompletionHandler:
+         ^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+             if (!error) {
+                 self.firstNameLabel.text = user.name;
+                 self.lastNameLabel.text = user.name;
+//                 self.userProfileImage.profileID = [user objectForKey:@"id"];
+             }
+         }];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -109,12 +122,14 @@ BOOL userRetrieved;
 //    birthdayLabel.frame = CGRectMake(birthdayLabel.frame.origin.x, majorLabel.frame.origin.y + majorLabel.frame.size.height + 6, birthdayLabel.frame.size.width, birthdayLabel.frame.size.height);
     
     // set labels texts
-    firstNameLabel.text = [NSString stringWithFormat:@"%@", user.first];
-    lastNameLabel.text = [NSString stringWithFormat:@"%@", user.last];
+//    firstNameLabel.text = [NSString stringWithFormat:@"%@", user.first];
+//    lastNameLabel.text = [NSString stringWithFormat:@"%@", user.last];
     emailLabel.text = [NSString stringWithFormat:@"%@", user.uniqueID];
     schoolLabel.text = [NSString stringWithFormat:@"%@", user.school];
     majorLabel.text = [NSString stringWithFormat:@"%@", user.major];
     birthdayLabel.text = [NSString stringWithFormat:@"%@", user.birthday];
+    
+    [self populateUserDetails];
 }
 
 // HELPER - returns image from url. so sexy

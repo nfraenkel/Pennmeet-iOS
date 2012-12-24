@@ -24,10 +24,16 @@
     return self;
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    PennMeetAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    NSLog(@"appdeleageate session: %@", appDelegate.session.description);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSLog(@"loginview viewdidload");
     
     [self.scrolley setContentSize:CGSizeMake(self.scrolley.frame.size.width, 600)];
     self.emailField.delegate = self;
@@ -49,86 +55,6 @@
     [loginview sizeToFit];
 }
 
-- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
-    return [FBSession openActiveSessionWithReadPermissions:nil
-                                              allowLoginUI:allowLoginUI
-                                         completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
-                                             [self sessionStateChanged:session state:state error:error];
-                                         }];
-}
-
-- (void)sessionStateChanged:(FBSession *)session
-                      state:(FBSessionState)state
-                      error:(NSError *)error
-{
-    // FBSample logic
-    // Any time the session is closed, we want to display the login controller (the user
-    // cannot use the application unless they are logged in to Facebook). When the session
-    // is opened successfully, hide the login controller and show the main UI.
-    switch (state) {
-        case FBSessionStateOpen: {
-//            [self.mainViewController startLocationManager];
-//            if (self.loginViewController != nil) {
-//                UIViewController *topViewController = [self.navController topViewController];
-//                [topViewController dismissModalViewControllerAnimated:YES];
-//                self.loginViewController = nil;
-//            }
-            
-            NSLog(@"FBSESSIONSTATE OPEND");
-            [self performSegueWithIdentifier:@"showTabPage" sender:self];
-            
-            // FBSample logic
-            // Pre-fetch and cache the friends for the friend picker as soon as possible to improve
-            // responsiveness when the user tags their friends.
-            FBCacheDescriptor *cacheDescriptor = [FBFriendPickerViewController cacheDescriptor];
-            [cacheDescriptor prefetchAndCacheForSession:session];
-        }
-            break;
-        case FBSessionStateClosed: {
-            // FBSample logic
-            // Once the user has logged out, we want them to be looking at the root view.
-//            UIViewController *topViewController = [self.navController topViewController];
-//            UIViewController *modalViewController = [topViewController modalViewController];
-//            if (modalViewController != nil) {
-//                [topViewController dismissModalViewControllerAnimated:NO];
-//            }
-//            [self.navController popToRootViewControllerAnimated:NO];
-            
-            NSLog(@"FBSESSIONSTATE closed");
-            
-            [FBSession.activeSession closeAndClearTokenInformation];
-            
-            [self performSelector:@selector(showLoginView)
-                       withObject:nil
-                       afterDelay:0.5f];
-        }
-            break;
-        case FBSessionStateClosedLoginFailed: {
-            // if the token goes invalid we want to switch right back to
-            // the login view, however we do it with a slight delay in order to
-            // account for a race between this and the login view dissappearing
-            // a moment before
-            [self performSelector:@selector(showLoginView)
-                       withObject:nil
-                       afterDelay:0.5f];
-        }
-            break;
-        default:
-            break;
-    }
-    
-//    [[NSNotificationCenter defaultCenter] postNotificationName:SCSessionStateChangedNotification
-//                                                        object:session];
-    
-    if (error) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Error: %@", error.description]
-                                                            message:error.localizedDescription
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-        [alertView show];
-    }
-}
 
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
     NSLog(@"fetched user info: %@", user);
@@ -209,6 +135,29 @@
 - (IBAction)signUpPressed:(id)sender {
     
     [self performSegueWithIdentifier:@"showSignUp" sender:self];
+}
+
+- (IBAction)fbLoginPushed:(id)sender {
+    PennMeetAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
+    if (appDelegate.session.state != FBSessionStateCreated) {
+        // Create a new, logged out session.
+        NSLog(@"new session");
+        appDelegate.session = [[FBSession alloc] init];
+    }
+    appDelegate.session = [[FBSession alloc] init];
+
+    
+    NSLog(@"here %@", appDelegate.session.description);
+    // if the session isn't open, let's open it now and present the login UX to the user
+    [appDelegate.session openWithCompletionHandler:^(FBSession *session,
+                                                     FBSessionState status,
+                                                     NSError *error) {
+        // and here we make sure to update our UX according to the new session state
+        NSLog(@"button completion handler!");
+        NSLog(@" session : %@", appDelegate.session.description);
+        [self performSegueWithIdentifier:@"showTabPage" sender:self];
+    }];
+
 }
 
 

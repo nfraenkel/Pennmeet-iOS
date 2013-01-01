@@ -302,12 +302,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="guN-N8-CQS">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="guN-N8-CQS">
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="E9M-Co-Pf8"/>
                                     <constraint firstAttribute="height" constant="110" id="OJO-cD-rXf"/>
-                                    <constraint firstAttribute="width" constant="110" id="nSI-Zj-e7v"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITT-9w-nc0" customClass="FBProfilePictureView">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -315,13 +318,17 @@
                             <constraint firstItem="20" firstAttribute="leading" secondItem="2ND-nK-CeT" secondAttribute="leading" type="default" id="2xm-wM-XUK"/>
                             <constraint firstItem="yrr-cg-9gm" firstAttribute="trailing" secondItem="21" secondAttribute="trailing" type="default" id="3RU-ey-Jmz"/>
                             <constraint firstItem="ahR-KB-96w" firstAttribute="trailing" secondItem="yrr-cg-9gm" secondAttribute="trailing" type="default" id="4Sl-wq-1WR"/>
+                            <constraint firstItem="NPq-57-NCB" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="4ls-sh-MPC"/>
                             <constraint firstItem="20" firstAttribute="top" secondItem="16" secondAttribute="top" constant="76" id="4nQ-xf-kYm"/>
                             <constraint firstItem="21" firstAttribute="centerX" secondItem="aez-tJ-h1Z" secondAttribute="centerX" type="default" id="55F-qL-gec"/>
-                            <constraint firstItem="aez-tJ-h1Z" firstAttribute="trailing" secondItem="NPq-57-NCB" secondAttribute="trailing" type="default" id="60D-1G-kIL"/>
+                            <constraint firstItem="guN-N8-CQS" firstAttribute="leading" secondItem="21" secondAttribute="leading" type="default" id="6dz-v8-Al7"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="bottom" secondItem="16" secondAttribute="bottom" type="default" id="9nw-aH-CiW"/>
+                            <constraint firstItem="guN-N8-CQS" firstAttribute="leading" secondItem="ITT-9w-nc0" secondAttribute="leading" type="default" id="Eum-tR-h5v"/>
+                            <constraint firstItem="ITT-9w-nc0" firstAttribute="top" secondItem="guN-N8-CQS" secondAttribute="top" type="default" id="Gqj-Gi-YIT"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="HCY-kA-1zB"/>
                             <constraint firstItem="21" firstAttribute="leading" secondItem="yrr-cg-9gm" secondAttribute="leading" type="default" id="Is1-6q-IHW"/>
                             <constraint firstItem="20" firstAttribute="trailing" secondItem="2ND-nK-CeT" secondAttribute="trailing" type="default" id="Jzd-12-HjZ"/>
+                            <constraint firstItem="guN-N8-CQS" firstAttribute="bottom" secondItem="ITT-9w-nc0" secondAttribute="bottom" type="default" id="NId-90-L5i"/>
                             <constraint firstItem="2ND-nK-CeT" firstAttribute="top" secondItem="16" secondAttribute="top" constant="120" id="PIM-2j-bmg"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="top" secondItem="16" secondAttribute="top" type="default" id="Pct-eg-Nbt"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="leading" secondItem="16" secondAttribute="leading" type="default" id="RhY-xS-D16"/>
@@ -329,12 +336,12 @@
                             <constraint firstItem="bwZ-Vh-5c7" firstAttribute="trailing" secondItem="ahR-KB-96w" secondAttribute="trailing" type="default" id="aDx-w5-fxx"/>
                             <constraint firstItem="NPq-57-NCB" firstAttribute="top" secondItem="aez-tJ-h1Z" secondAttribute="bottom" type="default" id="bxg-VW-GI1"/>
                             <constraint firstItem="ahR-KB-96w" firstAttribute="leading" secondItem="bwZ-Vh-5c7" secondAttribute="leading" type="default" id="eS1-OB-Jlf"/>
+                            <constraint firstItem="ITT-9w-nc0" firstAttribute="trailing" secondItem="guN-N8-CQS" secondAttribute="trailing" type="default" id="ftQ-OA-K13"/>
                             <constraint firstItem="aez-tJ-h1Z" firstAttribute="trailing" secondItem="16" secondAttribute="trailing" type="default" id="ii3-ee-i4a"/>
                             <constraint firstAttribute="trailing" secondItem="20" secondAttribute="trailing" constant="10" id="jFv-tz-jv8"/>
-                            <constraint firstItem="guN-N8-CQS" firstAttribute="top" secondItem="16" secondAttribute="top" constant="69" id="lQm-ld-52k"/>
+                            <constraint firstItem="ITT-9w-nc0" firstAttribute="top" secondItem="16" secondAttribute="top" constant="69" id="opo-aD-qnw"/>
                             <constraint firstItem="yrr-cg-9gm" firstAttribute="leading" secondItem="ahR-KB-96w" secondAttribute="leading" type="default" id="sTR-3M-X81"/>
                             <constraint firstItem="bwZ-Vh-5c7" firstAttribute="top" secondItem="ahR-KB-96w" secondAttribute="bottom" constant="8" type="user" id="tsy-i9-Hit"/>
-                            <constraint firstItem="21" firstAttribute="leading" secondItem="guN-N8-CQS" secondAttribute="leading" type="default" id="uqd-BG-maP"/>
                             <constraint firstItem="21" firstAttribute="top" secondItem="16" secondAttribute="top" constant="204" type="user" id="znM-zb-mNT"/>
                         </constraints>
                     </view>
@@ -351,6 +358,7 @@
                         <outlet property="refresher" destination="yHC-tf-gNW" id="C72-ZD-G46"/>
                         <outlet property="schoolLabel" destination="yrr-cg-9gm" id="r98-Rc-Dpv"/>
                         <outlet property="userImage" destination="guN-N8-CQS" id="3hN-3B-fMf"/>
+                        <outlet property="userProfImage" destination="ITT-9w-nc0" id="tME-4G-Nlf"/>
                         <segue destination="wRM-yL-42H" kind="modal" identifier="showEditProfile" id="yYV-qf-2ly"/>
                     </connections>
                 </viewController>
@@ -1025,6 +1033,9 @@
         <image name="refresh.png" width="22" height="22"/>
     </resources>
     <classes>
+        <class className="FBProfilePictureView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FBProfilePictureView.h"/>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
@@ -1072,6 +1083,7 @@
                 <relationship kind="outlet" name="refresher" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="schoolLabel" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="userImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userProfImage" candidateClass="FBProfilePictureView"/>
             </relationships>
         </class>
         <class className="PennMeetGroupViewController" superclassName="UIViewController">
@@ -1100,7 +1112,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSecondViewController.h"/>
             <relationships>
                 <relationship kind="action" name="newGroupTouched:"/>
-                <relationship kind="action" name="refresherTouched:"/>
                 <relationship kind="outlet" name="title" candidateClass="UILabel"/>
             </relationships>
         </class>

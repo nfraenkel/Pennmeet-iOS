@@ -14,7 +14,7 @@
 
 @implementation PennMeetFirstViewController
 
-@synthesize currentUser, firstNameLabel, lastNameLabel, emailLabel, schoolLabel, majorLabel, birthdayLabel, userImage, navy;
+@synthesize currentUser, firstNameLabel, lastNameLabel, emailLabel, schoolLabel, majorLabel, birthdayLabel, userImage, navy, userProfImage;
 
 //NSString* username = @"fraenkel@seas.upenn.edu";
 //NSString* username = @"zhangb@seas.upenn.edu";
@@ -107,7 +107,7 @@ BOOL userRetrieved;
     // get height change/diff
 //    double diff = newHeight - userImage.frame.size.height;
     
-    [self.userImage setImage:profImage];
+//    [self.userImage setImage:profImage];
     
     // create new frame based on image width/height ratio
 //    self.userImage.frame = CGRectMake(userImage.frame.origin.x, userImage.frame.origin.y, userImage.frame.size.width, newHeight);
@@ -126,6 +126,8 @@ BOOL userRetrieved;
     schoolLabel.text = [NSString stringWithFormat:@"%@", user.school];
     majorLabel.text = [NSString stringWithFormat:@"%@", user.major];
     birthdayLabel.text = [NSString stringWithFormat:@"%@", user.birthday];
+    
+    self.userProfImage.profileID = user.fbID;
     
 //    [self populateUserDetails];
 }
@@ -159,6 +161,49 @@ BOOL userRetrieved;
     
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [connection start];
+}
+
+-(NSDictionary*)createNewUser {
+    // UPDATE currentuser singleton
+//    PennMeetUser *meUser = [PennMeetUser alloc] initwith
+//    self.currentUser = me;
+    
+    // create dictionary to be used in POST request
+    NSMutableDictionary *me = [[NSMutableDictionary alloc] init];
+    [me setObject:self.currentUser.currentUser.uniqueID forKey:@"_id"];
+    [me setObject:self.currentUser.currentUser.first forKey:@"first"];
+    [me setObject:self.currentUser.currentUser.last forKey:@"last"];
+    
+    return [NSDictionary dictionaryWithObject:me forKey:@"document"];
+}
+
+-(void)postNewUser:(NSDictionary *) dict {
+    NSData *data;
+    if ([NSJSONSerialization isValidJSONObject:dict]){
+        data = [NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:nil];
+    }
+    else {
+        NSLog(@"CANTTTTTTT");
+        return;
+    }
+    
+    NSLog(@"dict for new user: %@", dict);
+    
+    NSLog(@"nsdata for new user: %@", data);
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    NSString *api = [(PennMeetAppDelegate*)[[UIApplication sharedApplication] delegate] apiToken];
+    
+    NSString *url = [NSString stringWithFormat:@"https://api.mongohq.com/databases/pmeet/collections/users/documents?_apikey=%@", api];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
+    //[request setValuesForKeysWithDictionary:dict];
+    [request setHTTPBody:data];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection start];
+    
 }
 
 
@@ -202,42 +247,53 @@ BOOL userRetrieved;
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     NSDictionary *dictResponse = [NSJSONSerialization JSONObjectWithData:_data options:0 error:nil];
     NSLog(@"dict response: %@", dictResponse);
-    NSString* identy = [dictResponse objectForKey:@"_id"];
-    NSString* first = [dictResponse objectForKey:@"first"];
-    NSString* last = [dictResponse objectForKey:@"last"];
-    NSString* school = [dictResponse objectForKey:@"school"];
-    NSString* major = [dictResponse objectForKey:@"major"];
-    NSString* birthday = [dictResponse objectForKey:@"birthday"];
-    NSString* photoUrlTho = [dictResponse objectForKey:@"photoUrl"];
-    NSMutableArray* groups = [NSMutableArray array];
-    NSDictionary *groupsDict = [dictResponse objectForKey:@"groups"];
-    NSLog(@"%@ %@ %@ %@ %@ %@", identy, first, last, school, major, birthday);
-    NSLog(@"groups count: %d", groupsDict.count);
-    for (int i = 1; i <= groupsDict.count; i++){
-        NSDictionary *singleGroupDict = [groupsDict objectForKey:[NSString stringWithFormat:@"group%d", i]];
-        
-        NSString *gID = [singleGroupDict objectForKey:@"id"];
-        NSString *gName = [singleGroupDict objectForKey:@"name"];
-        NSString *gAdminPref = [singleGroupDict objectForKey:@"admin"];
-        
-        PennMeetSimplifiedGroup *sGroup = [[PennMeetSimplifiedGroup alloc] initWithID:gID andName:gName andAdmin:gAdminPref];
-                    
-        [groups addObject:sGroup];
+    
+    if (!dictResponse){
+        NSLog(@"----- NO DICTIONARY RESPONSE");
+        NSLog(@"----- CREATING NEW DB USER FROM FB INFO");
+        [self postNewUser:[self createNewUser]];
     }
-    PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups];
-    
-    user.photoUrl = photoUrlTho;
+    else if (dictResponse.count <= 2){
+        NSLog(@"POSTed and created new user!");
+        [self populateProfile:self.currentUser.currentUser];
+    }
+    else {
+        NSLog(@"retrieved user info from DB");
+        NSString* identy = [dictResponse objectForKey:@"_id"];
+        NSString* first = [dictResponse objectForKey:@"first"];
+        NSString* last = [dictResponse objectForKey:@"last"];
+        NSString* school = [dictResponse objectForKey:@"school"];
+        NSString* major = [dictResponse objectForKey:@"major"];
+        NSString* birthday = [dictResponse objectForKey:@"birthday"];
+        NSString* photoUrlTho = [dictResponse objectForKey:@"photoUrl"];
+        NSMutableArray* groups = [NSMutableArray array];
+        NSDictionary *groupsDict = [dictResponse objectForKey:@"groups"];
+        NSLog(@"%@ %@ %@ %@ %@ %@", identy, first, last, school, major, birthday);
+        NSLog(@"groups count: %d", groupsDict.count);
+        for (int i = 1; i <= groupsDict.count; i++){
+            NSDictionary *singleGroupDict = [groupsDict objectForKey:[NSString stringWithFormat:@"group%d", i]];
+            
+            NSString *gID = [singleGroupDict objectForKey:@"id"];
+            NSString *gName = [singleGroupDict objectForKey:@"name"];
+            NSString *gAdminPref = [singleGroupDict objectForKey:@"admin"];
+            
+            PennMeetSimplifiedGroup *sGroup = [[PennMeetSimplifiedGroup alloc] initWithID:gID andName:gName andAdmin:gAdminPref];
+            
+            [groups addObject:sGroup];
+        }
+        PennMeetUser *user = [[PennMeetUser alloc] initWithId:identy andFirst:first andLast:last andSchool:school andMajor:major andBirthday:birthday andGroups:groups];
+        
+        user.photoUrl = photoUrlTho;
+        
+        // UPDATE OUR SINGLETON
+        currentUser.currentUser = user;
+        
+        
+        userRetrieved = YES;
+        [self populateProfile:user];
 
-    // UPDATE OUR SINGLETON
-    currentUser.currentUser = user;
+    }
     
-    
-    userRetrieved = YES;
-    
-    [self populateProfile:user];
-    
-    
-    // TODO: do something with user
     
 }
 

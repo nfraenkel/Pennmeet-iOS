@@ -10,7 +10,7 @@
 
 @implementation PennMeetUser
 
-@synthesize uniqueID, first, last, school, major, birthday, groupsSimplified;
+@synthesize uniqueID, first, last, school, major, birthday, fbID, groupsSimplified;
 
 -(id)initWithId:(NSString *)newID andFirst:(NSString *)newFirst andLast:(NSString *)newLast andSchool:(NSString *)newSchool andMajor:(NSString *)newMajor andBirthday:(NSString *)newBirthday andGroups:(NSMutableArray *)newGroups{
     self = [super init];
@@ -32,9 +32,11 @@
     self = [super init];
     if (self) {
         self.fbUser = user;
-        self.first = user.name;
-        self.last = user.name;
+        self.uniqueID = [user objectForKey:@"email"];
+        self.first = user.first_name;
+        self.last = user.last_name;
         self.birthday = user.birthday;
+        self.fbID = user.id;
         return self;
     }
     

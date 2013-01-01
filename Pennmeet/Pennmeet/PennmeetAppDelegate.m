@@ -84,7 +84,7 @@ NSString *const FBSessionStateChangedNotification =
                     
                     // create user model 
                     PennMeetUser *usaaaaa = [[PennMeetUser alloc] initWithFbInfo:user];
-                    usaaaaa.uniqueID = [user objectForKey:@"email"];
+//                    usaaaaa.uniqueID = [user objectForKey:@"email"];
 
                     // update currentuser singleton
                     self.currentUser.currentUser = usaaaaa;

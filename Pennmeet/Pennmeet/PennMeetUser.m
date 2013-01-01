@@ -28,4 +28,16 @@
     return nil;
 }
 
+-(id)initWithFbInfo:(id<FBGraphUser>)user {
+    self = [super init];
+    if (self) {
+        self.fbUser = user;
+        self.first = user.name;
+        self.last = user.name;
+        self.birthday = user.birthday;
+        return self;
+    }
+    
+    return nil;
+}
 @end

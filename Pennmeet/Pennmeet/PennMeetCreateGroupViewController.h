@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import "PennMeetCurrentLoggedInUser.h"
 #import "PennMeetAppDelegate.h"
 #import "PennMeetUser.h"
 #import "PennMeetGroup.h"

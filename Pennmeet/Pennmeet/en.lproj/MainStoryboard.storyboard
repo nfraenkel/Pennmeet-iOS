@@ -722,7 +722,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" image="pennmeet-icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="BiG-Ts-wjl">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="173" id="QBF-gJ-FoF"/>
-                                            <constraint firstAttribute="width" constant="182" id="RM7-Rx-KPW"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuJ-4O-jQQ">
@@ -762,8 +761,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LVh-bv-ott">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="182" id="doO-Hg-mPg"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="FB">
+                                        <state key="normal" title="Login with Facebook">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -776,21 +778,22 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="BiG-Ts-wjl" firstAttribute="top" secondItem="azA-c7-Tzc" secondAttribute="top" constant="59" id="6Tb-Ty-bEz"/>
+                                    <constraint firstItem="LVh-bv-ott" firstAttribute="trailing" secondItem="BiG-Ts-wjl" secondAttribute="trailing" type="default" id="37F-67-MZO"/>
+                                    <constraint firstAttribute="trailing" secondItem="LVh-bv-ott" secondAttribute="trailing" constant="69" id="6JJ-Hk-XrP"/>
+                                    <constraint firstItem="E09-wS-Nlx" firstAttribute="centerX" secondItem="azA-c7-Tzc" secondAttribute="centerX" type="default" id="Cyt-Lt-2zG"/>
+                                    <constraint firstItem="LVh-bv-ott" firstAttribute="leading" secondItem="BiG-Ts-wjl" secondAttribute="leading" type="default" id="Ef5-Za-1rY"/>
                                     <constraint firstItem="2rB-hD-J9X" firstAttribute="top" secondItem="azA-c7-Tzc" secondAttribute="top" constant="269" id="FGU-TB-dcJ"/>
                                     <constraint firstItem="EuJ-4O-jQQ" firstAttribute="trailing" secondItem="UDL-vc-7Bv" secondAttribute="trailing" type="default" id="K3B-y0-RpS"/>
-                                    <constraint firstItem="LVh-bv-ott" firstAttribute="leading" secondItem="azA-c7-Tzc" secondAttribute="leading" constant="118" id="P4O-po-w5V"/>
+                                    <constraint firstItem="BiG-Ts-wjl" firstAttribute="top" secondItem="LVh-bv-ott" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LNy-3n-cRK"/>
                                     <constraint firstItem="EuJ-4O-jQQ" firstAttribute="top" secondItem="azA-c7-Tzc" secondAttribute="top" constant="364" id="PxR-WX-HT6"/>
                                     <constraint firstItem="E09-wS-Nlx" firstAttribute="top" secondItem="2rB-hD-J9X" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TIy-wu-aDn"/>
-                                    <constraint firstItem="LVh-bv-ott" firstAttribute="top" secondItem="azA-c7-Tzc" secondAttribute="top" constant="231" id="Vfn-zv-7xm"/>
-                                    <constraint firstAttribute="trailing" secondItem="BiG-Ts-wjl" secondAttribute="trailing" constant="69" id="Yd9-ju-45c"/>
                                     <constraint firstItem="2rB-hD-J9X" firstAttribute="baseline" secondItem="E09-wS-Nlx" secondAttribute="baseline" type="default" id="c7Y-e3-7aI"/>
                                     <constraint firstItem="UDL-vc-7Bv" firstAttribute="top" secondItem="EuJ-4O-jQQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="fPd-yn-9MQ"/>
-                                    <constraint firstItem="UDL-vc-7Bv" firstAttribute="centerX" secondItem="azA-c7-Tzc" secondAttribute="centerX" type="default" id="fVy-6c-9ft"/>
                                     <constraint firstItem="BiG-Ts-wjl" firstAttribute="leading" secondItem="2rB-hD-J9X" secondAttribute="leading" type="default" id="ft7-VU-hSW"/>
                                     <constraint firstAttribute="bottom" secondItem="UDL-vc-7Bv" secondAttribute="bottom" constant="29" id="jGb-sO-Kyd"/>
                                     <constraint firstItem="E09-wS-Nlx" firstAttribute="leading" secondItem="2rB-hD-J9X" secondAttribute="leading" type="default" id="lup-8v-poc"/>
                                     <constraint firstItem="E09-wS-Nlx" firstAttribute="centerX" secondItem="EuJ-4O-jQQ" secondAttribute="centerX" type="default" id="qAs-aG-t7g"/>
+                                    <constraint firstItem="LVh-bv-ott" firstAttribute="top" secondItem="azA-c7-Tzc" secondAttribute="top" constant="8" id="rgO-BA-R2C"/>
                                     <constraint firstItem="EuJ-4O-jQQ" firstAttribute="leading" secondItem="UDL-vc-7Bv" secondAttribute="leading" type="default" id="tYN-Hb-xjb"/>
                                     <constraint firstItem="BiG-Ts-wjl" firstAttribute="trailing" secondItem="2rB-hD-J9X" secondAttribute="trailing" type="default" id="x52-8d-yUT"/>
                                     <constraint firstItem="2rB-hD-J9X" firstAttribute="trailing" secondItem="E09-wS-Nlx" secondAttribute="trailing" type="default" id="yui-uS-8GS"/>
@@ -990,7 +993,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
-                <tabBarController id="4" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tbc" id="4" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="PO0-Rn-kqN"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5">
@@ -1021,6 +1024,111 @@
         <image name="redox_01.png" width="600" height="375"/>
         <image name="refresh.png" width="22" height="22"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PennMeetCreateGroupViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetCreateGroupViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonTouched:"/>
+                <relationship kind="action" name="doneButtonTouched:"/>
+                <relationship kind="action" name="generateQRImage:"/>
+                <relationship kind="action" name="saveQRImage:"/>
+                <relationship kind="outlet" name="bannerURLField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="groupNameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="qrCode" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetEditProfileViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetEditProfileViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelButtonPressed:"/>
+                <relationship kind="action" name="saveButtonPressed:"/>
+                <relationship kind="outlet" name="birthdayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="majorTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="photoUrlTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="schoolTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrolley" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetFirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetFirstViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="editButtonPressed:"/>
+                <relationship kind="action" name="refresherPressed:"/>
+                <relationship kind="outlet" name="birthdayLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="firstNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="lastNameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="majorLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="navy" candidateClass="UINavigationController"/>
+                <relationship kind="outlet" name="refresher" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="schoolLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="userImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetGroupViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetGroupViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="refresherPressed:"/>
+                <relationship kind="outlet" name="groupCoverPhotoTho" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="navItem" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="refesher" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableForGroupMembers" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetLoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="fbLoginPushed:"/>
+                <relationship kind="action" name="loginPressed:"/>
+                <relationship kind="action" name="signUpPressed:"/>
+                <relationship kind="outlet" name="bgImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrolley" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetSecondViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSecondViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="newGroupTouched:"/>
+                <relationship kind="action" name="refresherTouched:"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="PennMeetSignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetSignUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancelPressed:"/>
+                <relationship kind="action" name="donePressed:"/>
+                <relationship kind="outlet" name="birthdayTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="confirmField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="firstNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastNameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="majorTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="passwordField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="photoUrlTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="schoolTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrolley" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PennMeetThirdViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PennMeetThirdViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cameraOutlet" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="plusButton" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

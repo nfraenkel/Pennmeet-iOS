@@ -8,15 +8,22 @@
 
 #import <UIKit/UIKit.h>
 #import "FacebookSDK.h"
+#import "PennMeetCurrentLoggedInUser.h"
 
 
 @interface PennMeetAppDelegate : UIResponder <UIApplicationDelegate>
+
+extern NSString *const FBSessionStateChangedNotification;
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) NSString *apiToken, *accountToken, *defaultPhotoUrl;
 
-@property (strong, nonatomic) FBSession *session;
+//@property (strong, nonatomic) FBSession *session;
+
+@property (retain) PennMeetCurrentLoggedInUser *currentUser;
+
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI;
 
 
 

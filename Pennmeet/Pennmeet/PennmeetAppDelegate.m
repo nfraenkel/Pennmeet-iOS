@@ -10,12 +10,17 @@
 
 @implementation PennMeetAppDelegate
 
+NSString *const FBSessionStateChangedNotification =
+@"edu.upenn.cis195.PennMeet:FBSessionStateChangedNotification";
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.apiToken = @"5vj8a8fxoktufbjegfv0";
     self.accountToken = @"849315";
     self.defaultPhotoUrl = @"http://www.sessionlogs.com/media/icons/defaultIcon.png";
+    
+    self.currentUser = [PennMeetCurrentLoggedInUser sharedDataModel];
     
     // Override point for customization after application launch.
     return YES;
@@ -32,7 +37,7 @@
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
     // attempt to extract a token from the url
-    return [self.session handleOpenURL:url];
+    return [FBSession.activeSession handleOpenURL:url];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -57,7 +62,74 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
-    [self.session close];
+    [FBSession.activeSession close];
+}
+
+
+/*
+ * Callback for session changes.
+ */
+- (void)sessionStateChanged:(FBSession *)session
+                      state:(FBSessionState) state
+                      error:(NSError *)error
+{
+    switch (state) {
+        case FBSessionStateOpen:
+            if (!error) {
+                // We have a valid session
+                NSLog(@"User session found");
+                
+                [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, NSDictionary<FBGraphUser> *user, NSError *error) {
+                    NSLog(@"user: %@", user);
+                    
+                    // create user model 
+                    PennMeetUser *usaaaaa = [[PennMeetUser alloc] initWithFbInfo:user];
+                    usaaaaa.uniqueID = [user objectForKey:@"email"];
+
+                    // update currentuser singleton
+                    self.currentUser.currentUser = usaaaaa;
+                                        
+                    // show profile page!
+                    [(UINavigationController*)self.window.rootViewController performSegueWithIdentifier:@"showTabPage" sender:self];
+                    
+                }];
+                
+            }
+            break;
+        case FBSessionStateClosed:
+        case FBSessionStateClosedLoginFailed:
+            [FBSession.activeSession closeAndClearTokenInformation];
+            break;
+        default:
+            break;
+    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:FBSessionStateChangedNotification
+     object:session];
+    
+    if (error) {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Error"
+                                  message:error.localizedDescription
+                                  delegate:nil
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
+/*
+ * Opens a Facebook session and optionally shows the login UX.
+ */
+- (BOOL)openSessionWithAllowLoginUI:(BOOL)allowLoginUI {
+    NSArray *permissions = [[NSArray alloc] initWithObjects:@"email", nil];
+    return [FBSession openActiveSessionWithReadPermissions:permissions
+                                              allowLoginUI:allowLoginUI
+                                         completionHandler:^(FBSession *session, FBSessionState state, NSError *error)
+                                        {
+                                            [self sessionStateChanged:session state:state error:error];
+                                        }
+            ];
 }
 
 

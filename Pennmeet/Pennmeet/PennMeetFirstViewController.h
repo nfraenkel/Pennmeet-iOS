@@ -33,7 +33,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *majorLabel;
 @property (weak, nonatomic) IBOutlet UITextView *birthdayLabel;
 @property (strong, nonatomic) IBOutlet UINavigationController *navy;
-@property (strong, nonatomic) IBOutlet PennMeetEditProfileViewController *editorz;
+//@property (strong, nonatomic) IBOutlet PennMeetEditProfileViewController *editorz;
 
 - (IBAction)editButtonPressed:(id)sender;
 - (IBAction)refresherPressed:(id)sender;

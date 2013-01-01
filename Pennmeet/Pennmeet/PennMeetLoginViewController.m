@@ -26,7 +26,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     PennMeetAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
-    NSLog(@"appdeleageate session: %@", appDelegate.session.description);
+//    NSLog(@"appdeleageate session: %@", appDelegate.session.description);
 }
 
 - (void)viewDidLoad
@@ -44,30 +44,28 @@
     
     
     // Create Login View so that the app will be granted "status_update" permission.
-    FBLoginView *loginview = [[FBLoginView alloc] init];
-    
-    loginview.frame = CGRectOffset(loginview.frame, 5, 5);
-    loginview.delegate = self;
-
-    
-    [self.view addSubview:loginview];
-    
-    [loginview sizeToFit];
+//    FBLoginView *loginview = [[FBLoginView alloc] init];
+//    loginview.frame = CGRectOffset(loginview.frame, 5, 5);
+//    loginview.delegate = self;
+//    [self.view addSubview:loginview];
+//    [loginview sizeToFit];
 }
 
 
-- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
-    NSLog(@"fetched user info: %@", user);
-    
-}
-
-- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
-    NSLog(@"showing logged in user %@", loginView);
-}
-
-- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
-    NSLog(@"shoging logged out mode? %@", loginView);
-}
+//- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user {
+//    NSLog(@"fetched user info: %@", user);
+////    NSDictionary *dict = [NSDictionary dictionar]
+//    [self performSegueWithIdentifier:@"showTabPage" sender:self];
+//    
+//}
+//
+//- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView{
+//    NSLog(@"showing logged in user %@", loginView);
+//}
+//
+//- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {
+//    NSLog(@"shoging logged out mode? %@", loginView);
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -139,24 +137,26 @@
 
 - (IBAction)fbLoginPushed:(id)sender {
     PennMeetAppDelegate *appDelegate = [[UIApplication sharedApplication]delegate];
-    if (appDelegate.session.state != FBSessionStateCreated) {
-        // Create a new, logged out session.
-        NSLog(@"new session");
-        appDelegate.session = [[FBSession alloc] init];
-    }
-    appDelegate.session = [[FBSession alloc] init];
-
     
-    NSLog(@"here %@", appDelegate.session.description);
-    // if the session isn't open, let's open it now and present the login UX to the user
-    [appDelegate.session openWithCompletionHandler:^(FBSession *session,
-                                                     FBSessionState status,
-                                                     NSError *error) {
-        // and here we make sure to update our UX according to the new session state
-        NSLog(@"button completion handler!");
-        NSLog(@" session : %@", appDelegate.session.description);
-        [self performSegueWithIdentifier:@"showTabPage" sender:self];
-    }];
+    [appDelegate openSessionWithAllowLoginUI:YES];
+//    if (appDelegate.session.state != FBSessionStateCreated) {
+//        // Create a new, logged out session.
+//        NSLog(@"new session");
+//        appDelegate.session = [[FBSession alloc] init];
+//    }
+//    appDelegate.session = [[FBSession alloc] init];
+//
+//    
+//    NSLog(@"here %@", appDelegate.session.description);
+//    // if the session isn't open, let's open it now and present the login UX to the user
+//    [appDelegate.session openWithCompletionHandler:^(FBSession *session,
+//                                                     FBSessionState status,
+//                                                     NSError *error) {
+//        // and here we make sure to update our UX according to the new session state
+//        NSLog(@"button completion handler!");
+//        NSLog(@" session : %@", appDelegate.session.description);
+//        [self performSegueWithIdentifier:@"showTabPage" sender:self];
+//    }];
 
 }
 
